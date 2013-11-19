@@ -375,7 +375,7 @@ ul.contact li a.icon-rss:before
 	}
 
 #triangle-up {
-	margin: 15px auto;
+	margin: 0 auto;
 	width: 0;
 	height: 0;
 	border-left: 60px solid transparent;
