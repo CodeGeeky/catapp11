@@ -1,6 +1,10 @@
 Catreen101::Application.configure do
 
   # Loading Font and Images Assests
+  config.assets.enabled = true
+  config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+  config.assets.compress = true
+  config.assets.css_compressor = :sass
 
   # Settings specified here will take precedence over those in config/application.rb.
 
