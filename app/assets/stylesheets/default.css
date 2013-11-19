@@ -380,7 +380,7 @@ ul.contact li a.icon-rss:before
 	height: 0;
 	border-left: 60px solid transparent;
 	border-right: 60px solid transparent;
-	border-bottom: 30px solid #3D3D3D;
+	border-bottom: 15px solid #3D3D3D;
 	-moz-transform: rotate(180deg); 
 	transform: rotate(180deg);
 	-ms-transform: rotate(180deg); /* IE 9 */
@@ -437,7 +437,7 @@ ul.contact li a.icon-rss:before
 	#menu-wrapper
 	{
 		background: #3D3D3D;
-		height: 57px;
+		height: 72px;
 	}
 
 	#menu
@@ -459,7 +459,7 @@ ul.contact li a.icon-rss:before
 	{
 		display: inline-block;
 		margin-left: 0.50em;
-		padding: 2.7em 1.5em 1em 1.5em;
+		padding: 2.3em 1.5em 1em 1.5em;
 		letter-spacing: 0.20em;
 		text-decoration: none;
 		font-size: 0.90em;
