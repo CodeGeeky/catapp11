@@ -30,6 +30,12 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+#Capybara-webkit for mouse on hover event
+gem 'capybara', '>= 2.1.0'
+
+gem 'rspec-rails'
+
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', '0.3.20', require: false
