@@ -92,7 +92,13 @@
 	</div>
 	<div id="triangle-up"></div>
 	<div id="sticky-login" >
+	<% if current_user %>
+		<%= current_user.phone %>
+		<%= link_to "Log out", logout_path %>
+	<%else%>
+	
 	<a href="pages/login" rel="facebox">Login!</a>
+	<% end %>
 </div>
 </div>
 

@@ -1,11 +1,17 @@
 Catreen101::Application.routes.draw do
-  get 'pages/login'
+  get 'pages/login', :as => "login"
   get 'welcome/index'
+
+  #get "logout" => "sessions#destroy", :as => "logout"
+  #get "login" => "sessions#new", :as => "login"
+  #get "sign_up" => "users#new", :as => "sign_up"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  resources :users
+  resources :pages
 
   # You can have the root of your site routed with "root"
- root 'welcome#index'
+ root 'welcome#index', :as => "sign_up"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

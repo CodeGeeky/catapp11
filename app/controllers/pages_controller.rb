@@ -2,6 +2,9 @@ class PagesController < ApplicationController
   def login
   	
   end
+  def new
+    
+  end
   def create
     user = User.authenticate(params[:phone], params[:password])
     if user
