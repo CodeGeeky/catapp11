@@ -1044,6 +1044,7 @@ ul.contact li a.icon-rss:before
 /**loginbutton**/
 #LogInButton {
 	display:none;
+	color: #F7F7F7;
 	text-decoration:none;
 	position:fixed;
 	top:15px;

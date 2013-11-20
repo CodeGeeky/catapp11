@@ -16,6 +16,7 @@
     $(window).load(function(){
       $("#menu-area").sticky({ topSpacing: 0 });
     });
+    
   </script>
   <script type="text/javascript">
     jQuery(document).ready(function($) {
@@ -34,6 +35,23 @@
 		/**background-color: transparent**/
 		background: '#3D3D3D';
 	}
+	#sticky-login
+	{
+	  	background: #bada55;
+      	color: white;
+      	font-family: Droid Sans;
+      	font-size: 16px;
+      	line-height: 1.6em;
+      	font-weight: bold;
+      	text-align: center;
+      	padding: 5px;
+      	text-shadow: 0 1px 1px rgba(0,0,0,.2);
+      	width: 110px;
+      	margin-top: -27px;
+      	float: right;
+      	box-sizing:border-box;
+      	z-index: 200;
+	}
   </style>
 <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" %>
 <%= stylesheet_link_tag "default.css" %>
@@ -46,10 +64,9 @@
 <div id="header-wrapper">
 	<div id="header" class="container">
 		<div id="logo" style="background-image: url('lock-fade.png')">
-			<a id="LogInButton" href="pages/login" style="margin-right: -535px; right: 50%; display: inline;" style="background: url('images/lock-fade.png')" rel="facebox">
-					<%#=  link_to image_tag("lock-black.png", alt: "lock-black"), '#' %>
+								<%#=  link_to image_tag("lock-black.png", alt: "lock-black"), '#' %>
 			<!--<span id="LogInButtonHover" style="background-image: lock-black.png no-repeat left top;"></span>-->
-			</a>
+			
 			<% #<span class="icon icon-group"></span> %>
 			<h1><a href="#">Catering</a></h1>
 			<span>Template Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a></span> </div>
@@ -71,11 +88,15 @@
 				<li><a href="#" accesskey="5" title="">Contact Us</a></li>
 			</ul>
 		</div>
+		
 	</div>
 	<div id="triangle-up"></div>
+	<div id="sticky-login" >
+	<a href="pages/login" rel="facebox">Login!</a>
 </div>
+</div>
+
 <div id="wrapper">
-	
 	<div id="featured-wrapper">
 	
 		<div class="extra2 container">
