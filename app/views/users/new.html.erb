@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<%= javascript_include_tag "facebox.js" %>
+	<%= stylesheet_link_tag "facebox.css" %>
+	<%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" %>
+	<%= stylesheet_link_tag "default.css" %>
+	<%= stylesheet_link_tag "fonts.css"%>
+</head>
+	<h1>Sign Up</h1>
+
+<%= form_for @user do |f| %>
+	<% if @user.errors.any? %>
+		<div class="error_messages">
+			<h2>Form is invalid</h2>
+			<ul>
+				<% for message in @user.errors.full_messages %>
+				<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>	
+	<% end %>
+	<p>
+		<%= f.label :name %><br />
+		<%= f.text_field :name %><br />
+		<%= f.label :password %><br />
+		<%= f.password_field :password %><br />
+		<%= f.label :password_confirmation %><br />
+		<%= f.password_field :password_confirmation %><br />
+		<%= f.label :phone %><br />
+		<%= f.text_field :phone %><br />
+		<%= f.label :email %><br />
+		<%= f.text_field :email %><br />
+
+	<p class="button"><%= f.submit "Sign Up"%></p>
+<% end %>
+</body>
+</html>
+
