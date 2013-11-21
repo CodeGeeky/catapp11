@@ -1,4 +1,5 @@
 Catreen101::Application.routes.draw do
+  get "calender/full_calender"
   get 'pages/login', :as => "login"
   get 'welcome/index'
 

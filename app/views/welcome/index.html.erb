@@ -21,8 +21,8 @@
   <script type="text/javascript">
     jQuery(document).ready(function($) {
       $('a[rel*=facebox]').facebox({
-        loadingImage : 'loading.gif',
-        closeImage   : 'closelabel.png'
+        loadingImage : '/images/loading.gif',
+        closeImage   : '/images/closelabel.png'
       })
     })
   </script>
@@ -63,9 +63,9 @@
 <body>
 <div id="header-wrapper">
 	<div id="header" class="container">
-		<div id="logo" style="background-image: url('lock-fade.png')">
+		<div id="logo">
 								<%#=  link_to image_tag("lock-black.png", alt: "lock-black"), '#' %>
-			<!--<span id="LogInButtonHover" style="background-image: lock-black.png no-repeat left top;"></span>-->
+			<a href="#"><div id="LogInButton"></div></a>
 			
 			<% #<span class="icon icon-group"></span> %>
 			<h1><a href="#">Catering</a></h1>
@@ -83,7 +83,7 @@
 						<li><a href="#">Our Staffs</a></li>
 					</ul>-->
 				</li>
-				<li><a href="#" accesskey="3" title="">About Us</a></li>
+				<li><a href="calender/full_calender" rel="facebox" accesskey="3" title="">About Us</a></li>
 				<li><a href="#" accesskey="4" title="">Food Menu</a></li>
 				<li><a href="#" accesskey="5" title="">Contact Us</a></li>
 			</ul>
