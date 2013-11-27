@@ -10,18 +10,18 @@
 <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" %>
 <%= javascript_include_tag "jquery.sticky.js" %>
 <%= javascript_include_tag "facebox.js" %>
+<%= javascript_include_tag "tabs.js" %>
 <%= stylesheet_link_tag "facebox.css" %>
-  <% #<script type="text/javascript" src="jquery.sticky.js"></script> %>
+
   <script>
     $(window).load(function(){
       $("#menu-area").sticky({ topSpacing: 0 });
     });
-    
   </script>
   <script type="text/javascript">
     jQuery(document).ready(function($) {
       $('a[rel*=facebox]').facebox({
-        loadingImage : '/images/loading.gif',
+        loadingImage : '/images/loader.gif',
         closeImage   : '/images/closelabel.png'
       })
     })
@@ -33,24 +33,38 @@
 		width: 100%;
 		height: 72px;
 		/**background-color: transparent**/
-		background: '#3D3D3D';
+		background: '#004D6E';
+		box-shadow: 0 8px 30px rgba(0,0,0,.2);
 	}
-	#sticky-login
+	#sticky
 	{
-	  	background: #bada55;
-      	color: white;
+		position: relative;
+	  	background: #0070A3 url('overlay.png') repeat;
       	font-family: Droid Sans;
-      	font-size: 16px;
-      	line-height: 1.6em;
+      	font-size: 14.5px;
+      	line-height: 2em;
       	font-weight: bold;
       	text-align: center;
-      	padding: 5px;
+      	padding: 0 20px;
       	text-shadow: 0 1px 1px rgba(0,0,0,.2);
-      	width: 110px;
-      	margin-top: -27px;
-      	float: right;
+      	width: auto;
       	box-sizing:border-box;
-      	z-index: 200;
+      	box-shadow: 0px -25px 18px rgba(0,0,0,.2);
+	}
+	#sticky a
+	{
+		text-decoration: none;
+		color: #fff;
+	}
+	#sticky a:hover
+	{
+		color: #fff000;
+	}
+	#sticky-wrapper
+	{
+		margin: 0 auto;
+		width: auto;
+		padding: 0 20px;
 	}
   </style>
 <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" %>
@@ -61,15 +75,54 @@
 
 </head>
 <body>
+	
 <div id="header-wrapper">
+	<div id="sticky-wrapper">
+	<div id="sticky" style="margin-top: -41px; margin-left: 10px; float: left;">
+		<h4><a href="calender/full_calender" rel='facebox'><img src="/images/set_icons/cart32.png" /></a><%= link_to " Book Now! >>", 'calender/full_calender', :rel => 'facebox' %></h4>
+	</div>
+	<div id="sticky" style="margin-top: -41px; float: left; margin-left: 10px">
+		<h4><img src="/images/set_icons/social/skype.png" /> Call Us: +977-00-0000000</h4>
+	</div>
+	<div id="sticky" style="margin-top: -41px; float: left; margin-left: 10px">
+		<h4>Socials : 
+			<a href="#" accesskey="1"><img src="/images/set_icons/social/facebook.png" /></a>
+			<a href="#" accesskey="2"><img src="/images/set_icons/social/twitter.png" /></a>
+			<a href="#" accesskey="3"><img src="/images/set_icons/social/youtube.png" /></a>
+			<a href="#" accesskey="4"><img src="/images/set_icons/social/flickr.png" /></a>
+		</h4>
+	</div>
+	<div id="sticky" style="margin-top: -41px; float: left; margin-left: 10px">
+		<h4>
+			<a href="#"><img src="/images/set_icons/clipboard32.png" /> View Menu!</a>
+		</h4>
+	</div>
+	<div id="sticky" style='margin-top: -41px; float: left; margin-left: 10px'>
+		<h4>
+			<a href="#"><img src="/images/set_icons/bubble32.png" /> Feedback!</a>
+		</h4>
+	</div>
+	<div id="sticky" style="margin-top: -41px; margin-left: 10px; float: left;">
+		<% if current_user %>
+			<%= current_user.phone %>
+			<%= link_to "Log out", logout_path %>
+		<% else %>
+			<h4><%= # link_to image_tag("lock-fade.png", alt: "lock-black"), 'pages/login', :rel=>'facebox' 
+				link_to "Sign in!", 'pages/login', :rel => 'facebox' 
+				
+			%>
+			<a href="pages/login" rel='facebox'><img src="/images/icon-user.png" /></a>
+			</h4>
+			<p style="font-size: 12px; color: #FFF; font-weight: normal; line-height: 20%;">Not Registered? <a href="#">Sign Up!</a></p>
+			
+		<% end %>
+	</div>
+	</div>
 	<div id="header" class="container">
 		<div id="logo">
-								<%#=  link_to image_tag("lock-black.png", alt: "lock-black"), '#' %>
-			<a href="#"><div id="LogInButton"></div></a>
-			
-			<% #<span class="icon icon-group"></span> %>
-			<h1><a href="#">Catering</a></h1>
-			<span>Template Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a></span> </div>
+			<span class="icon icon-group"><img src="/images/set_icons/open48.png" />  
+			<h1><a href="#">CaMS</a></h1></span>
+			<span>Designed & Developed by <a href="#" rel="nofollow">BEETLE</a></span> </div>
 		</div>
 	</div>
 </div>
@@ -83,23 +136,15 @@
 						<li><a href="#">Our Staffs</a></li>
 					</ul>-->
 				</li>
-				<li><a href="calender/full_calender" rel="facebox" accesskey="3" title="">About Us</a></li>
+				<li><a href="#" accesskey="3" title="">About Us</a></li>
 				<li><a href="#" accesskey="4" title="">Food Menu</a></li>
 				<li><a href="#" accesskey="5" title="">Contact Us</a></li>
 			</ul>
 		</div>
-		
+		<a href="#" id="top-open">Menu</a>
 	</div>
-	<div id="triangle-up"></div>
-	<div id="sticky-login" >
-	<% if current_user %>
-		<%= current_user.phone %>
-		<%= link_to "Log out", logout_path %>
-	<%else%>
 	
-	<a href="pages/login" rel="facebox">Login!</a>
-	<% end %>
-</div>
+	<div id="triangle-up"></div>
 </div>
 
 <div id="wrapper">
@@ -107,34 +152,35 @@
 	
 		<div class="extra2 container">
 			<div class="ebox1">
-				<!--<div class="hexagon"><span class="icon icon-lightbulb"></span></div>
+				<div class="hexagon"><span class="icon icon-lightbulb"><img src="/images/twitter.png" /></span></div>
 				<div class="title">
 					<h2>Fusce ultrices fringilla</h2>
 					<span class="byline">Integer sit amet pede vel arcu aliquet pretium</span>
 				</div>
 				<p>This is <strong>Plushiness</strong>, a free, fully standards-compliant CSS template designed by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>. The photos in this template are from <a href="http://fotogrph.com/"> Fotogrph</a>. This free template is released under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attributions 3.0</a> license, so you are pretty much free to do whatever you want with it (even use it commercially) provided you keep the links in the footer intact. Aside from that, have fun with it :) </p>
-				<a href="#" class="button">Etiam posuere</a>-->
+				<a href="#" class="button">Etiam posuere</a>
 			</div>		
 
 			<div class="ebox2">
-				<div class="hexagon"><span class="icon icon-bullhorn"></span></div>
+				<div class="hexagon"><span class="icon icon-bullhorn"><img src="/images/" /></span></div>
 				<div class="title">
-					<h2>Donec dictum metus</h2>
-					<span class="byline">Integer sit amet pede vel arcu aliquet pretium</span>
+					<h2>Catering Management System(CaMS) | RoR Project</h2>
+					<span class="byline">CaMS is developed in RoR platform.</span>
 				</div>
-				<p>In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat. Pellentesque tristique ante ut risus. Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum congue, nibh. Suspendisse dictum porta lectus. Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat vel, suscipit in, mattis placerat, nulla. Sed ac leo. Pellentesque imperdiet.</p>
-				<a href="#" class="button">Etiam posuere</a>
+				<p>Catering Management System(CaMS) is the online Catering Booking System. This system is facilated by embedded e-payment system.</p>
+				<a href="#" class="button">Read More...</a>
 			</div>		
 
 		</div>	
 
 	</div>
 </div>
+
 <div id="stamp" class="container">
 	<div class="hexagon"><span class="icon icon-wrench"></span></div>
 </div>
 <div id="copyright" class="container">
-	<p>Copyright (c) 2013 Sitename.com. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
+	<p>Copyright (c) 2013. All rights reserved. | Design by <a href="#">Beetle</a>.</p>
 </div>
 </body>
 </html>

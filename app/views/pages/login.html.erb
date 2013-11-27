@@ -13,21 +13,38 @@
 	</ruby>
 </head>
 <body>
-	<h2>Create a new account</h2>
-	<p>It's simple, and free.</p>
-	
 	<div>
-	<%= form_tag pages_path do %>
-	<p>
-		<%= label_tag :phone %><br />
-		<%= text_field_tag :phone, params[:phone] %>
-	</p>
-	<p>
-		<%= label_tag :password %><br />
-		<%= password_field_tag :password %>
-	</p>
-	<p class="button"><%= submit_tag "Log in" %></p>
-<% end %></div>
+	
+		<table>
+			<th>
+			<%= form_tag pages_path do %>			
+			<tr>
+				<h2>Create a new account</h2>		
+			</tr>
+			<tr>
+				<p>It's simple, and free.</p>		
+			</tr>
+			<tr>
+				<th><%= label_tag :phone %><br /></th>
+				<th><%= text_field_tag :phone, params[:phone] %></th>
+			</tr>
+			<tr>
+				<th><%= label_tag :password %><br /></th>
+				<th><%= password_field_tag :password %></th>
+			</tr>
+			<tr>
+				<th>
+					<p class="button"><%= submit_tag "Log in" %></p>
+					<% end %>
+				</th>
+			</tr>
+			</th>
+			<th>
+				Sign Up!
+			</th>
+		</table>
+	
+	</div>
 </body>
 </html>
 
