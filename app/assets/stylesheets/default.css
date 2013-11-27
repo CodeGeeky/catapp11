@@ -451,14 +451,13 @@ ul.contact li a.icon-rss:before
 /*********************************************************************************/
 
 #top-open{
-	position: relative;
+	position: absolute;
+	bottom: -42px;
 	right: 0px;
 	display: block;
 	width: 42px;
 	height: 42px;
 	background: url('/images/top-open.png') no-repeat 0px 0px ;
-	margin-top: -60px;
-	float: right;
 	text-indent: -9000px;
 }
 
