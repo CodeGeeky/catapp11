@@ -11,12 +11,9 @@
 <%= javascript_include_tag "jquery.sticky.js" %>
 <%= javascript_include_tag "facebox.js" %>
 <%= javascript_include_tag "tabs.js" %>
+<%= javascript_include_tag "camera.js" %>
 <%= stylesheet_link_tag "facebox.css" %>
 <%= stylesheet_link_tag "camera.css" %>
-<%= stylesheet_link_tag "reset.css" %>
-<%= javascript_include_tag "css3-mediaqueries.js" %>
-<%= javascript_include_tag "custom.js" %>
-
 
   <script>
     $(window).load(function(){
@@ -31,6 +28,26 @@
       })
     })
   </script>
+  <script>
+  	$(document).ready(function(){
+				$('.slider_wrapper')._TMS({
+					show:0,
+					pauseOnHover:false,
+					prevBu:'.prev',
+					nextBu:'.next',
+					playBu:false,
+					duration:800,
+					preset:'fade',
+					pagination:true,//'.pagination',true,'<ul></ul>'
+					pagNums:false,
+					slideshow:8000,
+					numStatus:false,
+					banners: 'fade',
+					waitBannerAnimation:false,
+					progressBar:false
+				});
+			});
+  </script>
   <style>
     #menu-area
 	{
@@ -44,7 +61,7 @@
 	#sticky
 	{
 		position: relative;
-	  	background: #0070A3 url('overlay.png') repeat;
+	  	background: #334960 url('overlay.png') repeat;
       	font-family: Droid Sans;
       	font-size: 14.5px;
       	line-height: 2em;
@@ -125,18 +142,46 @@
 	</div>
 	<div id="header" class="container">
 		<div id="logo">
-			<span class="icon icon-group"><img src="/images/set_icons/open48.png" />  
+			<!--<span class="icon icon-group"><img src="/images/set_icons/open48.png" />  
 			<h1><a href="#">CaMS</a></h1></span>
-			<span>Designed & Developed by <a href="#" rel="nofollow">BEETLE</a></span> </div>
-		</div>
+			<span>Designed & Developed by <a href="#" rel="nofollow">BEETLE</a></span> -->
+		
+		<div class="slider_wrapper">
+						<ul class="items">
+							<li>
+								<img src="images/spacer.gif" alt="">
+								<div class="caption banner">
+									<h2>Let Us Show You the Way to Success</h2>
+								</div>
+							</li>
+							<li>
+								<img src="images/spacer.gif" alt="">
+								<div class="caption banner">
+									<h2>Interminable Energy for Your Project</h2>
+								</div>
+							</li>
+							<li>
+								<img src="images/spacer.gif" alt="">
+								<div class="caption banner">
+									<h2>We know how to solve your problems!</h2>
+								</div>
+							</li>
+							<li>
+								<img src="images/spacer.gif" alt="">
+								<div class="caption banner">
+									<h2>Make your business a booming one!</h2>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
 	</div>
 </div>
-<!--<a href="#" id="top-open">Menu</a>-->
 <div id="menu-area">
 	<div id="menu-wrapper">
 		<div id="menu">
 			<ul style="margin-bottom: 0px;">
-				<li class="current_page_item"><a href="#" accesskey="1" title="">Home</a></li>
+				<li class="current_page_item"><a href="#" accesskey="1" title=""><img src="/images/home.png" /> Home</a></li>
 				<li><a href="#" accesskey="2" title="">Gallery</a>
 					<!--<ul>
 						<li><a href="#">Our Staffs</a></li>
@@ -168,7 +213,7 @@
 			</div>		
 
 			<div class="ebox2">
-				<div class="hexagon"><span class="icon icon-bullhorn"><img src="/images/" /></span></div>
+				<div class="hexagon"><span class="icon icon-bullhorn"><img src="/images/set_icons/label48.png" /></span></div>
 				<div class="title">
 					<h2>Catering Management System(CaMS) | RoR Project</h2>
 					<span class="byline">CaMS is developed in RoR platform.</span>
@@ -183,7 +228,7 @@
 </div>
 
 <div id="stamp" class="container">
-	<div class="hexagon"><span class="icon icon-wrench"></span></div>
+	<div class="hexagon"><span class="icon icon-wrench"><img src="/images/set_icons/coffee48.png" /></span></div>
 </div>
 <div id="copyright" class="container">
 	<p>Copyright (c) 2013. All rights reserved. | Design by <a href="#">Beetle</a>.</p>
