@@ -11,13 +11,13 @@
 <%= javascript_include_tag "jquery.sticky.js" %>
 <%= javascript_include_tag "facebox.js" %>
 <%= javascript_include_tag "tabs.js" %>
-<%= javascript_include_tag "camera.js" %>
-<%= stylesheet_link_tag "reset.css" %>
 <%= stylesheet_link_tag "facebox.css" %>
+
+<%= javascript_include_tag "camera.js" %>
 <%= stylesheet_link_tag "camera.css" %>
 
   <script>
-    $(window).load(function(){
+    $(window).load(function(){ 
       $("#menu-area").sticky({ topSpacing: 0 });
     });
   </script>
@@ -29,26 +29,6 @@
       })
     })
   </script>
-  <script>
-  	$(document).ready(function(){
-				$('.slider_wrapper')._TMS({
-					show:0,
-					pauseOnHover:false,
-					prevBu:'.prev',
-					nextBu:'.next',
-					playBu:false,
-					duration:800,
-					preset:'fade',
-					pagination:true,//'.pagination',true,'<ul></ul>'
-					pagNums:false,
-					slideshow:8000,
-					numStatus:false,
-					banners: 'fade',
-					waitBannerAnimation:false,
-					progressBar:false
-				});
-			});
-  </script>
   <style>
     #menu-area
 	{
@@ -56,7 +36,7 @@
 		width: 100%;
 		height: 72px;
 		/**background-color: transparent**/
-		background: '#004D6E';
+		background: '#334960';
 		box-shadow: 0 8px 30px rgba(0,0,0,.2);
 	}
 	#sticky
@@ -143,39 +123,40 @@
 	</div>
 	<div id="header" class="container">
 		<div id="logo">
-			<!--<span class="icon icon-group"><img src="/images/set_icons/open48.png" />  
+			<span class="icon icon-group"><img src="/images/box1_img4.png" />  
 			<h1><a href="#">CaMS</a></h1></span>
-			<span>Designed & Developed by <a href="#" rel="nofollow">BEETLE</a></span> -->
-		
-		<div class="slider_wrapper">
-						<ul class="items">
-							<li>
-								<img src="images/spacer.gif" alt="">
-								<div class="caption banner">
-									<h2>Let Us Show You the Way to Success</h2>
-								</div>
-							</li>
-							<li>
-								<img src="images/spacer.gif" alt="">
-								<div class="caption banner">
-									<h2>Interminable Energy for Your Project</h2>
-								</div>
-							</li>
-							<li>
-								<img src="images/spacer.gif" alt="">
-								<div class="caption banner">
-									<h2>We know how to solve your problems!</h2>
-								</div>
-							</li>
-							<li>
-								<img src="images/spacer.gif" alt="">
-								<div class="caption banner">
-									<h2>Make your business a booming one!</h2>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
+			<span>Designed & Developed by <a href="#" rel="nofollow">BEETLE</a></span>
+			<!--
+			<div class="slider_wrapper">
+				<ul class="items">
+					<li>
+						<img src="images/spacer.gif" alt="">
+						<div class="caption banner">
+							<h2>Let Us Show You the Way to Success</h2>
+						</div>
+					</li>
+					<li>
+						<img src="images/spacer.gif" alt="">
+						<div class="caption banner">
+							<h2>Interminable Energy for Your Project</h2>
+						</div>
+					</li>
+					<li>
+						<img src="images/spacer.gif" alt="">
+						<div class="caption banner">
+							<h2>We know how to solve your problems!</h2>
+						</div>
+					</li>
+					<li>
+						<img src="images/spacer.gif" alt="">
+						<div class="caption banner">
+							<h2>Make your business a booming one!</h2>
+						</div>
+					</li>
+				</ul>
+			</div>
+			-->
+		</div>
 	</div>
 </div>
 <div id="menu-area">
@@ -206,11 +187,11 @@
 			<div class="ebox1">
 				<div class="hexagon"><span class="icon icon-lightbulb"><img src="/images/twitter.png" /></span></div>
 				<div class="title">
-					<h2>Fusce ultrices fringilla</h2>
-					<span class="byline">Integer sit amet pede vel arcu aliquet pretium</span>
+					<h2>Easy Payment! Easy Dealing!</h2>
+					<span class="byline">Leave your phone number, we'll contact you and confirm your booking. </span>
 				</div>
-				<p>This is <strong>Plushiness</strong>, a free, fully standards-compliant CSS template designed by <a href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>. The photos in this template are from <a href="http://fotogrph.com/"> Fotogrph</a>. This free template is released under a <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attributions 3.0</a> license, so you are pretty much free to do whatever you want with it (even use it commercially) provided you keep the links in the footer intact. Aside from that, have fun with it :) </p>
-				<a href="#" class="button">Etiam posuere</a>
+				<p><a href="#">CaMS(Catering Management System)</a> is easy dealing online catering booking system. We allow you the cash on event day or advance payment. We have <a href="#">eSewa</a>, <a href="#">Bank Transfer</a>, <a href="#">Online Banking Transfer</a> or Cash on Event Day. Just leave your phone number in our calender, we'll call you. No <a href="#">Registration</a> Required. Easy! Fast!! Reliable!!!</p>
+				<a href="#" class="button">Read more...</a>
 			</div>		
 
 			<div class="ebox2">

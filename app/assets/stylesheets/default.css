@@ -8,7 +8,7 @@ body
 {
 	margin: 0px;
 	padding: 0px;
-	background: #004D6E;
+	background: #334960;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 11pt;
 	font-weight: 300;
@@ -307,7 +307,7 @@ ul.contact li a.icon-rss:before
 {
 	/**display: inline-block;
 	padding: 1.3em 3em;
-	background: #004D6E;
+	background: #334960;
 	-moz-transition: opacity 0.25s ease-in-out;
 	-webkit-transition: opacity 0.25s ease-in-out;
 	-o-transition: opacity 0.25s ease-in-out;
@@ -391,7 +391,7 @@ ul.contact li a.icon-rss:before
 	height: 0;
 	border-left: 60px solid transparent;
 	border-right: 60px solid transparent;
-	border-bottom: 30px solid #004D6E;
+	border-bottom: 30px solid #334960;
 	-moz-transform: rotate(180deg); 
 	transform: rotate(180deg);
 	-ms-transform: rotate(180deg); /* IE 9 */
@@ -475,7 +475,7 @@ ul.contact li a.icon-rss:before
 	#menu-wrapper
 	{
 		box-shadow: 0 -8px 30px rgba(0,0,0,.2);
-		background: #004D6E;
+		background: #334960;
 		height: 72px;
 	}
 
@@ -694,16 +694,16 @@ ul.contact li a.icon-rss:before
 
 #stamp .hexagon
 {
-	background: #004D6E;
+	background: #334960;
 }
 
 #stamp .hexagon:before {
 	border-left: 60px solid transparent;
 	border-right: 60px solid transparent;
-	border-bottom: 30px solid #004D6E;
+	border-bottom: 30px solid #334960;
 }
 #stamp .hexagon:after {
-	border-color: #004D6E;
+	border-color: #334960;
 }
 
 
@@ -1033,7 +1033,7 @@ ul.contact li a.icon-rss:before
 	width: 120px;
 	height: 80px;
 	line-height: 80px;
-	background: #004D6E;
+	background: #334960;
 	position: relative;
 	text-align: center;
 	color: #FFF;
@@ -1048,7 +1048,7 @@ ul.contact li a.icon-rss:before
 	height: 0;
 	border-left: 60px solid transparent;
 	border-right: 60px solid transparent;
-	border-bottom: 30px solid #004D6E;
+	border-bottom: 30px solid #334960;
 }
 .hexagon:after {
 	content: "";
@@ -1059,7 +1059,7 @@ ul.contact li a.icon-rss:before
 	height: 0;
 	border-left: 60px solid transparent;
 	border-right: 60px solid transparent;
-	border-top: 30px solid #004D6E;
+	border-top: 30px solid #334960;
 }
 
 #portfolio
