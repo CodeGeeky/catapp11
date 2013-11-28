@@ -12,10 +12,10 @@ class PagesController < ApplicationController
       redirect_to root_url, :notice => "Logged in"
     else
       flash.now.alert = "Invalid phone or password"
-      render "login"
+      render "redirect_page"     
     end
   end
-
+  
   def destroy
     session[:user_id] = nil
     redirect_to root_url, :notice => "Logged Out"
