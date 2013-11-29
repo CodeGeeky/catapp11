@@ -12,9 +12,10 @@ class PagesController < ApplicationController
       redirect_to root_url #, :notice => "Logged in"
     else
       
-      flash.now.alert = "Invalid phone or password"
-      render "login"
-      #redirect_to :controller => 'users', :action => 'new'    
+      #flash.now.alert = "Invalid phone or password"
+      #render "login"
+      flash[:error] = true
+      redirect_to root_url
     end
   end
   

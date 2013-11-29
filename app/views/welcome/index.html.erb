@@ -109,14 +109,25 @@
 		<% if current_user %>
 			<div style = "margin-top:10px"><%= current_user.phone %></div>
 			<%= link_to "Log out", logout_path %>
-		<% else %>
-			<h4><%= # link_to image_tag("lock-fade.png", alt: "lock-black"), 'pages/login', :rel=>'facebox' 
-				link_to "Sign in!", 'pages/login', :rel => 'facebox' 
-				
-			%>
+		<% else %>			
+			<h4>
+				<% if flash[:error]  %>
+					<%= # link_to image_tag("lock-fade.png", alt: "lock-black"), 'pages/login', :rel=>'facebox'			 	
+					link_to "Sign in!", 'pages/login', :rel => 'facebox', :style => 'color:red' %>
+				<% else %>
+					<%= # link_to image_tag("lock-fade.png", alt: "lock-black"), 'pages/login', :rel=>'facebox'			 	
+					link_to "Sign in!", 'pages/login', :rel => 'facebox' %>
+				<% end %>
+					
 			<a href="pages/login" rel='facebox'><img src="/images/icon-user.png" /></a>
 			</h4>
-			<p style="font-size: 12px; color: #FFF; font-weight: normal; line-height: 20%;">Not Registered? <%= link_to "Sign Up", 'users/new', :rel => 'facebox'%></p>
+			<p style="font-size: 12px; color: #FFF; font-weight: normal; line-height: 20%;">Not Registered? 
+				<% if flash[:error_signup] %>
+					<%= link_to "Sign Up!", 'users/new', :rel => 'facebox', :style => 'color:red'%>
+				<%else%>
+					<%= link_to "Sign Up!", 'users/new', :rel => 'facebox' %>
+				<%end%>
+			</p>
 			
 		<% end %>
 	</div>

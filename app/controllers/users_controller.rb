@@ -8,7 +8,8 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_url #, :notice => "Signed up!"
     else
-      render "new"
+      flash[:error_signup] = true
+      redirect_to root_url
     end
   end
   private
