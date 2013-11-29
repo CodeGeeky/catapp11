@@ -1,9 +1,11 @@
 Catreen101::Application.routes.draw do
   get "calender/full_calender"
   get 'pages/login', :as => "login"
+  get "logout" => "pages#destroy", :as => "logout"
   get 'welcome/index'
   get 'users/new', :as => 'user'
-
+  root :to => 'welcome#index'
+ 
   #get "logout" => "sessions#destroy", :as => "logout"
   #get "login" => "sessions#new", :as => "login"
   #get "sign_up" => "users#new", :as => "sign_up"
@@ -13,7 +15,7 @@ Catreen101::Application.routes.draw do
   resources :pages
 
   # You can have the root of your site routed with "root"
- root 'welcome#index', :as => "sign_up"
+ 
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
