@@ -8,7 +8,7 @@ body
 {
 	margin: 0px;
 	padding: 0px;
-	background: #3D3D3D;
+	background: #334960;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 11pt;
 	font-weight: 300;
@@ -21,6 +21,7 @@ h1, h2, h3
 	padding: 0;
 	font-weight: 600;
 	color: #454445;
+	font-size:xx-large;
 }
 
 p, ol, ul
@@ -304,9 +305,9 @@ ul.contact li a.icon-rss:before
 
 	.button
 {
-	display: inline-block;
+	/**display: inline-block;
 	padding: 1.3em 3em;
-	background: #FFC000;
+	background: #334960;
 	-moz-transition: opacity 0.25s ease-in-out;
 	-webkit-transition: opacity 0.25s ease-in-out;
 	-o-transition: opacity 0.25s ease-in-out;
@@ -316,7 +317,15 @@ ul.contact li a.icon-rss:before
 	text-decoration: none;
 	text-transform: uppercase;
 	font-weight: 600;
-	color: #FFF;
+	color: #FFF;**/
+	position: relative;
+	display: inline-block;
+	padding: 0 .6em;
+	overflow: hidden;
+	height: 1.9em;
+	line-height: 1.9em;
+	white-space: nowrap;
+	cursor: pointer;
 }
 
 .button:hover
@@ -366,12 +375,14 @@ ul.contact li a.icon-rss:before
 	#header-wrapper
 	{
 		overflow: hidden;
-		padding: 5em 0em 0em 0em;
-		background: #FFC000 url('/images/overlay.png') repeat;
+		padding: 2.38em 0em 0em 0em;
+		background: #334960; /**#0070A3;**/
+		height: 85%;
 	}
 
 	#header
 	{
+		
 	}
 
 #triangle-up {
@@ -380,7 +391,7 @@ ul.contact li a.icon-rss:before
 	height: 0;
 	border-left: 60px solid transparent;
 	border-right: 60px solid transparent;
-	border-bottom: 30px solid #3D3D3D;
+	border-bottom: 30px solid #334960;
 	-moz-transform: rotate(180deg); 
 	transform: rotate(180deg);
 	-ms-transform: rotate(180deg); /* IE 9 */
@@ -401,7 +412,15 @@ ul.contact li a.icon-rss:before
 	{
 		font-size: 3.5em;
 	}
-	
+	h4
+	{
+		color: #FFFFFF;
+	}
+	img:hover
+	{
+		opacity: .7;
+		
+	}
 	#logo a
 	{
 		text-decoration: none;
@@ -430,13 +449,33 @@ ul.contact li a.icon-rss:before
 	
 
 /*********************************************************************************/
+/* Tab																			 */
+/*********************************************************************************/
+
+#top-open{
+	position: absolute;
+	bottom: -42px;
+	right: 0px;
+	display: block;
+	width: 42px;
+	height: 42px;
+	background: url('/images/top-open.png') no-repeat 0px 0px ;
+	text-indent: -9000px;
+}
+
+#top-open.tab-closed{
+	background-position: -44px 0px;	
+}
+
+/*********************************************************************************/
 /* Menu                                                                          */
 /*********************************************************************************/
 	
 
 	#menu-wrapper
 	{
-		background: #3D3D3D;
+		box-shadow: 0 -8px 30px rgba(0,0,0,.2);
+		background: #334960;
 		height: 72px;
 	}
 
@@ -471,11 +510,14 @@ ul.contact li a.icon-rss:before
 	
 	#menu li:hover a, #menu li.active a, #menu li.active span
 	{
+		color: #FFF000;
+		box-shadow: 0px -6px 9px rgba(0,0,0,.2);
 	}
 	
 	#menu .current_page_item a
 	{
-		color: #FFF;
+		color: #FFF000;
+		box-shadow: 0px -6px 9px rgba(0,0,0,.2);
 	}
 
 	#menu li:hover ul
@@ -652,16 +694,16 @@ ul.contact li a.icon-rss:before
 
 #stamp .hexagon
 {
-	background: #3D3D3D;
+	background: #334960;
 }
 
 #stamp .hexagon:before {
 	border-left: 60px solid transparent;
 	border-right: 60px solid transparent;
-	border-bottom: 30px solid #3D3D3D;
+	border-bottom: 30px solid #334960;
 }
 #stamp .hexagon:after {
-	border-color: #3D3D3D;
+	border-color: #334960;
 }
 
 
@@ -894,6 +936,7 @@ ul.contact li a.icon-rss:before
 
 #footer-wrapper
 {
+	box-shadow: 0 -8px 30px rgba(0,0,0,.2);
 	overflow: hidden;
 	padding: 7em 0em;
 	color: rgba(255,255,255,0.5);
@@ -990,7 +1033,7 @@ ul.contact li a.icon-rss:before
 	width: 120px;
 	height: 80px;
 	line-height: 80px;
-	background: #FFC000;
+	background: #334960;
 	position: relative;
 	text-align: center;
 	color: #FFF;
@@ -1005,7 +1048,7 @@ ul.contact li a.icon-rss:before
 	height: 0;
 	border-left: 60px solid transparent;
 	border-right: 60px solid transparent;
-	border-bottom: 30px solid #FFC000;
+	border-bottom: 30px solid #334960;
 }
 .hexagon:after {
 	content: "";
@@ -1016,7 +1059,7 @@ ul.contact li a.icon-rss:before
 	height: 0;
 	border-left: 60px solid transparent;
 	border-right: 60px solid transparent;
-	border-top: 30px solid #FFC000;
+	border-top: 30px solid #334960;
 }
 
 #portfolio
@@ -1042,12 +1085,13 @@ ul.contact li a.icon-rss:before
 }
 
 /**loginbutton**/
-#LogInButton {
+.LogInButton {
 	display:none;
 	color: #F7F7F7;
 	text-decoration:none;
 	position:fixed;
 	top:15px;
+	float: right;
 	margin-right: -620px !important;
 	overflow:hidden;
 	width:60px;
@@ -1055,13 +1099,9 @@ ul.contact li a.icon-rss:before
 	border:none;
 	text-indent:-999px;
 	z-index:999;
-	
 	transition: 0s ease;
 	-webkit-transition: 0s ease;
 	-o-transition: 0s ease;	
-}
-#LogInButton:hover {
-	background:url('/images/lock-black.png') no-repeat left top;
 }
 
 /*leanModal CSS */
