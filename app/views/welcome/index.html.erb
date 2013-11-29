@@ -114,7 +114,7 @@
 			<h4>
 				<% if flash[:error]  %>
 					<%= # link_to image_tag("lock-fade.png", alt: "lock-black"), 'pages/login', :rel=>'facebox'			 	
-					link_to "Sign in!", 'pages/login', :rel => 'facebox', :style => 'color:red' %>
+					link_to "Sign in!", 'pages/login', :title => 'Invalid username or password', :rel => 'tooltip', :rel => 'facebox', :style => 'color:red'%>
 				<% else %>
 					<%= # link_to image_tag("lock-fade.png", alt: "lock-black"), 'pages/login', :rel=>'facebox'			 	
 					link_to "Sign in!", 'pages/login', :rel => 'facebox' %>
@@ -124,7 +124,7 @@
 			</h4>
 			<p style="font-size: 12px; color: #FFF; font-weight: normal; line-height: 20%;">Not Registered? 
 				<% if flash[:error_signup] %>
-					<%= link_to "Sign Up!", 'users/new', :rel => 'facebox', :style => 'color:red'%>
+					<%= link_to "Sign Up!", 'users/new', :title => flash[:msg], :rel=>'tooltip', :rel => 'facebox', :style => 'color:red'%>
 				<%else%>
 					<%= link_to "Sign Up!", 'users/new', :rel => 'facebox' %>
 				<%end%>

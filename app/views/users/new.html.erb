@@ -12,14 +12,9 @@
 
 <%= form_for @user do |f| %>
 	<% if @user.errors.any? %>
-		<div class="error_messages">
-			<h2>Form is invalid</h2>
-			<ul>
-				<% for message in @user.errors.full_messages %>
-				<li><%= message %></li>
-				<% end %>
-			</ul>
-		</div>	
+		<% for message in @user.errors.full_messages %>
+		<%= @message = message %>
+		<% end %>	
 	<% end %>
 	<p>
 		<%= f.label :name %><br />
