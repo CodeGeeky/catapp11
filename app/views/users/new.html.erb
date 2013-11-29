@@ -11,11 +11,6 @@
 	<h1>Sign Up</h1>
 
 <%= form_for @user do |f| %>
-	<% if @user.errors.any? %>
-		<% for message in @user.errors.full_messages %>
-		<%= @message = message %>
-		<% end %>	
-	<% end %>
 	<p>
 		<%= f.label :name %><br />
 		<%= f.text_field :name %><br />
@@ -26,7 +21,7 @@
 		<%= f.label :phone %><br />
 		<%= f.text_field :phone %><br />
 		<%= f.label :email %><br />
-		<%= f.text_field :email %><br />
+		<%= f.text_field :email  %><br />
 
 	<p class="button"><%= f.submit "Sign Up"%></p>
 <% end %>
