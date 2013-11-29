@@ -107,7 +107,7 @@
 	</div>
 	<div id="sticky" style="margin-top: -41px; margin-left: 10px; float: left;">
 		<% if current_user %>
-			<%= current_user.phone %>
+			<div style = "margin-top:10px"><%= current_user.phone %></div>
 			<%= link_to "Log out", logout_path %>
 		<% else %>
 			<h4><%= # link_to image_tag("lock-fade.png", alt: "lock-black"), 'pages/login', :rel=>'facebox' 
