@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<%= javascript_include_tag "facebox.js" %>
+	<%= stylesheet_link_tag "facebox.css" %>
+	<%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" %>
+	<%= stylesheet_link_tag "default.css" %>
+	<%= stylesheet_link_tag "fonts.css"%>
+	<%= stylesheet_link_tag "profile.css"%>
+	
+	<ruby>
+		
+	</ruby>
+</head>
+<body>
+	<div id ="profile">		
+			<%= current_user.name %></br>
+			<%= current_user.email %></br>
+			<%= current_user.phone %></br>
+	</div>
+</body>
+</html>
+			
