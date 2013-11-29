@@ -107,7 +107,7 @@
 	</div>
 	<div id="sticky" style="margin-top: -41px; margin-left: 10px; float: left;">
 		<% if current_user %>
-			<div style = "margin-top:10px"><%= current_user.phone %></div>
+			<div style = "margin-top:10px"><%= link_to current_user.phone, 'welcome/profile', :rel => 'facebox' %></div>
 			<%= link_to "Log out", logout_path %>
 		<% else %>			
 			<h4>

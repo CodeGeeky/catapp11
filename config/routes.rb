@@ -1,6 +1,7 @@
 Catreen101::Application.routes.draw do
   get "calender/full_calender"
   get 'pages/login', :as => "login"
+  get 'welcome/profile', :as => "profile"
   get "logout" => "pages#destroy", :as => "logout"
   get 'welcome/index'
   get 'users/new', :as => 'user'
