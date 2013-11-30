@@ -15,7 +15,8 @@ class User < ActiveRecord::Base
                     :length => { is: 10 },
                     numericality: true
                     
-  validates :name, :presence =>true, format: { with: /\A[a-zA-Z]+([\s]+[a-zA-Z]+){1}+\Z/, message: "only allows letters" }
+  validates :name, :presence =>true, format: { without: /\d/} 
+    #with: /^[0-9`!@#\$%\^&*+_=]+$/, message: "only allows letters" }
   
   def email_regex
     if email.present? and not email.match(/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i)
