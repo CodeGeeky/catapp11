@@ -13,6 +13,8 @@
 <%= javascript_include_tag "tabs.js" %>
 <%= stylesheet_link_tag "facebox.css" %>
 
+<%= javascript_include_tag "tms-0.4.1.js" %>
+
 <%= javascript_include_tag "camera.js" %>
 <%= stylesheet_link_tag "camera.css" %>
 
@@ -41,18 +43,8 @@
 	}
 	#sticky
 	{
-		position: relative;
-	  	background: #334960 url('overlay.png') repeat;
-      	font-family: Droid Sans;
-      	font-size: 14.5px;
-      	line-height: 2em;
-      	font-weight: bold;
-      	text-align: center;
-      	padding: 0 20px;
-      	text-shadow: 0 1px 1px rgba(0,0,0,.2);
-      	width: auto;
-      	box-sizing:border-box;
-      	box-shadow: 0px -25px 18px rgba(0,0,0,.2);
+		width: auto;
+		text-align: center; 
 	}
 	#sticky a
 	{
@@ -63,12 +55,67 @@
 	{
 		color: #fff000;
 	}
+	#sticky ul
+	{
+		text-decoration: none;
+	}
+	#sticky li
+	{
+		position: relative;
+		margin-top: -15px;
+		margin-left: 2px;
+		margin-right: 2px;
+	  	background: #334960 url('overlay.png') repeat;
+      	font-family: Droid Sans;
+      	font-size: 14.5px;
+      	line-height: 2em;
+      	font-weight: bold;
+      	text-align: center;
+      	padding-left: 20px;
+      	padding-right: 20px;
+      	padding-top: 10px;
+      	padding-bottom: 0;
+      	text-shadow: 0 1px 1px rgba(0,0,0,.2);
+      	width: auto;
+      	box-sizing:border-box;
+      	box-shadow: 0px -25px 18px rgba(0,0,0,.2);
+      	display: inline-block;
+	}
+	
 	#sticky-wrapper
 	{
 		margin: 0 auto;
 		width: auto;
 		padding: 0 20px;
 	}
+  </style>
+  <script>
+  	$(document).ready(function(){
+				$('.slider_wrapper')._TMS({
+					show:0,
+					pauseOnHover:false,
+					prevBu:'.prev',
+					nextBu:'.next',
+					playBu:false,
+					duration:800,
+					preset:'fade',
+					pagination:true,//'.pagination',true,'<ul></ul>'
+					pagNums:false,
+					slideshow:8000,
+					numStatus:false,
+					banners: 'fade',
+					waitBannerAnimation:false,
+					progressBar:false
+				});
+			});
+  </script>
+  <style>
+  	.caption h2
+  	{
+  		font-size: 60px;
+  		color: #FFFFFF;
+  	}
+  	
   </style>
 <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" %>
 <%= stylesheet_link_tag "default.css" %>
@@ -80,82 +127,107 @@
 <body>
 	
 <div id="header-wrapper">
-	<div id="sticky-wrapper">
-	<div id="sticky" style="margin-top: -41px; margin-left: 10px; float: left;">
-		<h4><a href="calender/full_calender" rel='facebox'><img src="/images/set_icons/cart32.png" /></a><%= link_to " Book Now! >>", 'calender/full_calender', :rel => 'facebox' %></h4>
-	</div>
-	<div id="sticky" style="margin-top: -41px; float: left; margin-left: 10px">
-		<h4><img src="/images/set_icons/social/skype.png" /> Call Us: +977-00-0000000</h4>
-	</div>
-	<div id="sticky" style="margin-top: -41px; float: left; margin-left: 10px">
-		<h4>Socials : 
-			<a href="#" accesskey="1"><img src="/images/set_icons/social/facebook.png" /></a>
-			<a href="#" accesskey="2"><img src="/images/set_icons/social/twitter.png" /></a>
-			<a href="#" accesskey="3"><img src="/images/set_icons/social/youtube.png" /></a>
-			<a href="#" accesskey="4"><img src="/images/set_icons/social/flickr.png" /></a>
-		</h4>
-	</div>
-	<div id="sticky" style="margin-top: -41px; float: left; margin-left: 10px">
-		<h4>
-			<a href="#"><img src="/images/set_icons/clipboard32.png" /> View Menu!</a>
-		</h4>
-	</div>
-	<div id="sticky" style='margin-top: -41px; float: left; margin-left: 10px'>
-		<h4>
-			<a href="#"><img src="/images/set_icons/bubble32.png" /> Feedback!</a>
-		</h4>
-	</div>
-	<div id="sticky" style="margin-top: -41px; margin-left: 10px; float: left;">
-		<% if current_user %>
-			<%= current_user.phone %>
+	<div style="width:100%">
+	<div id="sticky-wrapper" style="margin: auto; width:80%">
+	<div id="sticky" style="margin-top: -41px;">
+		<ul>
+			<li>
+				<h4><a href="calender/full_calender" rel='facebox'><img src="/images/set_icons/cart32.png" /></a><%= link_to " Book Now! >>", 'calender/full_calender', :rel => 'facebox' %></h4>
+			</li>
+			<li>
+				<h4>
+					<a href="#"><img src="/images/set_icons/clipboard32.png" /> View Menu!</a>
+				</h4>
+			</li>
+			<li><h4><img src="/images/set_icons/social/skype.png" /> Call Us: +977-00-0000000</h4></li>
+			<li>
+				<h4>Socials : 
+				<a href="#" accesskey="1"><img src="/images/set_icons/social/facebook.png" /></a>
+				<a href="#" accesskey="2"><img src="/images/set_icons/social/twitter.png" /></a>
+				<a href="#" accesskey="3"><img src="/images/set_icons/social/youtube.png" /></a>
+				<a href="#" accesskey="4"><img src="/images/set_icons/social/flickr.png" /></a>
+				</h4>
+			</li>
+			
+			<li>
+				<h4>
+					<a href="#"><img src="/images/set_icons/bubble32.png" /> Feedback!</a>
+				</h4>
+			</li>
+			<li style="line-height: .1em; padding-top: 15px;">
+				<% if current_user %>
+			<div style = "margin-top:10px"><%= link_to current_user.phone, 'welcome/profile', :rel => 'facebox' %></div>
 			<%= link_to "Log out", logout_path %>
-		<% else %>
-			<h4><%= # link_to image_tag("lock-fade.png", alt: "lock-black"), 'pages/login', :rel=>'facebox' 
-				link_to "Sign in!", 'pages/login', :rel => 'facebox' 
-				
-			%>
+		<% else %>			
+			<h4>
+				<% if flash[:error]  %>					
+				   <script language="javascript">
+				     alert("Invalid username or password.\n    Hit <enter> to continue ");
+				   </script>
+					<%= # link_to image_tag("lock-fatde.png", alt: "lock-black"), 'pages/login', :rel=>'facebox'			 	
+					link_to "Sign in!", 'pages/login', :title => 'Invalid username or password', :rel => 'tooltip', :rel => 'facebox', :style => 'color:red'%>
+				<% else %>
+					<%= link_to "Sign in!", 'pages/login', :rel => 'facebox' %>
+				<% end %>
+					
 			<a href="pages/login" rel='facebox'><img src="/images/icon-user.png" /></a>
 			</h4>
-			<p style="font-size: 12px; color: #FFF; font-weight: normal; line-height: 20%;">Not Registered? <%= link_to "Sign Up", 'users/new', :rel => 'facebox'%></p>
+			<p style="font-size: 12px; color: #FFF; font-weight: normal; line-height: 20%;">Not Registered? 
+				<% if flash[:error_signup] %>			
+					<script type="text/javascript">
+					  <% for n in flash[:notice] %>					  
+					  	alert("<%= raw n %>")
+					  <%end%>				
+					</script>
+					<%= link_to "Sign Up!", 'users/new', :title => flash[:notice], :rel=>'tooltip', :rel => 'facebox', :style => 'color:red'%>
+				<%else%>
+					<%= link_to "Sign Up!", 'users/new', :rel => 'facebox' %>
+				<%end%>
+			</p>
 			
-		<% end %>
+		<% end %>		
+			</li>
+		</ul>
+	</div>
+		
 	</div>
 	</div>
 	<div id="header" class="container">
 		<div id="logo">
+			<!--
 			<span class="icon icon-group"><img src="/images/box1_img4.png" />  
 			<h1><a href="#">CaMS</a></h1></span>
-			<span>Designed & Developed by <a href="#" rel="nofollow">BEETLE</a></span>
-			<!--
+			<span>Designed & Developed by <a href="#" rel="nofollow">BEETLE</a></span>-->
+			
 			<div class="slider_wrapper">
 				<ul class="items">
 					<li>
-						<img src="images/spacer.gif" alt="">
+						<img src="images/spacer.gif" alt="" />
 						<div class="caption banner">
 							<h2>Let Us Show You the Way to Success</h2>
 						</div>
 					</li>
 					<li>
-						<img src="images/spacer.gif" alt="">
+						<img src="images/spacer.gif" alt="" />
 						<div class="caption banner">
 							<h2>Interminable Energy for Your Project</h2>
 						</div>
 					</li>
 					<li>
-						<img src="images/spacer.gif" alt="">
+						<img src="images/spacer.gif" alt="" />
 						<div class="caption banner">
 							<h2>We know how to solve your problems!</h2>
 						</div>
 					</li>
 					<li>
-						<img src="images/spacer.gif" alt="">
+						<img src="images/spacer.gif" alt="" />
 						<div class="caption banner">
 							<h2>Make your business a booming one!</h2>
 						</div>
 					</li>
 				</ul>
 			</div>
-			-->
+			
 		</div>
 	</div>
 </div>
@@ -170,8 +242,7 @@
 					</ul>-->
 				</li>
 				<li><a href="#" accesskey="3" title="">About Us</a></li>
-				<li><a href="#" accesskey="4" title="">Food Menu</a></li>
-				<li><a href="#" accesskey="5" title="">Contact Us</a></li>
+				<li><a href="#" accesskey="4" title="">Contact Us</a></li>
 			</ul>
 		</div>
 		
@@ -213,7 +284,7 @@
 	<div class="hexagon"><span class="icon icon-wrench"><img src="/images/set_icons/coffee48.png" /></span></div>
 </div>
 <div id="copyright" class="container">
-	<p>Copyright (c) 2013. All rights reserved. | Design by <a href="#">Beetle</a>.</p>
+	<p>Copyright (c) 2013. All rights reserved. | Design and Developed by <a href="#">Beetle</a>.</p>
 </div>
 </body>
 </html>

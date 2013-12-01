@@ -14,10 +14,8 @@
 </head>
 <body>
 	<div>
-	
-		<table>
-			<th>
-			<%= form_tag pages_path do %>			
+		<%= form_tag pages_path do %>
+		<table>					
 			<tr>
 				<h2>Create a new account</h2>		
 			</tr>
@@ -34,16 +32,11 @@
 			</tr>
 			<tr>
 				<th>
-					<p class="button"><%= submit_tag "Log in" %></p>
-					<% end %>
+					<%= submit_tag "Log in" %>
 				</th>
 			</tr>
-			</th>
-			<th>
-				Sign Up!
-			</th>
 		</table>
-	
+		<% end %>
 	</div>
 </body>
 </html>
