@@ -156,7 +156,7 @@
 			<li style="line-height: .1em; padding-top: 15px;">
 				<% if current_user %>
 			<div style = "margin-top:10px"><%= link_to current_user.phone, 'welcome/profile', :rel => 'facebox' %></div>
-			<%= link_to "Log out", logout_path %>
+			<hr /><%= link_to "Log out", logout_path %>
 		<% else %>			
 			<h4>
 				<% if flash[:error]  %>					
