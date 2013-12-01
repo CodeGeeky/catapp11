@@ -1,4 +1,4 @@
-catreen101
+Catering Management System
 ==========
 
-Catreen Management System
+CaMS (Catering Management System)
