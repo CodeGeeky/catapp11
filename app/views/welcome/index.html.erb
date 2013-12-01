@@ -89,6 +89,34 @@
 		padding: 0 20px;
 	}
   </style>
+  <script>
+  	$(document).ready(function(){
+				$('.slider_wrapper')._TMS({
+					show:0,
+					pauseOnHover:false,
+					prevBu:'.prev',
+					nextBu:'.next',
+					playBu:false,
+					duration:800,
+					preset:'fade',
+					pagination:true,//'.pagination',true,'<ul></ul>'
+					pagNums:false,
+					slideshow:8000,
+					numStatus:false,
+					banners: 'fade',
+					waitBannerAnimation:false,
+					progressBar:false
+				});
+			});
+  </script>
+  <style>
+  	.caption h2
+  	{
+  		font-size: 60px;
+  		color: #FFFFFF;
+  	}
+  	
+  </style>
 <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" %>
 <%= stylesheet_link_tag "default.css" %>
 <%= stylesheet_link_tag "fonts.css"%>
@@ -174,25 +202,25 @@
 			<div class="slider_wrapper">
 				<ul class="items">
 					<li>
-						<img src="images/spacer.gif" alt="">
+						<img src="images/spacer.gif" alt="" />
 						<div class="caption banner">
 							<h2>Let Us Show You the Way to Success</h2>
 						</div>
 					</li>
 					<li>
-						<img src="images/spacer.gif" alt="">
+						<img src="images/spacer.gif" alt="" />
 						<div class="caption banner">
 							<h2>Interminable Energy for Your Project</h2>
 						</div>
 					</li>
 					<li>
-						<img src="images/spacer.gif" alt="">
+						<img src="images/spacer.gif" alt="" />
 						<div class="caption banner">
 							<h2>We know how to solve your problems!</h2>
 						</div>
 					</li>
 					<li>
-						<img src="images/spacer.gif" alt="">
+						<img src="images/spacer.gif" alt="" />
 						<div class="caption banner">
 							<h2>Make your business a booming one!</h2>
 						</div>
