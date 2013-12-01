@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       redirect_to root_url #, :notice => "Signed up!"
     else
       flash[:error_signup] = true
-      flash[:msg] = @user.errors.full_messages
+      flash[:notice] = @user.errors.full_messages
       redirect_to root_url
     end
   end

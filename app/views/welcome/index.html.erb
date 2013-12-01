@@ -41,18 +41,8 @@
 	}
 	#sticky
 	{
-		position: relative;
-	  	background: #334960 url('overlay.png') repeat;
-      	font-family: Droid Sans;
-      	font-size: 14.5px;
-      	line-height: 2em;
-      	font-weight: bold;
-      	text-align: center;
-      	padding: 0 20px;
-      	text-shadow: 0 1px 1px rgba(0,0,0,.2);
-      	width: auto;
-      	box-sizing:border-box;
-      	box-shadow: 0px -25px 18px rgba(0,0,0,.2);
+		width: auto;
+		text-align: center; 
 	}
 	#sticky a
 	{
@@ -63,6 +53,33 @@
 	{
 		color: #fff000;
 	}
+	#sticky ul
+	{
+		text-decoration: none;
+	}
+	#sticky li
+	{
+		position: relative;
+		margin-top: -15px;
+		margin-left: 2px;
+		margin-right: 2px;
+	  	background: #334960 url('overlay.png') repeat;
+      	font-family: Droid Sans;
+      	font-size: 14.5px;
+      	line-height: 2em;
+      	font-weight: bold;
+      	text-align: center;
+      	padding-left: 20px;
+      	padding-right: 20px;
+      	padding-top: 10px;
+      	padding-bottom: 0;
+      	text-shadow: 0 1px 1px rgba(0,0,0,.2);
+      	width: auto;
+      	box-sizing:border-box;
+      	box-shadow: 0px -25px 18px rgba(0,0,0,.2);
+      	display: inline-block;
+	}
+	
 	#sticky-wrapper
 	{
 		margin: 0 auto;
@@ -82,56 +99,67 @@
 <div id="header-wrapper">
 	<div style="width:100%">
 	<div id="sticky-wrapper" style="margin: auto; width:80%">
-	<div id="sticky" style="margin-top: -41px; margin-left: 10px; float: left;">
-		<h4><a href="calender/full_calender" rel='facebox'><img src="/images/set_icons/cart32.png" /></a><%= link_to " Book Now! >>", 'calender/full_calender', :rel => 'facebox' %></h4>
-	</div>
-	<div id="sticky" style="margin-top: -41px; float: left; margin-left: 10px">
-		<h4><img src="/images/set_icons/social/skype.png" /> Call Us: +977-00-0000000</h4>
-	</div>
-	<div id="sticky" style="margin-top: -41px; float: left; margin-left: 10px">
-		<h4>Socials : 
-			<a href="#" accesskey="1"><img src="/images/set_icons/social/facebook.png" /></a>
-			<a href="#" accesskey="2"><img src="/images/set_icons/social/twitter.png" /></a>
-			<a href="#" accesskey="3"><img src="/images/set_icons/social/youtube.png" /></a>
-			<a href="#" accesskey="4"><img src="/images/set_icons/social/flickr.png" /></a>
-		</h4>
-	</div>
-	<div id="sticky" style="margin-top: -41px; float: left; margin-left: 10px">
-		<h4>
-			<a href="#"><img src="/images/set_icons/clipboard32.png" /> View Menu!</a>
-		</h4>
-	</div>
-	<div id="sticky" style='margin-top: -41px; float: left; margin-left: 10px'>
-		<h4>
-			<a href="#"><img src="/images/set_icons/bubble32.png" /> Feedback!</a>
-		</h4>
-	</div>
-	<div id="sticky" style="margin-top: -41px; margin-left: 10px; float: left;">
-		<% if current_user %>
+	<div id="sticky" style="margin-top: -41px;">
+		<ul>
+			<li>
+				<h4><a href="calender/full_calender" rel='facebox'><img src="/images/set_icons/cart32.png" /></a><%= link_to " Book Now! >>", 'calender/full_calender', :rel => 'facebox' %></h4>
+			</li>
+			<li>
+				<h4>
+					<a href="#"><img src="/images/set_icons/clipboard32.png" /> View Menu!</a>
+				</h4>
+			</li>
+			<li><h4><img src="/images/set_icons/social/skype.png" /> Call Us: +977-00-0000000</h4></li>
+			<li>
+				<h4>Socials : 
+				<a href="#" accesskey="1"><img src="/images/set_icons/social/facebook.png" /></a>
+				<a href="#" accesskey="2"><img src="/images/set_icons/social/twitter.png" /></a>
+				<a href="#" accesskey="3"><img src="/images/set_icons/social/youtube.png" /></a>
+				<a href="#" accesskey="4"><img src="/images/set_icons/social/flickr.png" /></a>
+				</h4>
+			</li>
+			
+			<li>
+				<h4>
+					<a href="#"><img src="/images/set_icons/bubble32.png" /> Feedback!</a>
+				</h4>
+			</li>
+			<li style="line-height: .1em; padding-top: 15px;">
+				<% if current_user %>
 			<div style = "margin-top:10px"><%= link_to current_user.phone, 'welcome/profile', :rel => 'facebox' %></div>
 			<%= link_to "Log out", logout_path %>
 		<% else %>			
 			<h4>
-				<% if flash[:error]  %>
-					<%= # link_to image_tag("lock-fade.png", alt: "lock-black"), 'pages/login', :rel=>'facebox'			 	
+				<% if flash[:error]  %>					
+				   <script language="javascript">
+				     alert("Invalid username or password.\n    Hit <enter> to continue ");
+				   </script>
+					<%= # link_to image_tag("lock-fatde.png", alt: "lock-black"), 'pages/login', :rel=>'facebox'			 	
 					link_to "Sign in!", 'pages/login', :title => 'Invalid username or password', :rel => 'tooltip', :rel => 'facebox', :style => 'color:red'%>
 				<% else %>
-					<%= # link_to image_tag("lock-fade.png", alt: "lock-black"), 'pages/login', :rel=>'facebox'			 	
-					link_to "Sign in!", 'pages/login', :rel => 'facebox' %>
+					<%= link_to "Sign in!", 'pages/login', :rel => 'facebox' %>
 				<% end %>
 					
 			<a href="pages/login" rel='facebox'><img src="/images/icon-user.png" /></a>
 			</h4>
 			<p style="font-size: 12px; color: #FFF; font-weight: normal; line-height: 20%;">Not Registered? 
-				<% if flash[:error_signup] %>
-					<%= link_to "Sign Up!", 'users/new', :title => flash[:msg], :rel=>'tooltip', :rel => 'facebox', :style => 'color:red'%>
+				<% if flash[:error_signup] %>			
+					<script type="text/javascript">
+					  <% for n in flash[:notice] %>					  
+					  	alert("<%= raw n %>")
+					  <%end%>				
+					</script>
+					<%= link_to "Sign Up!", 'users/new', :title => flash[:notice], :rel=>'tooltip', :rel => 'facebox', :style => 'color:red'%>
 				<%else%>
 					<%= link_to "Sign Up!", 'users/new', :rel => 'facebox' %>
 				<%end%>
 			</p>
 			
-		<% end %>
+		<% end %>		
+			</li>
+		</ul>
 	</div>
+		
 	</div>
 	</div>
 	<div id="header" class="container">
@@ -183,8 +211,7 @@
 					</ul>-->
 				</li>
 				<li><a href="#" accesskey="3" title="">About Us</a></li>
-				<li><a href="#" accesskey="4" title="">Food Menu</a></li>
-				<li><a href="#" accesskey="5" title="">Contact Us</a></li>
+				<li><a href="#" accesskey="4" title="">Contact Us</a></li>
 			</ul>
 		</div>
 		
