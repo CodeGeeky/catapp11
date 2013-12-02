@@ -9,7 +9,8 @@ gem "recaptcha", require: "recaptcha/rails"
 group :development do
 	gem 'sqlite3', '1.3.8'
 end
-
+# Deliver the email
+gem 'pony'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
