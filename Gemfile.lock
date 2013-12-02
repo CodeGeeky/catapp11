@@ -89,6 +89,7 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    recaptcha (0.3.5)
     rspec-core (2.14.7)
     rspec-expectations (2.14.4)
       diff-lcs (>= 1.1.3, < 2.0)
@@ -109,6 +110,9 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
+    simple_form (3.0.1)
+      actionpack (>= 4.0.0, < 4.1)
+      activemodel (>= 4.0.0, < 4.1)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -147,10 +151,12 @@ DEPENDENCIES
   pg (= 0.15.1)
   rails (= 4.0.1.rc4)
   rails_12factor (= 0.0.2)
+  recaptcha
   rspec-rails
   ruby
   sass-rails (~> 4.0.0)
   sdoc (= 0.3.20)
+  simple_form
   sqlite3 (= 1.3.8)
   turbolinks
   uglifier (>= 1.3.0)
