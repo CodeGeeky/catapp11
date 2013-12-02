@@ -18,7 +18,6 @@ class User < ActiveRecord::Base
   validates :name, :presence =>true, format: { without: /\d/} 
     #with: /^[0-9`!@#\$%\^&*+_=]+$/, message: "only allows letters" }
 
-
   def self.authenticate(phone, password)
     user = find_by_phone(phone)
     if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
