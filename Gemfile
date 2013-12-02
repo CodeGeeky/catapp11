@@ -3,7 +3,8 @@ gem 'ruby'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1.rc4'
-
+# captcha gem
+gem "recaptcha", require: "recaptcha/rails"
 # Use sqlite3 as the database for Active Record
 group :development do
 	gem 'sqlite3', '1.3.8'
