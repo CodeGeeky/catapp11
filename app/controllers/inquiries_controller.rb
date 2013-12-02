@@ -6,9 +6,12 @@ class InquiriesController < ApplicationController
   def create
     @inquiry = Inquiry.new(params[:inquiry])
     if @inquiry.deliver
-      render :thank_you
+      flash[:notice_feedback] = true
+      redirect_to root_url
     else
-      render :new
+      flash[:error_feedback] = true
+      flash[:notice_feedback] = @inquiry.errors.full_messages
+      redirect_to root_url
     end
   end
 end

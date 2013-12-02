@@ -15,9 +15,7 @@ Catreen101::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
   resources :users
   resources :pages
-  resources :inquiries, :only => [:new, :create] do
-    get 'thank_you', :on => :collection
-  end
+  resources :inquiries, :only => [:new, :create]
 
   # You can have the root of your site routed with "root"
  
