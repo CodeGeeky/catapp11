@@ -170,7 +170,7 @@
 					<script type="text/javascript">
 						alert("<%= flash[:notice_feedback]%>")
 					</script>
-					<a href="inquiries/new" rel="facebox"><img src="/images/set_icons/bubble32.png" /></a>
+					<a href="inquiries/new" rel="facebox"><img src="/images/24x24/email.png" /></a>
 					<%= link_to "Feedback!", 'inquiries/new', :title => flash[:notice_feedback], :rel => :tooltip, :rel => 'facebox', :style => 'color:red' %>
 					<% else %>
 						<% if flash[:notice_feedback]%>
@@ -178,11 +178,9 @@
 								alert("Thanks for your feedback!")
 							</script>
 						<%end%>
-					<a href="inquiries/new" rel="facebox"><img src="/images/set_icons/bubble32.png" /></a>
+					<a href="inquiries/new" rel="facebox"><img src="/images/24x24/email.png" /></a>
 					<%= link_to "Feedback!", 'inquiries/new', :rel => 'facebox' %>
 					<% end %>
-
-					<a href="#"><img src="/images/24x24/email.png" /> Feedback!</a>
 				</h4>
 			</li>
 			<li style="line-height: .1em;">
