@@ -13,11 +13,6 @@
 <%= javascript_include_tag "tabs.js" %>
 <%= stylesheet_link_tag "facebox.css" %>
 
-<%= javascript_include_tag "tms-0.4.1.js" %>
-
-<%= javascript_include_tag "camera.js" %>
-<%= stylesheet_link_tag "camera.css" %>
-
   <script>
     $(window).load(function(){ 
       $("#menu-area").sticky({ topSpacing: 0 });
@@ -87,27 +82,9 @@
 		margin: 0 auto;
 		width: 100%
 	}
+
+	
   </style>
-  <script>
-  	$(document).ready(function(){
-				$('.slider_wrapper')._TMS({
-					show:0,
-					pauseOnHover:false,
-					prevBu:'.prev',
-					nextBu:'.next',
-					playBu:false,
-					duration:800,
-					preset:'fade',
-					pagination:true,//'.pagination',true,'<ul></ul>'
-					pagNums:false,
-					slideshow:8000,
-					numStatus:false,
-					banners: 'fade',
-					waitBannerAnimation:false,
-					progressBar:false
-				});
-			});
-  </script>
   <style>
   	.caption h2
   	{
@@ -116,9 +93,47 @@
   	}
   	
   </style>
+
+
+
 <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" %>
 <%= stylesheet_link_tag "default.css" %>
 <%= stylesheet_link_tag "fonts.css"%>
+
+<%= javascript_include_tag "jquery.immersive-slider.js" %>
+<%= javascript_include_tag "jquery.immersive-slider.min.js" %>
+<%= stylesheet_link_tag "immersive-slider.css" %>
+
+
+<script>
+	$(document).ready( function() {
+  	    $(".immersive_slider").immersive_slider({
+  	      container: ".container"
+  	    });
+  	  });
+</script>
+
+<style>
+	.immersive_slider .is-slide .content h2{
+	      line-height: 140%;
+	      font-weight: 100;
+	      color: white;
+	      font-weight: 100;
+    }
+    .immersive_slider .is-slide .content a {
+     	 color: white;
+     	 text-decoration: none;
+    }
+  
+  	.immersive_slider .is-slide .content p
+  	{
+    	float: left;
+    	font-weight: 100;
+    	width: 100%;
+	    font-size: 17px;
+	    margin-top: 5px;
+  	}
+</style>
 
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
@@ -126,110 +141,129 @@
 <body>
 	
 <div id="header-wrapper">
-	<div style="width:100%">
-	<div id="sticky-wrapper">
-	<div id="sticky" style="margin-top: -41px;">
-		<ul>
+	<div id="sticky-wrapper" style="width:100%">
+		<div id="sticky" style="margin-top: -41px;">
+			<ul>
 			<li>
-				<h4><a href="calender/full_calender" rel='facebox'><img src="/images/set_icons/cart32.png" /></a><%= link_to " Book Now! >>", 'calender/full_calender', :rel => 'facebox' %></h4>
+				<h4>
+					<a href="calender/full_calender" rel='facebox'><img src="/images/book_now_2.png" /></a><%= link_to "  Book Now! >>", 'calender/full_calender', :rel => 'facebox' %>
+				</h4>
 			</li>
 			<li>
 				<h4>
-					<a href="#"><img src="/images/set_icons/clipboard32.png" /> View Menu!</a>
+					<a href="#"><img src="/images/view_menu.png" /> View Menu!</a>
 				</h4>
 			</li>
-			<li><h4><img src="/images/set_icons/social/skype.png" /> Call Us: +977-00-0000000</h4></li>
+			<li><h4><img src="/images/24x24/skype.png" /> Call Us: +977-00-0000000</h4></li>
 			<li>
 				<h4>Socials : 
-				<a href="#" accesskey="1"><img src="/images/set_icons/social/facebook.png" /></a>
-				<a href="#" accesskey="2"><img src="/images/set_icons/social/twitter.png" /></a>
-				<a href="#" accesskey="3"><img src="/images/set_icons/social/youtube.png" /></a>
-				<a href="#" accesskey="4"><img src="/images/set_icons/social/flickr.png" /></a>
+				<a href="#" accesskey="1"><img src="/images/24x24/facebook.png" /></a>  
+				<a href="#" accesskey="2"><img src="/images/24x24/twitter.png" /></a>  
+				<a href="#" accesskey="3"><img src="/images/24x24/youtube.png" /></a>  
+				<a href="#" accesskey="4"><img src="/images/24x24/flickr.png" /></a>  
 				</h4>
 			</li>
-			
 			<li>
 				<h4>
-					<a href="#"><img src="/images/set_icons/bubble32.png" /> Feedback!</a>
+					<a href="#"><img src="/images/24x24/email.png" /> Feedback!</a>
 				</h4>
 			</li>
-			<li style="line-height: .1em; padding-top: 15px;">
-			<% if current_user %>
-				<div style = "margin-top:10px"><%= link_to current_user.phone, 'welcome/profile', :rel => 'facebox' %></div>
-			    <hr /><%= link_to "Log out", logout_path %>
-			<% else %>			
-			<h4>
-				<% if flash[:error]  %>					
-				   <script language="javascript">
-				     alert("Invalid username or password.\n    Hit <enter> to continue ");
-				   </script>
-					<%= # link_to image_tag("lock-fatde.png", alt: "lock-black"), 'pages/login', :rel=>'facebox'			 	
-					link_to "Sign in!", 'pages/login', :title => 'Invalid username or password', :rel => 'tooltip', :rel => 'facebox', :style => 'color:red'%>
-				<% else %>
-					<%= link_to "Sign in!", 'pages/login', :rel => 'facebox' %>
-				<% end %>
+			<li style="line-height: .1em;">
+				<% if current_user %>
+					<div style = "margin-top:10px"><%= link_to current_user.phone, 'welcome/profile', :rel => 'facebox' %></div>
+			    	<hr /><%= link_to "Log out", logout_path %>
+				<% else %>			
+					<h4>
+						<% if flash[:error]  %>					
+					   		<script language="javascript">
+					     		alert("Invalid username or password.\n    Hit <enter> to continue ");
+					   		</script>
+							<%= # link_to image_tag("lock-fatde.png", alt: "lock-black"), 'pages/login', :rel=>'facebox'			 	
+								link_to "Sign in!", 'pages/login', :title => 'Invalid username or password', :rel => 'tooltip', :rel => 'facebox', :style => 'color:red'%>
+						<% else %>
+							<%= link_to "Sign in!", 'pages/login', :rel => 'facebox' %>
+						<% end %>		
 					
-			<a href="pages/login" rel='facebox'><img src="/images/icon-user.png" /></a>
-			</h4>
-			<p style="font-size: 12px; color: #FFF; font-weight: normal; line-height: 20%;">Not Registered? 
-				<% if flash[:error_signup] %>			
-					<script type="text/javascript">
-					  <% for n in flash[:notice] %>					  
-					  	alert("<%= raw n %>")
-					  <%end%>				
-					</script>
-					<%= link_to "Sign Up!", 'users/new', :title => flash[:notice], :rel=>'tooltip', :rel => 'facebox', :style => 'color:red'%>
-				<%else%>
-					<%= link_to "Sign Up!", 'users/new', :rel => 'facebox' %>
-				<%end%>
-			</p>
-			
-		<% end %>		
+						<a href="pages/login" rel='facebox'><img src="/images/icon-user.png" /></a>
+					</h4>
+
+					<p style="font-size: 12px; color: #FFF; font-weight: normal; line-height: 20%;">Not Registered? 
+						<% if flash[:error_signup] %>			
+							<script type="text/javascript">
+						  		<% for n in flash[:notice] %>					  
+						  			alert("<%= raw n %>")
+						  		<%end%>				
+							</script>
+					
+							<%= link_to "Sign Up!", 'users/new', :title => flash[:notice], :rel=>'tooltip', :rel => 'facebox', :style => 'color:red'%>
+						<% else %>
+							<%= link_to "Sign Up!", 'users/new', :rel => 'facebox' %>
+						<%end%>
+					</p>
+				<% end %>
 			</li>
-		</ul>
-	</div>
-		
-	</div>
-	</div>
-	<div id="header" class="container">
-		<div id="logo">
-			<!--
-			<span class="icon icon-group"><img src="/images/box1_img4.png" />  
-			<h1><a href="#">CaMS</a></h1></span>
-			<span>Designed & Developed by <a href="#" rel="nofollow">BEETLE</a></span>-->
-			
-			<div class="slider_wrapper">
-				<ul class="items">
-					<li>
-						<img src="images/spacer.gif" alt="" />
-						<div class="caption banner">
-							<h2>Let Us Show You the Way to Success</h2>
-						</div>
-					</li>
-					<li>
-						<img src="images/spacer.gif" alt="" />
-						<div class="caption banner">
-							<h2>Interminable Energy for Your Project</h2>
-						</div>
-					</li>
-					<li>
-						<img src="images/spacer.gif" alt="" />
-						<div class="caption banner">
-							<h2>We know how to solve your problems!</h2>
-						</div>
-					</li>
-					<li>
-						<img src="images/spacer.gif" alt="" />
-						<div class="caption banner">
-							<h2>Make your business a booming one!</h2>
-						</div>
-					</li>
-				</ul>
-			</div>
-			
-		</div>
+			</ul>
+		</div>		
 	</div>
 </div>
+
+<div id="header" class="container">
+		<!--<div id="logo">
+			
+			<span class="icon icon-group"><img src="/images/box1_img4.png" />  
+			<h1><a href="#">CaMS</a></h1></span>
+			<span>Designed & Developed by <a href="#" rel="nofollow">BEETLE<img src="/images/beetle/beetle-18x16.png" /></a></span>
+			
+		</div>-->
+		<!-- 	SLIDER START	-->
+
+		<div class="immersive_slider">
+          <div class="slide">
+            <div class="content">
+            	<h2><a href="http://www.bucketlistly.com" target="_blank">BucketListly</a></h2>
+              	<p>It’s never been easier to watch YouTube on the big screen
+              	Send your favorite YouTube videos from your Android phone or tablet to TV with the touch of a button. It’s easy. No wires, no setup, no nothing. Find out more here.</p>
+            </div>
+            <div class="image">
+              <a href="http://www.bucketlistly.com" target="_blank">
+                <img src="/img/slide1.jpg" alt="Slider 1">
+              </a>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="content">
+              	<h2><a href="http://www.bucketlistly.com/apps" target="_blank">BucketListly Apps</a></h2>
+              	<p>It’s never been easier to watch YouTube on the big screen
+              	Send your favorite YouTube videos from your Android phone or tablet to TV with the touch of a button. It’s easy. No wires, no setup, no nothing. Find out more here.</p>
+            </div>
+            <div class="image">
+             	<a href="http://www.bucketlistly.com/apps" target="_blank"> <img src="/img/slide2.jpg" alt="Slider 1"></a>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="content">
+              <h2><a href="http://www.thepetedesign.com" target="_blank">The Pete Design</a></h2>
+              <p>It’s never been easier to watch YouTube on the big screen
+              Send your favorite YouTube videos from your Android phone or tablet to TV with the touch of a button. It’s easy. No wires, no setup, no nothing. Find out more here.</p>
+            </div>
+            <div class="image">
+              <a href="http://www.thepetedesign.com" target="_blank"><img src="/img/slide3.jpg" alt="Slider 1"></a>
+            </div>
+          </div>
+          
+          <a href="#" class="is-prev">&laquo;</a>
+          <a href="#" class="is-next">&raquo;</a>
+        </div>
+      </div>
+  	</div>
+  	<div class="benefits">
+      <div class="page_container">
+  	  </div>
+  	</div>
+
+		<!-- 	SLDIER END 		-->
+</div>
+
 <div id="menu-area">
 	<div id="menu-wrapper">
 		<div id="menu">
@@ -243,10 +277,8 @@
 				<li><a href="#" accesskey="3" title="">About Us</a></li>
 				<li><a href="#" accesskey="4" title="">Contact Us</a></li>
 			</ul>
-		</div>
-		
+		</div>	
 	</div>
-	
 	<div id="triangle-up"></div>
 </div>
 
@@ -278,7 +310,6 @@
 
 	</div>
 </div>
-
 <div id="stamp" class="container">
 	<div class="hexagon"><span class="icon icon-wrench"><img src="/images/set_icons/coffee48.png" /></span></div>
 </div>
@@ -287,5 +318,13 @@
 	<img src="/images/beetle/beetle-18x16.png"/></a>.
 	</p>
 </div>
+
+<script>
+
+  	var _gaq=[['_setAccount','UA-11278966-1'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
+  	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+  	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  	s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
 </body>
 </html>

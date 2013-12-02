@@ -47,6 +47,7 @@ strong
 a
 {
 	color: #2C383B;
+	text-decoration: none;
 }
 
 a:hover
@@ -372,18 +373,17 @@ ul.contact li a.icon-rss:before
 /* Header                                                                        */
 /*********************************************************************************/
 
-	#header-wrapper
-	{
-		overflow: hidden;
-		padding: 2.38em 0em 0em 0em;
-		background: #334960; /**#0070A3;**/
-		height: 85%;
-	}
+#header-wrapper
+{
+	overflow: hidden;
+	padding: 2.38em 0em 0em 0em;
+	background: #334960; /**#0070A3;**/
+}
 
-	#header
-	{
-		
-	}
+#header
+{
+	height: 75%;
+}
 
 #triangle-up {
 	margin: 0 auto;
@@ -404,7 +404,7 @@ ul.contact li a.icon-rss:before
 
 	#logo
 	{
-		padding: 5em 0em;
+		padding: 0em 0em;
 		text-align: center;
 	}
 	
