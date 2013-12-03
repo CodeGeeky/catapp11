@@ -168,8 +168,8 @@ html .fc,
 .fc-text-arrow {
 	margin: 0 .1em;
 	font-size: 2em;
-	font-family: "Courier New", Courier, monospace;
-	vertical-align: baseline; /* for IE7 */
+	/* font-family: "Courier New", Courier, monospace;
+	vertical-align: baseline;  for IE7 */
 	}
 
 .fc-button-prev .fc-text-arrow,
