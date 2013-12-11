@@ -20,13 +20,43 @@
   </script>
   <script type="text/javascript">
     jQuery(document).ready(function($) {
-      $('a[rel*=facebox]').facebox({
-        loadingImage : '/images/loader.gif',
-        closeImage   : '/images/closelabel.png'
-      })
+      	$('a[rel*=facebox]').facebox({
+        	loadingImage : '/images/loader.gif',
+        	closeImage   : '/images/closelabel.png'
+      	})
     })
   </script>
   <style>
+
+  	#panelButtons_Holder
+  	{
+  		z-index: 200;
+  		float: right;
+  		width: auto;
+  		height: auto;
+  		vertical-align: middle;
+  		text-align: center;
+  		line-height: .6em;
+  		margin-top: 20px;
+  		margin-right: 5px;
+  		position: absolute;
+  		
+  	}
+  	#panelButtons_Holder:hover
+  	{
+  		text-decoration: blink;
+
+  	}
+
+  	#panelButtons_Holder img
+  	{
+  		opacity: .6;
+  	}
+  	#panelButtons_Holder img:hover
+  	{
+  		opacity: 1.0;
+  	}
+
     #menu-area
 	{
 		z-index: 50;		
@@ -111,8 +141,11 @@
   	      container: ".container"
   	    });
   	  });
-</script>
 
+	function setVisibility(id, visibility) {
+		document.getElementById(id).style.display = visibility;
+	}
+</script>
 <style>
 	.immersive_slider .is-slide .content h2{
 	      line-height: 140%;
@@ -230,9 +263,14 @@
 			<span>Designed & Developed by <a href="#" rel="nofollow">BEETLE<img src="/images/beetle/beetle-18x16.png" /></a></span>
 			
 		</div>-->
-		<!-- 	SLIDER START	-->
 
-		<div class="immersive_slider">
+		
+		<!-- 	SLIDER START	-->
+		
+		<div class="immersive_slider" onmouseover="setVisibility('panelButtons_Holder', 'inline');" onmouseout="setVisibility('panelButtons_Holder', 'none');">
+			<div id="panelButtons_Holder" style="display: none;">
+				<a href="#"><span style="color: #FFF; text-decoration: blink;"><img src="/images/settings.png" /> Settings</span></a>
+			</div>	
           <div class="slide" data-blurred="/img/transparent.png">
             <div class="content">
             	<h2><a href="#" target="_blank">Beetle<img src="/images/beetle/beetle-18x16.png"/> Developers</a></h2>
