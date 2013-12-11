@@ -235,12 +235,16 @@
 						<a href="pages/login" rel='facebox'><img src="/images/16x16/user.png" /></a>
 					</h4>
 
-					<p style="font-size: 12px; color: #FFF; font-weight: normal; line-height: 20%;">Not Registered? 
-						<% if flash[:error_signup] %>			
+					<p style="font-size: 12px; color: #FFF; font-weight: normal; line-height: 20%;">Not Registered?
+						<% if flash[:error_captcha] %>
 							<script type="text/javascript">
-						  		<% for n in flash[:notice] %>					  
-						  			alert("<%= raw n %>")
-						  		<%end%>				
+								alert("Captcha Verification Failed!")
+							</script>
+							<%= link_to "Sign Up!", 'users/new', :title => "captcha verification failed", :rel=>'tooltip', :rel => 'facebox', :style => 'color:red'%>
+						
+						<% elsif flash[:error_signup] %>			
+							<script type="text/javascript">						  							  
+						  			alert("<%= flash[:notice] %>")						  					
 							</script>
 					
 							<%= link_to "Sign Up!", 'users/new', :title => flash[:notice], :rel=>'tooltip', :rel => 'facebox', :style => 'color:red'%>
