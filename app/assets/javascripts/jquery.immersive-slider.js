@@ -162,9 +162,9 @@
       el.find(".is-slide").each(function( index ) {
         var activeclass = ""
         if(index == 0) activeclass = "active"
-        var img = "<img src='"+ $(this).data("blurred") +"'>";
         
-        $(settings.container).addClass("is-container").prepend("<div id='slide_" + (index + 1) + "_bg' class='is-background " + activeclass + "'>" + img + "</div>")
+        
+        $(settings.container).addClass("is-container").prepend("<div id='slide_" + (index + 1) + "_bg' class='is-background " + activeclass + "'></div>")
         $("#slide_" + (index + 1) + "_bg").positionSlides(settings, index)
       });
     }
