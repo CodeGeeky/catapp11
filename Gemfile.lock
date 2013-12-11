@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/Azdaroth/simple-captcha.git
+  revision: ab5e8aa1e18d735722c1a7d4ae6950ab09c12989
+  branch: rails-4
+  specs:
+    simple_captcha (0.1.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -42,6 +49,12 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    devise (3.2.2)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.0.2)
@@ -63,6 +76,7 @@ GEM
     multi_json (1.8.2)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
+    orm_adapter (0.5.0)
     pg (0.15.1)
     polyglot (0.3.3)
     pony (1.6.1)
@@ -91,7 +105,6 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
-    recaptcha (0.3.5)
     rspec-core (2.14.7)
     rspec-expectations (2.14.4)
       diff-lcs (>= 1.1.3, < 2.0)
@@ -138,6 +151,8 @@ GEM
     uglifier (2.3.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    warden (1.2.3)
+      rack (>= 1.0)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -148,17 +163,18 @@ DEPENDENCIES
   bcrypt-ruby
   capybara (>= 2.1.0)
   coffee-rails (~> 4.0.0)
+  devise
   jbuilder (~> 1.2)
   jquery-rails
   pg (= 0.15.1)
   pony
   rails (= 4.0.1.rc4)
   rails_12factor (= 0.0.2)
-  recaptcha
   rspec-rails
   ruby
   sass-rails (~> 4.0.0)
   sdoc (= 0.3.20)
+  simple_captcha!
   simple_form
   sqlite3 (= 1.3.8)
   turbolinks

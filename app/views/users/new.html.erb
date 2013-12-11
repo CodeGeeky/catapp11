@@ -22,6 +22,7 @@
 		<%= f.text_field :phone %><br />
 		<%= f.label :email %><br />
 		<%= f.text_field :email  %><br />
+		<%= show_simple_captcha(:label => "", :placeholder => "") %>
 
 	<p class="button"><%= f.submit "Sign Up"%></p>
 <% end %>
