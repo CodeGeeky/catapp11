@@ -6,6 +6,7 @@ Catreen101::Application.routes.draw do
   get 'welcome/index'
   get 'inquiries/new', :as => 'inquiry'
   get 'users/new', :as => 'user'
+  get 'menu/menu', :as => 'menu'
   root :to => 'welcome#index'
   
   #get "logout" => "sessions#destroy", :as => "logout"
