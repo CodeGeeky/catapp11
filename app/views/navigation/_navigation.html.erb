@@ -2,7 +2,7 @@
 	<div id="menu-wrapper">
 		<div id="menu">
 			<ul style="margin-bottom: 0px;">
-				<li class="current_page_item"><a href="#" accesskey="1" title=""><img src="/images/home.png" /> Home</a></li>
+				<li class="current_page_item"><a href="#" accesskey="1" title=""><span class="icon icon-home"> Home</a></span></li>
 				<li><a href="#" accesskey="2" title="">Gallery</a>
 					<!--<ul>
 						<li><a href="#">Our Staffs</a></li>
@@ -11,6 +11,12 @@
 				<li><a href="#" accesskey="3" title="">About Us</a></li>
 				<li><a href="#" accesskey="4" title="">Contact Us</a></li>
 			</ul>
+			<div id="scroll-down" onclick="pageScroll('scroll-down','scroll-up','none','inline')">
+				<span class="icon icon-arrow-down"></span>
+			</div>
+			<div id="scroll-up" onclick="pageScroll('scroll-up','scroll-down','inline','none')" style="display: none;">
+				<span class="icon icon-arrow-up"></span>
+			</div>
 		</div>	
 	</div>
 	<div id="triangle-up"></div>

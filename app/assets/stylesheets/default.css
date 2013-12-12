@@ -8,7 +8,7 @@ body
 {
 	margin: 0px;
 	padding: 0px;
-	background: #334960;
+	background: #3e606f;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 11pt;
 	font-weight: 300;
@@ -309,7 +309,7 @@ ul.contact li a.icon-rss:before
 {
 	/**display: inline-block;
 	padding: 1.3em 3em;
-	background: #334960;
+	background: #3e606f;
 	-moz-transition: opacity 0.25s ease-in-out;
 	-webkit-transition: opacity 0.25s ease-in-out;
 	-o-transition: opacity 0.25s ease-in-out;
@@ -378,7 +378,7 @@ ul.contact li a.icon-rss:before
 {
 	overflow: hidden;
 	padding: 2.38em 0em 0em 0em;
-	background: #334960; /**#0070A3;**/
+	background: #3e606f; /**#0070A3;**/
 }
 
 #header
@@ -390,9 +390,10 @@ ul.contact li a.icon-rss:before
 	margin: 0 auto;
 	width: 0;
 	height: 0;
+	z-index: 200;
 	border-left: 60px solid transparent;
 	border-right: 60px solid transparent;
-	border-bottom: 30px solid #334960;
+	border-bottom: 30px solid #3e606f;
 	-moz-transform: rotate(180deg); 
 	transform: rotate(180deg);
 	-ms-transform: rotate(180deg); /* IE 9 */
@@ -476,7 +477,7 @@ ul.contact li a.icon-rss:before
 	#menu-wrapper
 	{
 		box-shadow: 0 -8px 30px rgba(0,0,0,.2);
-		background: #334960;
+		background: #3e606f;
 		height: 72px;
 	}
 
@@ -499,7 +500,7 @@ ul.contact li a.icon-rss:before
 	{
 		display: inline-block;
 		margin-left: 0.50em;
-		padding: 2.3em 1.5em 1em 1.5em;
+		padding: 1.2em 1.5em 1em 1.5em;
 		letter-spacing: 0.20em;
 		text-decoration: none;
 		font-size: 0.90em;
@@ -512,13 +513,13 @@ ul.contact li a.icon-rss:before
 	#menu li:hover a, #menu li.active a, #menu li.active span
 	{
 		color: #FFF000;
-		box-shadow: 0px -6px 9px rgba(0,0,0,.2);
+		/*box-shadow: 0px -6px 9px rgba(0,0,0,.2);*/
 	}
 	
 	#menu .current_page_item a
 	{
 		color: #FFF000;
-		box-shadow: 0px -6px 9px rgba(0,0,0,.2);
+		/*box-shadow: 0px -6px 9px rgba(0,0,0,.2);*/
 	}
 
 	#menu li:hover ul
@@ -695,16 +696,16 @@ ul.contact li a.icon-rss:before
 
 #stamp .hexagon
 {
-	background: #334960;
+	background: #3e606f;
 }
 
 #stamp .hexagon:before {
 	border-left: 60px solid transparent;
 	border-right: 60px solid transparent;
-	border-bottom: 30px solid #334960;
+	border-bottom: 30px solid #3e606f;
 }
 #stamp .hexagon:after {
-	border-color: #334960;
+	border-color: #3e606f;
 }
 
 
@@ -1034,7 +1035,7 @@ ul.contact li a.icon-rss:before
 	width: 120px;
 	height: 80px;
 	line-height: 80px;
-	background: #334960;
+	background: #3e606f;
 	position: relative;
 	text-align: center;
 	color: #FFF;
@@ -1049,7 +1050,7 @@ ul.contact li a.icon-rss:before
 	height: 0;
 	border-left: 60px solid transparent;
 	border-right: 60px solid transparent;
-	border-bottom: 30px solid #334960;
+	border-bottom: 30px solid #3e606f;
 }
 .hexagon:after {
 	content: "";
@@ -1060,7 +1061,7 @@ ul.contact li a.icon-rss:before
 	height: 0;
 	border-left: 60px solid transparent;
 	border-right: 60px solid transparent;
-	border-top: 30px solid #334960;
+	border-top: 30px solid #3e606f;
 }
 
 #portfolio
