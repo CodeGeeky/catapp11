@@ -8,7 +8,7 @@ body
 {
 	margin: 0px;
 	padding: 0px;
-	background: #794c13;
+	background: #4F4F2F;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 11pt;
 	font-weight: 300;
@@ -309,7 +309,7 @@ ul.contact li a.icon-rss:before
 {
 	/**display: inline-block;
 	padding: 1.3em 3em;
-	background: #794c13;
+	background: #4F4F2F;
 	-moz-transition: opacity 0.25s ease-in-out;
 	-webkit-transition: opacity 0.25s ease-in-out;
 	-o-transition: opacity 0.25s ease-in-out;
@@ -378,12 +378,12 @@ ul.contact li a.icon-rss:before
 {
 	overflow: hidden;
 	padding: 2.38em 0em 0em 0em;
-	background: #794c13; /**#0070A3;**/
+	background: #4F4F2F; /**#0070A3;**/
 }
 
 #header
 {
-	height: 76%;
+	height: 78.5%;
 }
 
 #triangle-up {
@@ -393,7 +393,7 @@ ul.contact li a.icon-rss:before
 	z-index: 200;
 	border-left: 60px solid transparent;
 	border-right: 60px solid transparent;
-	border-bottom: 30px solid #794c13;
+	border-bottom: 30px solid #4F4F2F;
 	-moz-transform: rotate(180deg); 
 	transform: rotate(180deg);
 	-ms-transform: rotate(180deg); /* IE 9 */
@@ -476,9 +476,9 @@ ul.contact li a.icon-rss:before
 
 	#menu-wrapper
 	{
-		box-shadow: 0 -8px 30px rgba(0,0,0,.2);
-		background: #794c13;
-		height: 72px;
+		/*box-shadow: 0 -8px 30px rgba(0,0,0,.2);*/
+		background: #4F4F2F;
+		height: 55px;
 	}
 
 	#menu
@@ -488,7 +488,7 @@ ul.contact li a.icon-rss:before
 	
 	#menu ul
 	{
-		text-align: center;
+		text-align: left;
 	}
 	
 	#menu li
@@ -500,7 +500,7 @@ ul.contact li a.icon-rss:before
 	{
 		display: inline-block;
 		margin-left: 0.50em;
-		padding: 1.2em 1.5em 1em 1.5em;
+		padding: 10px 20px;
 		letter-spacing: 0.20em;
 		text-decoration: none;
 		font-size: 0.90em;
@@ -696,16 +696,16 @@ ul.contact li a.icon-rss:before
 
 #stamp .hexagon
 {
-	background: #794c13;
+	background: #4F4F2F;
 }
 
 #stamp .hexagon:before {
 	border-left: 60px solid transparent;
 	border-right: 60px solid transparent;
-	border-bottom: 30px solid #794c13;
+	border-bottom: 30px solid #4F4F2F;
 }
 #stamp .hexagon:after {
-	border-color: #794c13;
+	border-color: #4F4F2F;
 }
 
 
@@ -1035,7 +1035,7 @@ ul.contact li a.icon-rss:before
 	width: 120px;
 	height: 80px;
 	line-height: 80px;
-	background: #794c13;
+	background: #4F4F2F;
 	position: relative;
 	text-align: center;
 	color: #FFF;
@@ -1050,7 +1050,7 @@ ul.contact li a.icon-rss:before
 	height: 0;
 	border-left: 60px solid transparent;
 	border-right: 60px solid transparent;
-	border-bottom: 30px solid #794c13;
+	border-bottom: 30px solid #4F4F2F;
 }
 .hexagon:after {
 	content: "";
@@ -1061,7 +1061,7 @@ ul.contact li a.icon-rss:before
 	height: 0;
 	border-left: 60px solid transparent;
 	border-right: 60px solid transparent;
-	border-top: 30px solid #794c13;
+	border-top: 30px solid #4F4F2F;
 }
 
 #portfolio

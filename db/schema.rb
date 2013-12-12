@@ -13,6 +13,11 @@
 
 ActiveRecord::Schema.define(version: 20131212193459) do
 
+  create_table "feedbacks", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "simple_captcha_data", force: true do |t|
     t.string   "key",        limit: 40
     t.string   "value",      limit: 6
