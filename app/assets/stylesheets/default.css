@@ -383,7 +383,8 @@ ul.contact li a.icon-rss:before
 
 #header
 {
-	height: 522px;
+	height: auto !important;
+	height: 78.5%;
 }
 
 #triangle-up {
