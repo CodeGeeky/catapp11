@@ -7,6 +7,14 @@
 	<%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" %>
 	<%= stylesheet_link_tag "default.css" %>
 	<%= stylesheet_link_tag "fonts.css"%>
+	<script>
+  	$(document).ready(function(){
+  		$(".refresh_image").click(function(){
+  			$("#captcha").load();
+  		});
+  	});
+  </script>
+
 </head>
 	<h1>Sign Up</h1>
 
@@ -22,8 +30,11 @@
 		<%= f.text_field :phone %><br />
 		<%= f.label :email %><br />
 		<%= f.text_field :email  %><br />
-		<%= show_simple_captcha(:label => "", :placeholder => "") %>
-
+		<div id="captcha">
+			<%= show_simple_captcha(:label => "", :placeholder => "", :code_type => "numeric") %>
+		</div>
+		<%= link_to "reload", "users/new",:rel => 'facebox', :class => "refresh_image"%>
+		
 	<p class="button"><%= f.submit "Sign Up"%></p>
 <% end %>
 </body>
