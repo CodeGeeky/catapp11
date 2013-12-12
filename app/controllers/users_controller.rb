@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  before_action :log_in_required, only: [:show, :edit, :update]
+  
   def new
     @user = User.new
   end
@@ -38,6 +41,16 @@ class UsersController < ApplicationController
   
   private
   def user_params
-    params.require(:user).permit(:id, :name, :password, :password_confirmation, :email, :password_salt, :password_hash, :phone)
+    params.require(:user).permit(:id, :name, :password, :password_confirmation, :email, :password_salt, :password_hash, :phone, :role)
   end 
+  
+  def log_in_required
+    if current_user
+      if current_user.phone != '9800000000'
+        redirect_to root_url
+      end
+    else
+      redirect_to root_url
+    end
+  end
 end
