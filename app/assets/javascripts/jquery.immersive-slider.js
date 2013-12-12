@@ -147,7 +147,7 @@
     // Add all the gs sepecific classes  
     el.addClass("immersive_slider")
     el.find(settings.slideSelector).addClass("is-slide");
-    
+    /*
     // Use CSS to blur the first image the plugin found automatically 
     if (settings.cssBlur == true) {
       el.find(".is-slide img:first-child").each(function( index ) {
@@ -168,7 +168,7 @@
         $("#slide_" + (index + 1) + "_bg").positionSlides(settings, index)
       });
     }
-    
+    */
     if(settings.autoStart != 0 || settings.autoStart != false) {
       setInterval(function() {
         el.moveNext();
