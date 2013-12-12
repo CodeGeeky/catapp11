@@ -48,7 +48,11 @@
 			</li>
 			<li style="line-height: .1em;">
 				<% if current_user %>
-					<div style = "margin-top:10px"><%= link_to current_user.phone, 'welcome/profile', :rel => 'facebox' %></div>
+					<% if current_user.phone == '9800000000'%>
+						<div style = "margin-top:10px"><%= link_to "users", 'users/show', :rel => 'facebox' %></div>
+					<%else%>
+						<div style = "margin-top:10px"><%= link_to current_user.phone, 'welcome/profile', :rel => 'facebox' %></div>
+					<%end%>
 			    	<hr /><%= link_to "Log out", logout_path %>
 				<% else %>			
 					<h4>
