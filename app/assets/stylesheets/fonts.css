@@ -3,11 +3,11 @@
 @font-face
 {
 	font-family: 'FontAwesome';
-	src: url('fonts/fontawesome-webfont.eot?v=3.0.1');
-	src: url('fonts/fontawesome-webfont.eot?#iefix&v=3.0.1') format('embedded-opentype'),
-	     url('fonts/fontawesome-webfont.woff?v=3.0.1') format('woff'),
-	     url('fonts/fontawesome-webfont.ttf?v=3.0.1') format('truetype'),
-	     url('fonts/fontawesome-webfont.svg#FontAwesome') format('svg');
+	src: url('/fonts/fontawesome-webfont.eot?v=3.0.1');
+	src: url('/fonts/fontawesome-webfont.eot?#iefix&v=3.0.1') format('embedded-opentype'),
+	     url('/fonts/fontawesome-webfont.woff?v=3.0.1') format('woff'),
+	     url('/fonts/fontawesome-webfont.ttf?v=3.0.1') format('truetype'),
+	     url('/fonts/fontawesome-webfont.svg#FontAwesome') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -15,11 +15,11 @@
 @font-face
 {
 	font-family: 'Font-Awesome-Social';
-	src: url('fonts/fontawesome-social-webfont.eot');
-	src: url('fonts/fontawesome-social-webfont.eot?#iefix') format('embedded-opentype'),
-	     url('fonts/fontawesome-social-webfont.woff') format('woff'),
-		 url('fonts/fontawesome-social-webfont.ttf') format('truetype'),
-		 url('fonts/fontawesome-social-webfont.svg#Font-Awesome-More') format('svg');
+	src: url('/fonts/fontawesome-social-webfont.eot');
+	src: url('/fonts/fontawesome-social-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('/fonts/fontawesome-social-webfont.woff') format('woff'),
+		 url('/fonts/fontawesome-social-webfont.ttf') format('truetype'),
+		 url('/fonts/fontawesome-social-webfont.svg#Font-Awesome-More') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -40,123 +40,123 @@
 		text-decoration: none;
 	}
 
-		.icon:before
-		{
-			font-size: 1.25em;
-			text-decoration: none;
-			font-family: FontAwesome;
-			font-weight: normal;
-			font-style: normal;
-			-webkit-text-rendering: optimizeLegibility;
-			-moz-text-rendering: optimizeLegibility;
-			-ms-text-rendering: optimizeLegibility;
-			-o-text-rendering: optimizeLegibility;
-			text-rendering: optimizeLegibility;
-			-webkit-font-smoothing: antialiased;
-			-moz-font-smoothing: antialiased;
-			-ms-font-smoothing: antialiased;
-			-o-font-smoothing: antialiased;
-			font-smoothing: antialiased;
-			-webkit-font-feature-settings: "liga" 1, "dlig" 1;
-			-moz-font-feature-settings: "liga=1, dlig=1";
-			-ms-font-feature-settings: "liga" 1, "dlig" 1;
-			-o-font-feature-settings: "liga" 1, "dlig" 1;
-			font-feature-settings: "liga" 1, "dlig" 1;
-		}
+			.icon:before
+			{
+				font-size: 1.25em;
+				text-decoration: none;
+				font-family: FontAwesome;
+				font-weight: normal;
+				font-style: normal;
+				-webkit-text-rendering: optimizeLegibility;
+				-moz-text-rendering: optimizeLegibility;
+				-ms-text-rendering: optimizeLegibility;
+				-o-text-rendering: optimizeLegibility;
+				text-rendering: optimizeLegibility;
+				-webkit-font-smoothing: antialiased;
+				-moz-font-smoothing: antialiased;
+				-ms-font-smoothing: antialiased;
+				-o-font-smoothing: antialiased;
+				font-smoothing: antialiased;
+				-webkit-font-feature-settings: "liga" 1, "dlig" 1;
+				-moz-font-feature-settings: "liga=1, dlig=1";
+				-ms-font-feature-settings: "liga" 1, "dlig" 1;
+				-o-font-feature-settings: "liga" 1, "dlig" 1;
+				font-feature-settings: "liga" 1, "dlig" 1;
+			}
 
-		.icon-glass:before                { content: "\f000"; }
-		.icon-music:before                { content: "\f001"; }
-		.icon-search:before               { content: "\f002"; }
-		.icon-envelope:before             { content: "\f003"; }
-		.icon-heart:before                { content: "\f004"; }
-		.icon-star:before                 { content: "\f005"; }
-		.icon-star-empty:before           { content: "\f006"; }
-		.icon-user:before                 { content: "\f007"; }
-		.icon-film:before                 { content: "\f008"; }
-		.icon-th-large:before             { content: "\f009"; }
-		.icon-th:before                   { content: "\f00a"; }
-		.icon-th-list:before              { content: "\f00b"; }
-		.icon-ok:before                   { content: "\f00c"; }
-		.icon-remove:before               { content: "\f00d"; }
-		.icon-zoom-in:before              { content: "\f00e"; }
+			.icon-glass:before                { content: "\f000"; }
+			.icon-music:before                { content: "\f001"; }
+			.icon-search:before               { content: "\f002"; }
+			.icon-envelope:before             { content: "\f003"; }
+			.icon-heart:before                { content: "\f004"; }
+			.icon-star:before                 { content: "\f005"; }
+			.icon-star-empty:before           { content: "\f006"; }
+			.icon-user:before                 { content: "\f007"; }
+			.icon-film:before                 { content: "\f008"; }
+			.icon-th-large:before             { content: "\f009"; }
+			.icon-th:before                   { content: "\f00a"; }
+			.icon-th-list:before              { content: "\f00b"; }
+			.icon-ok:before                   { content: "\f00c"; }
+			.icon-remove:before               { content: "\f00d"; }
+			.icon-zoom-in:before              { content: "\f00e"; }
 
-		.icon-zoom-out:before             { content: "\f010"; }
-		.icon-off:before                  { content: "\f011"; }
-		.icon-signal:before               { content: "\f012"; }
-		.icon-cog:before                  { content: "\f013"; }
-		.icon-trash:before                { content: "\f014"; }
-		.icon-home:before                 { content: "\f015"; }
-		.icon-file:before                 { content: "\f016"; }
-		.icon-time:before                 { content: "\f017"; }
-		.icon-road:before                 { content: "\f018"; }
-		.icon-download-alt:before         { content: "\f019"; }
-		.icon-download:before             { content: "\f01a"; }
-		.icon-upload:before               { content: "\f01b"; }
-		.icon-inbox:before                { content: "\f01c"; }
-		.icon-play-circle:before          { content: "\f01d"; }
-		.icon-repeat:before               { content: "\f01e"; }
+			.icon-zoom-out:before             { content: "\f010"; }
+			.icon-off:before                  { content: "\f011"; }
+			.icon-signal:before               { content: "\f012"; }
+			.icon-cog:before                  { content: "\f013"; }
+			.icon-trash:before                { content: "\f014"; }
+			.icon-home:before                 { content: "\f015"; }
+			.icon-file:before                 { content: "\f016"; }
+			.icon-time:before                 { content: "\f017"; }
+			.icon-road:before                 { content: "\f018"; }
+			.icon-download-alt:before         { content: "\f019"; }
+			.icon-download:before             { content: "\f01a"; }
+			.icon-upload:before               { content: "\f01b"; }
+			.icon-inbox:before                { content: "\f01c"; }
+			.icon-play-circle:before          { content: "\f01d"; }
+			.icon-repeat:before               { content: "\f01e"; }
 
-		/* \f020 doesn't work in Safari. all shifted one down */
-		.icon-refresh:before              { content: "\f021"; }
-		.icon-list-alt:before             { content: "\f022"; }
-		.icon-lock:before                 { content: "\f023"; }
-		.icon-flag:before                 { content: "\f024"; }
-		.icon-headphones:before           { content: "\f025"; }
-		.icon-volume-off:before           { content: "\f026"; }
-		.icon-volume-down:before          { content: "\f027"; }
-		.icon-volume-up:before            { content: "\f028"; }
-		.icon-qrcode:before               { content: "\f029"; }
-		.icon-barcode:before              { content: "\f02a"; }
-		.icon-tag:before                  { content: "\f02b"; }
-		.icon-tags:before                 { content: "\f02c"; }
-		.icon-book:before                 { content: "\f02d"; }
-		.icon-bookmark:before             { content: "\f02e"; }
-		.icon-print:before                { content: "\f02f"; }
+			/* \f020 doesn't work in Safari. all shifted one down */
+			.icon-refresh:before              { content: "\f021"; }
+			.icon-list-alt:before             { content: "\f022"; }
+			.icon-lock:before                 { content: "\f023"; }
+			.icon-flag:before                 { content: "\f024"; }
+			.icon-headphones:before           { content: "\f025"; }
+			.icon-volume-off:before           { content: "\f026"; }
+			.icon-volume-down:before          { content: "\f027"; }
+			.icon-volume-up:before            { content: "\f028"; }
+			.icon-qrcode:before               { content: "\f029"; }
+			.icon-barcode:before              { content: "\f02a"; }
+			.icon-tag:before                  { content: "\f02b"; }
+			.icon-tags:before                 { content: "\f02c"; }
+			.icon-book:before                 { content: "\f02d"; }
+			.icon-bookmark:before             { content: "\f02e"; }
+			.icon-print:before                { content: "\f02f"; }
 
-		.icon-camera:before               { content: "\f030"; }
-		.icon-font:before                 { content: "\f031"; }
-		.icon-bold:before                 { content: "\f032"; }
-		.icon-italic:before               { content: "\f033"; }
-		.icon-text-height:before          { content: "\f034"; }
-		.icon-text-width:before           { content: "\f035"; }
-		.icon-align-left:before           { content: "\f036"; }
-		.icon-align-center:before         { content: "\f037"; }
-		.icon-align-right:before          { content: "\f038"; }
-		.icon-align-justify:before        { content: "\f039"; }
-		.icon-list:before                 { content: "\f03a"; }
-		.icon-indent-left:before          { content: "\f03b"; }
-		.icon-indent-right:before         { content: "\f03c"; }
-		.icon-facetime-video:before       { content: "\f03d"; }
-		.icon-picture:before              { content: "\f03e"; }
+			.icon-camera:before               { content: "\f030"; }
+			.icon-font:before                 { content: "\f031"; }
+			.icon-bold:before                 { content: "\f032"; }
+			.icon-italic:before               { content: "\f033"; }
+			.icon-text-height:before          { content: "\f034"; }
+			.icon-text-width:before           { content: "\f035"; }
+			.icon-align-left:before           { content: "\f036"; }
+			.icon-align-center:before         { content: "\f037"; }
+			.icon-align-right:before          { content: "\f038"; }
+			.icon-align-justify:before        { content: "\f039"; }
+			.icon-list:before                 { content: "\f03a"; }
+			.icon-indent-left:before          { content: "\f03b"; }
+			.icon-indent-right:before         { content: "\f03c"; }
+			.icon-facetime-video:before       { content: "\f03d"; }
+			.icon-picture:before              { content: "\f03e"; }
 
-		.icon-pencil:before               { content: "\f040"; }
-		.icon-map-marker:before           { content: "\f041"; }
-		.icon-adjust:before               { content: "\f042"; }
-		.icon-tint:before                 { content: "\f043"; }
-		.icon-edit:before                 { content: "\f044"; }
-		.icon-share:before                { content: "\f045"; }
-		.icon-check:before                { content: "\f046"; }
-		.icon-move:before                 { content: "\f047"; }
-		.icon-step-backward:before        { content: "\f048"; }
-		.icon-fast-backward:before        { content: "\f049"; }
-		.icon-backward:before             { content: "\f04a"; }
-		.icon-play:before                 { content: "\f04b"; }
-		.icon-pause:before                { content: "\f04c"; }
-		.icon-stop:before                 { content: "\f04d"; }
-		.icon-forward:before              { content: "\f04e"; }
+			.icon-pencil:before               { content: "\f040"; }
+			.icon-map-marker:before           { content: "\f041"; }
+			.icon-adjust:before               { content: "\f042"; }
+			.icon-tint:before                 { content: "\f043"; }
+			.icon-edit:before                 { content: "\f044"; }
+			.icon-share:before                { content: "\f045"; }
+			.icon-check:before                { content: "\f046"; }
+			.icon-move:before                 { content: "\f047"; }
+			.icon-step-backward:before        { content: "\f048"; }
+			.icon-fast-backward:before        { content: "\f049"; }
+			.icon-backward:before             { content: "\f04a"; }
+			.icon-play:before                 { content: "\f04b"; }
+			.icon-pause:before                { content: "\f04c"; }
+			.icon-stop:before                 { content: "\f04d"; }
+			.icon-forward:before              { content: "\f04e"; }
 
-		.icon-fast-forward:before         { content: "\f050"; }
-		.icon-step-forward:before         { content: "\f051"; }
-		.icon-eject:before                { content: "\f052"; }
-		.icon-chevron-left:before         { content: "\f053"; }
-		.icon-chevron-right:before        { content: "\f054"; }
-		.icon-plus-sign:before            { content: "\f055"; }
-		.icon-minus-sign:before           { content: "\f056"; }
-		.icon-remove-sign:before          { content: "\f057"; }
-		.icon-ok-sign:before              { content: "\f058"; }
-		.icon-question-sign:before        { content: "\f059"; }
-		.icon-info-sign:before            { content: "\f05a"; }
-		.icon-screenshot:before           { content: "\f05b"; }
+			.icon-fast-forward:before         { content: "\f050"; }
+			.icon-step-forward:before         { content: "\f051"; }
+			.icon-eject:before                { content: "\f052"; }
+			.icon-chevron-left:before         { content: "\f053"; }
+			.icon-chevron-right:before        { content: "\f054"; }
+			.icon-plus-sign:before            { content: "\f055"; }
+			.icon-minus-sign:before           { content: "\f056"; }
+			.icon-remove-sign:before          { content: "\f057"; }
+			.icon-ok-sign:before              { content: "\f058"; }
+			.icon-question-sign:before        { content: "\f059"; }
+			.icon-info-sign:before            { content: "\f05a"; }
+			.icon-screenshot:before           { content: "\f05b"; }
 		.icon-remove-circle:before        { content: "\f05c"; }
 		.icon-ok-circle:before            { content: "\f05d"; }
 		.icon-ban-circle:before           { content: "\f05e"; }

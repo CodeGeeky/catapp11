@@ -46,7 +46,7 @@
 					<% end %>
 				</h4>
 			</li>
-			<li style="line-height: .1em;">
+			<li style="line-height: .1em; padding-top: 20px;">
 				<% if current_user %>
 					<div style = "margin-top:10px"><%= link_to current_user.phone, 'welcome/profile', :rel => 'facebox' %></div>
 			    	<hr /><%= link_to "Log out", logout_path %>
@@ -62,7 +62,7 @@
 							<%= link_to "Sign in!", 'pages/login', :rel => 'facebox' %>
 						<% end %>		
 					
-						<a href="pages/login" rel='facebox'><img src="/images/16x16/user.png" /></a>
+						<a href="pages/login" rel='facebox'><span class="icon icon-user"></span></a>
 					</h4>
 
 					<p style="font-size: 12px; color: #FFF; font-weight: normal; line-height: 20%;">Not Registered?
