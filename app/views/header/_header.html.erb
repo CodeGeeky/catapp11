@@ -146,9 +146,11 @@
 		document.getElementById(id).style.display = visibility;
 	}
 
-  function pageScroll() {
+  function pageScroll(id1, id2, visibility1, visibility2) {
       window.scrollBy(0,630); // horizontal and vertical scroll increments
       //scrolldelay = setTimeout('pageScroll()',100); // scrolls every 100 milliseconds
+      document.getElementById(id1).style.display = visibility1;
+      document.getElementById(id2).style.display = visibility2;
 }
 </script>
 <style>
@@ -172,7 +174,7 @@
 	    margin-top: 5px;
   	}
 
-    #scroll
+    #scroll-down
     {
       float: right;
       width: auto;
@@ -183,10 +185,27 @@
       padding: 20px;
       opacity: .7;
     }
-    #scroll:hover
+    #scroll-down:hover
     {
       opacity: 1.0;
     }
+    #scroll-up
+    {
+      float: right;
+      width: auto;
+      /*background: none repeat scroll 0 0 #192441;*/
+      color: #FFFFFF;
+      font-size: 24px;
+      margin-top: -65px;
+      padding: 20px;
+      opacity: .7;
+    }
+    #scroll-up:hover
+    {
+      opacity: 1.0;
+    }
+
+
 </style>
 
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->

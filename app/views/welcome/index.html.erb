@@ -8,22 +8,22 @@
 			<ul>
 			<li>
 				<h4>
-					<a href="calender/full_calender" rel='facebox'><img src="/images/book_now_2.png" /></a><%= link_to "  Book Now! >>", 'calender/full_calender', :rel => 'facebox' %>
+					<a href="calender/full_calender" rel='facebox'><span class="icon icon-shopping-cart"></span></a><%= link_to "  Book Now! >>", 'calender/full_calender', :rel => 'facebox' %>
 				</h4>
 			</li>
 			<li>
 				<h4>
-					<a href="menu/menu" target="_blank"><img src="/images/view_menu.png" /></a>
+					<a href="menu/menu" target="_blank"><span class="icon icon-pencil"></span></a>
 					<%= link_to "View Menu!", 'menu/menu', :target => '_blank' %>
 				</h4>
 			</li>
-			<li><h4><img src="/images/24x24/skype.png" /> Call Us: +977-00-0000000</h4></li>
+			<li><h4><span class="icon icon-skype"> Call Us: +977-00-0000000</span></h4></li>
 			<li>
 				<h4>Socials : 
-				<a href="#" accesskey="1"><img src="/images/24x24/facebook.png" /></a>  
-				<a href="#" accesskey="2"><img src="/images/24x24/twitter.png" /></a>  
-				<a href="#" accesskey="3"><img src="/images/24x24/youtube.png" /></a>  
-				<a href="#" accesskey="4"><img src="/images/24x24/flickr.png" /></a>  
+				<a href="#" accesskey="1"> <span class="icon icon-facebook"></span></a>  
+				<a href="#" accesskey="2"> <span class="icon icon-twitter"></span></a>  
+				<a href="#" accesskey="3"><span class="icon icon-youtube"></span></a>  
+				<a href="#" accesskey="4"><span class="icon icon-flickr"></span></a>
 				</h4>
 			</li>
 			<li>
@@ -33,7 +33,7 @@
 					<script type="text/javascript">
 						alert("<%= flash[:notice_feedback]%>")
 					</script>
-					<a href="inquiries/new" rel="facebox"><img src="/images/24x24/email.png" /></a>
+					<a href="inquiries/new" rel="facebox"><span class="icon icon-comment"></span></a>
 					<%= link_to "Feedback!", 'inquiries/new', :title => flash[:notice_feedback], :rel => :tooltip, :rel => 'facebox', :style => 'color:red' %>
 					<% else %>
 						<% if flash[:notice_feedback]%>
@@ -41,15 +41,16 @@
 								alert("Thanks for your feedback!")
 							</script>
 						<%end%>
-					<a href="inquiries/new" rel="facebox"><img src="/images/24x24/email.png" /></a>
+					<a href="inquiries/new" rel="facebox"><span class="icon icon-comment"></span></a>
 					<%= link_to "Feedback!", 'inquiries/new', :rel => 'facebox' %>
 					<% end %>
 				</h4>
 			</li>
 			<li style="line-height: .1em; padding-top: 20px;">
 				<% if current_user %>
-					<div style = "margin-top:10px"><%= link_to current_user.phone, 'welcome/profile', :rel => 'facebox' %></div>
-			    	<hr /><%= link_to "Log out", logout_path %>
+					<div style = "margin-top:15px"><h4><span class="icon icon-user"> </span><%= link_to current_user.name, 'welcome/profile', :rel => 'facebox' %></h4>
+			    	<h4 style="font-size: 12px; color: #FFF; font-weight: normal; line-height: 20%;"><span class="icon icon-signout"></span><%= link_to "Log out", logout_path %></h4>
+			    	</div>
 				<% else %>			
 					<h4>
 						<% if flash[:error]  %>					
@@ -62,7 +63,7 @@
 							<%= link_to "Sign in!", 'pages/login', :rel => 'facebox' %>
 						<% end %>		
 					
-						<a href="pages/login" rel='facebox'><span class="icon icon-user"></span></a>
+						<a href="pages/login" rel='facebox'><span class="icon icon-signin"></span></a>
 					</h4>
 
 					<p style="font-size: 12px; color: #FFF; font-weight: normal; line-height: 20%;">Not Registered?

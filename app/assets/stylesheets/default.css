@@ -500,7 +500,7 @@ ul.contact li a.icon-rss:before
 	{
 		display: inline-block;
 		margin-left: 0.50em;
-		padding: 2.3em 1.5em 1em 1.5em;
+		padding: 1.2em 1.5em 1em 1.5em;
 		letter-spacing: 0.20em;
 		text-decoration: none;
 		font-size: 0.90em;
@@ -513,13 +513,13 @@ ul.contact li a.icon-rss:before
 	#menu li:hover a, #menu li.active a, #menu li.active span
 	{
 		color: #FFF000;
-		box-shadow: 0px -6px 9px rgba(0,0,0,.2);
+		/*box-shadow: 0px -6px 9px rgba(0,0,0,.2);*/
 	}
 	
 	#menu .current_page_item a
 	{
 		color: #FFF000;
-		box-shadow: 0px -6px 9px rgba(0,0,0,.2);
+		/*box-shadow: 0px -6px 9px rgba(0,0,0,.2);*/
 	}
 
 	#menu li:hover ul
