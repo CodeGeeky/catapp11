@@ -51,12 +51,12 @@
 					<% if current_user.phone == '9800000000'%>
 						<div style = "margin-top:10px"><%= link_to "users", 'users/show', :rel => 'facebox' %></div>
 					<%else%>
-						<div style = "margin-top:10px"><%= link_to current_user.phone, 'welcome/profile', :rel => 'facebox' %></div>
+						<div style = "margin-top:15px"><h4><span class="icon icon-user"> </span><%= link_to current_user.name, 'welcome/profile', :rel => 'facebox' %></h4>						
 					<%end%>
-			    	<hr /><%= link_to "Log out", logout_path %>
-					<div style = "margin-top:15px"><h4><span class="icon icon-user"> </span><%= link_to current_user.name, 'welcome/profile', :rel => 'facebox' %></h4>
 			    	<h4 style="font-size: 12px; color: #FFF; font-weight: normal; line-height: 20%;"><span class="icon icon-signout"></span><%= link_to "Log out", logout_path %></h4>
-			    	</div>\
+					
+			    	
+			    	</div>
 				<% else %>			
 					<h4>
 						<% if flash[:error]  %>					

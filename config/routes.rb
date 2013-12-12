@@ -5,7 +5,6 @@ Catreen101::Application.routes.draw do
   get "logout" => "pages#destroy", :as => "logout"
   get 'welcome/index'
   get 'inquiries/new', :as => 'inquiry'
-  get 'users/new', :as => 'user'
   get 'menu/menu', :as => 'menu'
   root :to => 'welcome#index'
   
