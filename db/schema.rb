@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 20131212004953) do
   create_table "feedbacks", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "feedback_msg"
   end
 
   create_table "simple_captcha_data", force: true do |t|
