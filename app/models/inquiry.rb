@@ -23,7 +23,7 @@ class Inquiry
   def deliver 
     return false unless valid?
     Pony.mail({
-      :from => %("#{name}" <#{email}>),
+      :from => email,
       :reply_to => email,
       :subject => "feedback",
       :body => message,
