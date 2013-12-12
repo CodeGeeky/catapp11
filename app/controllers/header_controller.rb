@@ -1,0 +1,2 @@
+class HeaderController < ApplicationController
+end

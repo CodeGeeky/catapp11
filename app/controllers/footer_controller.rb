@@ -1,0 +1,2 @@
+class FooterController < ApplicationController
+end
