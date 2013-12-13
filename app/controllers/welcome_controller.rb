@@ -19,7 +19,7 @@ class WelcomeController < ApplicationController
       @user = current_user
   end
   def user_params
-      params.require(:user).permit(:name, :phone, :email)
+      params.require(:user).permit(:name, :phone, :email, :photo)
   end
 
 end

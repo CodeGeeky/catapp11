@@ -11,12 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131212193459) do
-
-  create_table "feedbacks", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20131213141529) do
 
   create_table "simple_captcha_data", force: true do |t|
     t.string   "key",        limit: 40
@@ -36,6 +31,10 @@ ActiveRecord::Schema.define(version: 20131212193459) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "role"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
 end
