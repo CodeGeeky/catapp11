@@ -1,0 +1,11 @@
+
+<%= form_for @user, url: welcome_path(@user), method: :patch do |f| %>
+	<p>
+		<%= f.label :name %><br />
+		<%= f.text_field :name %><br />
+		<%= f.label :mobile %><br />
+		<%= f.text_field :phone %><br />
+		<%= f.label :email %><br />
+		<%= f.text_field :email  %><br />
+	<p class="button"><%= f.submit "Update"%></p>
+<% end %>

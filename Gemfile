@@ -24,6 +24,9 @@ gem 'simple_form'
 # Use jquery as the JavaScript library
 gem 'jquery-rails', '~>2.1'
 
+# Gem for profile picture.
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
