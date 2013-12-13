@@ -3,7 +3,7 @@
 body {
     font-family: 'Raleway', 'Arial', sans-serif;
     font-size: 13px;
-    background: #fff url(../images/bg.jpg);
+    background: #fff url(/images/images/bg.jpg);
     -webkit-font-smoothing: antialiased;
     overflow-y: scroll;
     overflow-x: hidden;
