@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  before_action :log_in_required, only: [:show, :edit, :update]
+  before_action :log_in_required, only: [:show, :edit, :update, :destroy]
   
   def new
     @user = User.new
@@ -37,6 +37,11 @@ class UsersController < ApplicationController
     else
       render "edit"
     end
+  end
+  
+  def destroy
+   User.find(params[:id]).destroy
+   redirect_to root_url     
   end
   
   private

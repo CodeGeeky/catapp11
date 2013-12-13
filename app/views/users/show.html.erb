@@ -7,10 +7,13 @@
 	<%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" %>
 	<%= stylesheet_link_tag "default.css" %>
 	<%= stylesheet_link_tag "fonts.css"%>
+	<%= javascript_include_tag :defaults%>
+    <%= csrf_meta_tags %>	
 </head>
 
 <% @user.each do |user|%>
-	<%= user.phone%><%=link_to 'Edit', edit_user_path(user), :rel => 'facebox' %><br />
+	<%= user.phone%><%=link_to ' Edit', edit_user_path(user), :rel => 'facebox' %>
+	<%= button_to "delete", user, method: :delete, data: { confirm: "You sure?" } %><br />
 <%end%>
 
 </html>
