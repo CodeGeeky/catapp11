@@ -26,7 +26,8 @@ class User < ActiveRecord::Base
     #with: /^[0-9`!@#\$%\^&*+_=]+$/, message: "only allows letters" }
   
   # validates role. permits only admin and user.
-  #validates :role, inclusion: { in: %w(admin user),:allow_blank => true, message: "%{value} is not a valid role for user. Choose between admin and user" }
+  validates :role, inclusion: { in: %w(admin user),:allow_blank => true, message: "%{value} is not a valid role for user. Choose between admin and user" }
+  
   def self.authenticate(phone, password)
     user = find_by_phone(phone)
     if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)

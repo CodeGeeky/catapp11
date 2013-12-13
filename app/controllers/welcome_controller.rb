@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+  before_action :log_in_required, only: [:edit, :update]
   def edit
     @user = current_user
   end
@@ -21,5 +22,7 @@ class WelcomeController < ApplicationController
   def user_params
       params.require(:user).permit(:name, :phone, :email, :photo)
   end
-
+  def log_in_required
+      redirect_to root_url unless current_user
+  end
 end
