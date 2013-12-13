@@ -24,7 +24,6 @@ class Inquiry
     return false unless valid?
     Pony.mail({
       :from => email,
-      :reply_to => email,
       :subject => "feedback",
       :body => message,
       :html_body => simple_format(message)
