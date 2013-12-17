@@ -75,14 +75,17 @@
 		width: auto;
 		text-align: center;
 	}
-	#sticky a
+	#sticky a, #sticky p
 	{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 100;
 		text-decoration: none;
+    text-transform: uppercase;
 		color: #fff;
 	}
-	#sticky a:hover
+	#sticky a:hover, #sticky p:hover
 	{
-		color: #fff000;
+	   font-weight: 300;
 	}
 	#sticky ul
 	{
@@ -92,24 +95,19 @@
 	{
 		position: relative;
 		margin-top: -25px;
-		margin-left: 2px;
-		margin-right: 2px;
-	  	background: #551950 url('overlay.png') repeat;
-      	font-family: Droid Sans;
-      	font-size: 14.5px;
-      	line-height: 6em;
-      	font-weight: bold;
-      	text-align: center;
-      	padding-left: 20px;
-      	padding-right: 20px;
-      	padding-top: 10px;
-      	padding-bottom: 0;
-      	text-shadow: 0 1px 1px rgba(0,0,0,.2);
-      	width: auto;
-      	/*box-shadow: 0px -25px 18px rgba(0,0,0,.2);*/
-      	display: inline-block;
-        vertical-align: text-bottom;
-        height: 100px;
+	  background: #551950 url('overlay.png') repeat;
+    line-height: 6em;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 0;
+    /*text-shadow: 0 1px 1px rgba(0,0,0,.2);*/
+    width: auto;
+    /*box-shadow: 0px -25px 18px rgba(0,0,0,.2);*/
+    display: inline-block;
+    vertical-align: text-bottom;
+    height: 100px;
 	}
 	
 	#sticky-wrapper
@@ -128,8 +126,6 @@
   	}
   	
   </style>
-
-
 
 <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" %>
 <%= stylesheet_link_tag "default.css" %>

@@ -1,15 +1,17 @@
 #facebox {
+  font-family: 'Source Sans Pro', sans-serif;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 100;
   text-align: left;
+  color: #FFF;
 }
 
 
 #facebox .popup{
   position:relative;
-  border:3px solid rgba(0,0,0,0);
+  border:3px solid #2a0c28;
   -webkit-border-radius:5px;
   -moz-border-radius:5px;
   border-radius:5px;
@@ -22,10 +24,11 @@
   display:table;
   width: 370px;
   padding: 10px 10px;
-  background: #FFFFFF;
+  background: #551950;
   -webkit-border-radius:4px;
   -moz-border-radius:4px;
   border-radius:4px;
+  color: #FFF;
 }
 
 #facebox .content > p:first-child{

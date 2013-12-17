@@ -1,15 +1,5 @@
 /* General Demo Style */
 
-body {
-    font-family: 'Raleway', 'Arial', sans-serif;
-    font-size: 13px;
-    background: #551950;
-    -webkit-font-smoothing: antialiased;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    font-weight: 300;
-}
-
 a {
     color: #555;
     text-decoration: none;
@@ -62,7 +52,7 @@ strong {
     font-size: 14px;
     font-weight: 500;
     margin: 0;
-    padding: 15px 30px 10px;
+    padding: 15px 30px y10px;
     color: #f0f0f0;
     width: 75%;
     margin: 0 auto;

@@ -11,15 +11,16 @@ body
 	background: #551950;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 11pt;
-	font-weight: 300;
+	font-weight: 100;
 	color: #6c6c6c
 }
 
 h1, h2, h3
 {
+	font-family: 'Source Sans Pro', sans-serif;
 	margin: 0;
 	padding: 0;
-	font-weight: 600;
+	font-weight: 100;
 	color: #454445;
 	font-size:xx-large;
 	
@@ -140,7 +141,7 @@ ul.style1 h3
 	letter-spacing: 0.10em;
 	text-transform: uppercase;
 	font-size: 1.2em;
-	font-weight: 600;
+	font-weight: 100;
 	color: #454445;
 }
 
@@ -342,7 +343,7 @@ ul.contact li a.icon-rss:before
 {
 	padding: 1.6em 4em;
 	font-size: 1.4em;
-	font-weight: 900;
+	font-weight: 100;
 }
 
 /*********************************************************************************/
@@ -356,7 +357,7 @@ ul.contact li a.icon-rss:before
 
 .title h2
 {
-	font-weight: 400;
+	font-weight: 100;
 	font-size: 2.8em;
 	color: #323232;
 }
@@ -365,7 +366,7 @@ ul.contact li a.icon-rss:before
 {
 	letter-spacing: 0.15em;
 	text-transform: uppercase;
-	font-weight: 400;
+	font-weight: 100;
 	font-size: 1.1em;
 	color: #6F6F6F;
 }
@@ -488,6 +489,7 @@ ul.contact li a.icon-rss:before
 		/*box-shadow: 0 -8px 30px rgba(0,0,0,.2);*/
 		background: #551950;
 		height: 55px;
+		border-bottom: 10px solid #2a0c28;
 	}
 
 	#menu
@@ -513,7 +515,7 @@ ul.contact li a.icon-rss:before
 		letter-spacing: 0.20em;
 		text-decoration: none;
 		font-size: 0.90em;
-		font-weight: 600;
+		font-weight: 100;
 		text-transform: uppercase;
 		outline: 0;
 		color: #FFF;
@@ -521,7 +523,8 @@ ul.contact li a.icon-rss:before
 	
 	#menu li:hover a, #menu li.active a, #menu li.active span
 	{
-		color: #FFF000;
+		/*color: #FFF000;*/
+		font-weight: 300;
 		/*box-shadow: 0px -6px 9px rgba(0,0,0,.2);*/
 	}
 	
@@ -529,6 +532,11 @@ ul.contact li a.icon-rss:before
 	{
 		color: #FFF000;
 		/*box-shadow: 0px -6px 9px rgba(0,0,0,.2);*/
+	}
+
+	#menu .current_page_item:hover
+	{
+		font-weight: 300;
 	}
 
 	#menu li:hover ul
@@ -594,7 +602,7 @@ ul.contact li a.icon-rss:before
 {
 	margin: 0em;
 	padding: 0em;
-	font-weight: 400;
+	font-weight: 100;
 	font-size: 3em;
 	color: #555555;
 }
@@ -661,7 +669,7 @@ ul.contact li a.icon-rss:before
 	letter-spacing: 0.10em;
 	text-transform: uppercase;
 	font-size: 1.2em;
-	font-weight: 600;
+	font-weight: 100;
 	color: #454445;
 }
 
@@ -868,7 +876,7 @@ ul.contact li a.icon-rss:before
 	background: #111111;
 	text-align: center;
 	opacity: 0.85;
-	font-weight: normal;
+	font-weight: 100;
 	color: #ffffff;
 	font-size: 2.25em;
 }
@@ -884,7 +892,7 @@ ul.contact li a.icon-rss:before
 	background: #0074C6;
 	text-align: center;
 	opacity: 0.85;
-	font-weight: normal;
+	font-weight: 100;
 	color: #ffffff;
 	font-size: 1.1em;
 }
@@ -957,7 +965,7 @@ ul.contact li a.icon-rss:before
 #footer .title h2
 {
 	font-size: 2em;
-	font-weight: 300;
+	font-weight: 100;
 	color: #FFF;
 }
 

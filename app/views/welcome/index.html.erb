@@ -3,18 +3,12 @@
 <style type="text/css">
 	#sticky li:hover
 	{
+		/*
 		background: #2a0c28;
+		box-shadow: 0px -25px 18px rgba(0,0,0,.2);
+		*/
 	}
 </style>
-<script type="text/javascript">
-$( "li.fade" ).hover(function() {
-  $( this ).fadeOut( 100 );
-  $( this ).fadeIn( 500 );
-});
-</script>
-
-
-
 
 <body>
 	
@@ -23,27 +17,26 @@ $( "li.fade" ).hover(function() {
 		<div id="sticky" style="margin-top: -41px;">
 			<ul>
 			
-			<li class="fade">
+			<li>
 				<h4>
-					<a href="calender/full_calender" rel='facebox'><span class="icon icon-shopping-cart"></span></a><%= link_to "  Book Now! >>", 'calender/full_calender', :rel => 'facebox' %>
+					<a href="calender/full_calender" rel='facebox'><span class="icon icon-shopping-cart"></span></a><%= link_to "  Book Now! >>", 'calender/full_calender', :rel => 'facebox', :title => "See the date schedule and Book online." %>
 				</h4>
-				
 			</li>
 			
 			<li>
 				<h4>
 					<a href="menu/menu" target="_blank"><span class="icon icon-pencil"></span></a>
-					<%= link_to "View Menu!", 'menu/menu', :target => '_blank' %>
+					<%= link_to "View Menu!", 'menu/menu', :target => '_blank', :title => "View what kind of food we serve and order." %>
 				</h4>
 			</li>
-			<li><h4><span class="icon icon-skype"> Call Us: +977-00-0000000</span></h4></li>
+			<li><h4><span class="icon icon-skype"><a href="#" title="Feel free to call us!"> Call Us: +977-00-0000000</a></span></h4></li>
 			<li>
-				<h4>Socials : 
+				<p style="padding-top: 50px;">Socials : 
 				<a href="#" accesskey="1"> <span class="icon icon-facebook"> </span></a>  
 				<a href="#" accesskey="2"> <span class="icon icon-twitter"> </span></a>  
 				<a href="#" accesskey="3"> <span class="icon icon-youtube"> </span></a>  
 				<a href="#" accesskey="4"> <span class="icon icon-flickr"> </span></a>
-				</h4>
+				</p>
 			</li>
 			<li>
 				<h4>
@@ -72,7 +65,7 @@ $( "li.fade" ).hover(function() {
 					<%else%>
 						<div style = "margin-top:15px"><h4 style="margin-top: 80px;"><span class="icon icon-user"> </span><%= link_to current_user.name, 'welcome/profile', :rel => 'facebox' %></h4>						
 					<%end%>
-			    	<p style="font-size: 12px; color: #FFF; font-weight: normal; line-height: 20%;"><span class="icon icon-signout"></span><%= link_to "Log out", logout_path %></p>					
+			    	<p style="font-size: 12px; color: #FFF; font-weight: 100; line-height: 20%;"><span class="icon icon-signout"></span><%= link_to "Log out", logout_path %></p>					
 			    	
 			    	</div>
 				<% else %>			
