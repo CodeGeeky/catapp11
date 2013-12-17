@@ -2,7 +2,13 @@
 	<div id="menu-wrapper">
 		<div id="menu">
 			<ul style="margin-bottom: 0px;">
-				<li class="current_page_item"><a href="#" accesskey="1" title=""><span class="icon icon-home"> Home</a></span></li>
+				<li class="current_page_item">
+					<div id="home" onclick="pageScrollUp('scroll-up','scroll-down','none','inline')">
+						<a href="#" accesskey="1" title="">
+							<span class="icon icon-home"> Home</span>
+						</a>
+					</div>
+				</li>
 				<li><a href="#" accesskey="2" title="">Gallery</a>
 					<!--<ul>
 						<li><a href="#">Our Staffs</a></li>
@@ -20,4 +26,13 @@
 		</div>	
 	</div>
 	<!--<div id="triangle-up"></div>-->
+	
 </div>
+<div id="header-bottom"></div>
+<style>
+	#home {
+		background: none;
+	}
+</style>
+<script type="text/javascript">
+</script>

@@ -370,6 +370,14 @@ ul.contact li a.icon-rss:before
 	color: #6F6F6F;
 }
 
+#header-bottom
+{
+	height: 10px;
+	background: #2a0c28;
+	float: none;
+	position: relative;
+}
+
 /*********************************************************************************/
 /* Header                                                                        */
 /*********************************************************************************/
@@ -383,12 +391,8 @@ ul.contact li a.icon-rss:before
 
 #header
 {
-<<<<<<< HEAD
-	height: 525px;
-=======
 	height: auto !important;
-	height: 78.5%;
->>>>>>> e7c33b41c92246693cc6bcc738ad0d930c294875
+
 }
 
 #triangle-up {

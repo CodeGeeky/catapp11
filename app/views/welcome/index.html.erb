@@ -1,16 +1,35 @@
 <%= render :partial => 'header/header' %>
 
+<style type="text/css">
+	#sticky li:hover
+	{
+		background: #2a0c28;
+	}
+</style>
+<script type="text/javascript">
+$( "li.fade" ).hover(function() {
+  $( this ).fadeOut( 100 );
+  $( this ).fadeIn( 500 );
+});
+</script>
+
+
+
+
 <body>
 	
 <div id="header-wrapper">
 	<div id="sticky-wrapper" style="width:100%">
 		<div id="sticky" style="margin-top: -41px;">
 			<ul>
-			<li>
+			
+			<li class="fade">
 				<h4>
 					<a href="calender/full_calender" rel='facebox'><span class="icon icon-shopping-cart"></span></a><%= link_to "  Book Now! >>", 'calender/full_calender', :rel => 'facebox' %>
 				</h4>
+				
 			</li>
+			
 			<li>
 				<h4>
 					<a href="menu/menu" target="_blank"><span class="icon icon-pencil"></span></a>
@@ -51,13 +70,13 @@
 					<% if current_user.phone == '9800000000'%>
 						<div style = "margin-top:10px"><%= link_to "users", 'users/show', :rel => 'facebox' %></div>
 					<%else%>
-						<div style = "margin-top:15px"><h4><span class="icon icon-user"> </span><%= link_to current_user.name, 'welcome/profile', :rel => 'facebox' %></h4>						
+						<div style = "margin-top:15px"><h4 style="margin-top: 80px;"><span class="icon icon-user"> </span><%= link_to current_user.name, 'welcome/profile', :rel => 'facebox' %></h4>						
 					<%end%>
-			    	<h4 style="font-size: 12px; color: #FFF; font-weight: normal; line-height: 20%;"><span class="icon icon-signout"></span><%= link_to "Log out", logout_path %></h4>					
+			    	<p style="font-size: 12px; color: #FFF; font-weight: normal; line-height: 20%;"><span class="icon icon-signout"></span><%= link_to "Log out", logout_path %></p>					
 			    	
 			    	</div>
 				<% else %>			
-					<h4>
+					<h4 style="margin-top: 80px;">
 						<% if flash[:error]  %>					
 					   		<script language="javascript">
 					     		alert("Invalid username or password.\n    Hit <enter> to continue ");
@@ -167,6 +186,7 @@
 
 		<!-- 	SLDIER END 		-->
 </div>
+
 
 <%= render :partial => 'navigation/navigation' %>
 
