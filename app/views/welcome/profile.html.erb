@@ -8,18 +8,41 @@
 	<%= stylesheet_link_tag "default.css" %>
 	<%= stylesheet_link_tag "fonts.css"%>
 	<%= stylesheet_link_tag "profile.css"%>
-	
+	<style type="text/css">
+	#custom_button
+	{
+		width: 75px;
+		text-align: center;
+		margin: 0 10px;
+		padding: 10px 25px;
+		background: #2a0c28;
+		font-weight: 100;
+		cursor: pointer;
+		cursor: hand;
+		text-transform: uppercase;
+		font-family: 'Source Sans Pro', sans-serif;
+		border-radius: 5px;
+		border-style: none;
+	}
+
+	#custom_button:hover {
+		font-weight: 300;
+	}
+	</style>
 	<ruby>
 		
 	</ruby>
 </head>
 <body>
 	<div id ="profile">	
+			<h3>Personal Details </h3><hr /><br />
 			<%= image_tag current_user.photo.url(:small) %></br>
 			<%= current_user.name %></br>
 			<%= current_user.email %></br>
 			<%= current_user.phone %></br>
+			<div id="custom_button">
 			<%= link_to "edit", edit_welcome_path(current_user)%>
+			</div>
 	</div>
 </body>
 </html>
