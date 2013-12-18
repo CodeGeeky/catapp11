@@ -733,7 +733,7 @@ ul.contact li a.icon-rss:before
 #featured-wrapper
 {
 	overflow: hidden;
-	padding: 10em 0em;
+	padding: 3em 0em;
 	background: #FFF;
 	text-align: center;
 }
@@ -1143,12 +1143,12 @@ input, textarea {
   color: #FFF;
   border-radius: 5px;
   border-style: none;
-  width: 400px;
 }
 
 input[type="text"], input[type="password"] {
   padding: 5px 2px;
   font-weight: 100;
+  width: 400px;
 }
 
 hr {
@@ -1158,12 +1158,14 @@ hr {
 }
 
 input[type="submit"]{
-  margin: 20px 0;
+  margin-top: 20px;
   padding: 10px 25px;
   text-transform: uppercase;
   font-weight: 100;
   cursor: hand;
   cursor: pointer;
+  width: 100px;
+  font-size: 12px;
 }
 
 input[type="submit"]:hover {
@@ -1171,5 +1173,5 @@ input[type="submit"]:hover {
 }
 
 textarea {
-
+	width: 400px;
 }

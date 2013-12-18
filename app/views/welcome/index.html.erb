@@ -189,7 +189,14 @@
 		<!-- 	SLDIER END 		-->
 </div>
 
-
+<style type="text/css">
+	#calender-wrapper
+	{
+		width: 640px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+</style>
 <%= render :partial => 'navigation/navigation' %>
 
 <div id="wrapper">
@@ -198,11 +205,13 @@
 		<div class="extra2 container">
 			<div class="ebox1">
 				<div class="title">
-					<h2>View Calender</h2>
+					<h2 style="line-height: 1em;">View Calender</h2>
 					<span class="byline"></span>
 				</div>
 				<p></p>
-				<%= render :partial => 'calender/full_calender' %>
+				<div id="calender-wrapper">
+					<%= render :partial => 'calender/full_calender' %>
+				</div>
 			</div>
 			
 			<div class="ebox2">

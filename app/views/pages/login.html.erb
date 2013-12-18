@@ -22,34 +22,44 @@
 			text-align: left;
 			color: #FFF;
 		}
+		#login-wrapper {
+			margin-right: auto;
+			margin-left: auto;
+			margin-top: 50px;
+			width: 470px;
+		}
+		form {
+			/*margin: 50px 31%;*/
+		}
 	</style>
 </head>
+<%= render :partial => 'banner/banner' %>
 <body>
-	<div>
+<div>
+	<div id="login-wrapper">
 		<%= form_tag pages_path do %>
 		<table>					
 			<tr>
-				<h3 style="color: #FFF;">Create a new account</h3>		
+				<h3 style="color: #FFF; font-size: 20px;">Create a new account</h3>		
 				<hr /><br />
 			</tr>
 			<tr>
 				<p>It's simple, and free.</p>		
 			</tr>
 			<tr>
-				<th><%= label_tag :phone %><br /></th>
+				<th style="text-align: left;"><%= label_tag :phone %></th>
 				<th><%= text_field_tag :phone, params[:phone] %></th>
 			</tr>
 			<tr>
-				<th><%= label_tag :password %><br /></th>
+				<th style="text-align: left;"><%= label_tag :password %></th>
 				<th><%= password_field_tag :password %></th>
 			</tr>
-			<tr>
-				<th>
-					<%= submit_tag "Log in" %>
-				</th>
-			</tr>
 		</table>
+		<div style="width: 75px; margin-left: auto; margin-right: auto;">
+		<%= submit_tag "Log in" %>
+		</div>
 		<% end %>
+	</div>
 	</div>
 </body>
 </html>

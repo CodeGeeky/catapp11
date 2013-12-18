@@ -17,7 +17,9 @@
 	
 html .fc,
 .fc table {
-	font-size: 1em;
+	font-size: 14px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300px;
 	}
 	
 .fc td,
@@ -65,7 +67,12 @@ html .fc,
 	
 .fc-header .fc-button {
 	margin-bottom: 1em;
-	vertical-align: top;
+	vertical-align: middle;
+	background: #551950;
+	color: #ffffff;
+	height: 35px;
+	cursor: pointer;
+	cursor: hand;
 	}
 	
 /* buttons edges butting together */
@@ -117,11 +124,12 @@ html .fc,
 
 .fc-widget-header,    /* <th>, usually */
 .fc-widget-content {  /* <td>, usually */
-	border: 1px solid #ddd;
+	border: 1px solid #551950;
 	}
 	
 .fc-state-highlight { /* <td> today cell */ /* TODO: add .fc-today to <th> */
-	background: #fcf8e3;
+	background: #551950;
+	color: #fff;
 	}
 	
 .fc-cell-overlay { /* semi-transparent rectangle while dragging */
@@ -168,8 +176,8 @@ html .fc,
 .fc-text-arrow {
 	margin: 0 .1em;
 	font-size: 2em;
-	/* font-family: "Courier New", Courier, monospace;
-	vertical-align: baseline;  for IE7 */
+	font-family: 'Source Sans Pro', sans-serif;
+	vertical-align: baseline;  for IE7 
 	}
 
 .fc-button-prev .fc-text-arrow,
@@ -396,8 +404,13 @@ table.fc-border-separate {
 	}
 	
 .fc-grid .fc-day-number {
-	float: right;
-	padding: 0 2px;
+	float: none;
+    font-size: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    text-align: center;
+    width: 45px;
 	}
 	
 .fc-grid .fc-other-month .fc-day-number {
@@ -577,7 +590,7 @@ table.fc-border-separate {
 	overflow: hidden !important;
 	line-height: 8px !important;
 	font-size: 11px  !important;
-	font-family: monospace;
+	font-family: 'Source Sans Pro', sans-serif;
 	text-align: center;
 	cursor: s-resize;
 	}
