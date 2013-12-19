@@ -1,11 +1,6 @@
 
 <%= form_for @user, url: user_path(@user), method: :patch do |f| %>
-	<p>
-		<%= f.file_field :photo%>
-		<%= f.label :name %><br />
-		<%= f.text_field :name %><br />
-		<%= f.label :mobile %><br />
-		<%= f.text_field :phone %><br />
+		<%= f.file_field :photo%><br />
 		<%= f.label :email %><br />
 		<%= f.text_field :email  %><br />
 		<%= f.label :role %><br />
