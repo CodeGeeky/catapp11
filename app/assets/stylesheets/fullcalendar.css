@@ -1,10 +1,3 @@
-/*!
- * FullCalendar v1.6.4 Stylesheet
- * Docs & License: http://arshaw.com/fullcalendar/
- * (c) 2013 Adam Shaw
- */
-
-
 .fc {
 	direction: ltr;
 	text-align: left;
@@ -25,7 +18,7 @@ html .fc,
 .fc td,
 .fc th {
 	padding: 0;
-	vertical-align: top;
+	vertical-align: middle;
 	}
 
 
@@ -124,7 +117,7 @@ html .fc,
 
 .fc-widget-header,    /* <th>, usually */
 .fc-widget-content {  /* <td>, usually */
-	border: 1px solid #551950;
+	border: 3px solid #551950;
 	}
 	
 .fc-state-highlight { /* <td> today cell */ /* TODO: add .fc-today to <th> */
