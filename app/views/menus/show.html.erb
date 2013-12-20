@@ -52,22 +52,6 @@
 			width: 100%;
 		}
 
-		.addtocart {
-			text-align: center;
-			padding: 2px 2px;
-			background: #2a0c28;
-			font-weight: 100;
-			cursor: pointer;
-			cursor: hand;
-			font-family: 'Source Sans Pro', sans-serif;
-			border-radius: 5px;
-			border-style: none;
-		}
-
-		.addtocart:hover {
-			font-weight: 300;
-		}
-
 		#menu-page-header {
 			width: 900px;
 			margin-left: auto;
@@ -144,7 +128,7 @@
   				<td></td>
   				<td><input type="textbox" /></td>
   				<td></td>
-  				<td><a class="addtocart" href="#"><span class="icon icon-plus-sign-alt"> Add To Cart</span></a></td>
+  				<td><a class="custom_button_small" href="#"><span class="icon icon-plus-sign-alt"> Add To Cart</span></a></td>
   				<td style="width: auto;"><%= link_to "edit", edit_menu_path(menu), :rel => 'facebox' %></div></td>
   				<td style="width: auto;"><%= link_to "delete", menu, method: :delete, data: { confirm: "You sure?" } %></div></td>
   			</tr>

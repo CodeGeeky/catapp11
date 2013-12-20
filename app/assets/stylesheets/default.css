@@ -1197,3 +1197,19 @@ textarea {
 	#custom_button:hover {
 		font-weight: 300;
 	}
+
+	.custom_button_small {
+			text-align: center;
+			padding: 2px 2px;
+			background: #2a0c28;
+			font-weight: 100;
+			cursor: pointer;
+			cursor: hand;
+			font-family: 'Source Sans Pro', sans-serif;
+			border-radius: 5px;
+			border-style: none;
+		}
+
+		.custom_button_small:hover {
+			font-weight: 300;
+		}
