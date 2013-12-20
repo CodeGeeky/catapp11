@@ -1,5 +1,8 @@
 class MenusController < ApplicationController
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3749272f7136321c10d66ca71541a420cd2d9062
   before_action :log_in_required
   
   def new
@@ -28,4 +31,12 @@ class MenusController < ApplicationController
       redirect_to root_url
     end
   end
+<<<<<<< HEAD
+=======
+
+	def show
+	end
+
+
+>>>>>>> 3749272f7136321c10d66ca71541a420cd2d9062
 end
