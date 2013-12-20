@@ -11,13 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20131220203106) do
+=======
+ActiveRecord::Schema.define(version: 20131220230631) do
+>>>>>>> d59434e2bd95770f94a82a95c4b07ce6a39fe2a0
 
   create_table "menus", force: true do |t|
     t.string   "item_name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "quantity"
+<<<<<<< HEAD
+=======
+    t.integer  "user_id"
+    t.float    "price"
+>>>>>>> d59434e2bd95770f94a82a95c4b07ce6a39fe2a0
   end
 
   create_table "orders", force: true do |t|

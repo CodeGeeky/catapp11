@@ -1,11 +1,12 @@
 class MenusController < ApplicationController
-  before_action :log_in_required
+  before_action :log_in_required, only: [:new, :create, :edit, :update, :destroy]
   
   def new
     @menu = Menu.new
   end
   def create 
-    @menu = current_user.menus.build(menu_params)
+    #@menu = current_user.menus.build(menu_params)
+    @menu = Menu.new(menu_params)
     if @menu.save
       redirect_to :back
     else
@@ -34,7 +35,7 @@ class MenusController < ApplicationController
   
   private
   def menu_params
-    params.require(:menu).permit(:id, :item_name)
+    params.require(:menu).permit(:id, :item_name, :price)
   end 
   
   def log_in_required

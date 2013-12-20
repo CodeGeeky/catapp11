@@ -118,19 +118,29 @@
   		<tr>
   			<td>Food Items</td>
   			<td>Price</td>
-  			<td>Quantity</td>
-  			<td>Amount</td>
+  			<%if current_user%>
+  				<%if current_user.role != 'admin' and current_user.phone != '9800000000'%>
+	  				<td>Quantity</td>	  			
+	  			<td>Amount</td>
+	  			<%end%>
+  			<%end%>
 
   		</tr>
   		<% @menu.each do |menu|%>
   			<tr>
   				<td><%= menu.item_name %><br /></td>
-  				<td></td>
-  				<td><input type="textbox" /></td>
-  				<td></td>
-  				<td><a class="custom_button_small" href="#"><span class="icon icon-plus-sign-alt"> Add To Cart</span></a></td>
-  				<td style="width: auto;"><%= link_to "edit", edit_menu_path(menu), :rel => 'facebox' %></div></td>
-  				<td style="width: auto;"><%= link_to "delete", menu, method: :delete, data: { confirm: "You sure?" } %></div></td>
+  				<td><%= menu.price %></td>
+  				<% if current_user %>
+  					<%if current_user.role != 'admin' and current_user.phone != '9800000000'%>
+		  				<td><input type="textbox" /></td>		  		
+		  				<td></td>		  			
+		  				<td><a class="addtocart" href="#"><span class="icon icon-plus-sign-alt"> Add To Cart</span></a></td>
+		  			<%end%>
+		  			<%if current_user.role == 'admin' or current_user.phone == '9800000000'%>
+		  				<td style="width: auto;"><%= link_to "edit", edit_menu_path(menu), :rel => 'facebox' %></div></td>
+		  				<td style="width: auto;"><%= link_to "delete", menu, method: :delete, data: { confirm: "You sure?" } %></div></td>
+		  			<%end%>
+	  			<%end%>
   			</tr>
   		<%end%>
   	</table>
