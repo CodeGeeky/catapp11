@@ -57,7 +57,7 @@
   		<% @menu.each do |menu|%>
   			<tr>
   				<td><%= menu.id %></td>
-  				<td><%= menu.item_name %><%=link_to ' Edit', edit_menu_path(menu), :rel => 'facebox' %><%= button_to "delete", menu, method: :delete, data: { confirm: "You sure?" } %><br /></td>
+  				<td><%= menu.item_name %><%=link_to ' Edit', edit_menu_path(menu), :rel => 'facebox' %><%= link_to "delete", menu, method: :delete, data: { confirm: "You sure?" } %><br /></td>
   				<td></td>
   				<td><input type="textbox" /></td>
   				<td></td>

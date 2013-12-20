@@ -39,7 +39,7 @@ class MenusController < ApplicationController
   
   def log_in_required
     if current_user
-      if current_user.phone != '9800000000'
+      if current_user.phone != '9800000000' and current_user.role != 'admin'
         redirect_to root_url
       end
     else
