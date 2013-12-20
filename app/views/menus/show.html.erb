@@ -33,21 +33,83 @@
 			font-weight: 300;
 		}
 		#show-wrapper {
-			width: 400px;
+			width: 800px;
 			margin-left: auto;
 			margin-right: auto;
 			margin-top: 50px;
 		}
-		
+		#show-wrapper input[type="textbox"] {
+			width: 50px;
+			padding: 2px 0;
+		}
+
+		#show-wrapper input[type="button"] {
+			padding: 2px 2px;
+			cursor: pointer;
+			cursor: hand;
+		}
+		#show-wrapper table {
+			width: 100%;
+		}
+
+		.addtocart {
+			text-align: center;
+			padding: 2px 2px;
+			background: #2a0c28;
+			font-weight: 100;
+			cursor: pointer;
+			cursor: hand;
+			font-family: 'Source Sans Pro', sans-serif;
+			border-radius: 5px;
+			border-style: none;
+		}
+
+		.addtocart:hover {
+			font-weight: 300;
+		}
+
+		#menu-page-header {
+			width: 900px;
+			margin-left: auto;
+			margin-right: auto;
+			height: auto;
+			margin-bottom: 10px;
+			padding-top: 10px;
+		}
+
+		#menu-page-header .left {
+			width: 450px;
+			margin-left: 0;
+			margin-top: 0;
+			float: left;
+			text-align: left;
+		}
+
+		#menu-page-header .right {
+			width: 450px;
+			margin-top: 0;
+			margin-right: 0;
+			float: right;
+			text-align: right;
+		}
 	  </style>
   </head>
   <body>
   <%= render :partial => 'banner/banner' %>
+  <div id="menu-page-header">
+  	<div class="left">
+  		<p>Hello! User, Check out the food items.</p>
+  	</div>
+  	<div id="right">
+  		<p style="text-align: right;">You have 0 items on your order list. <br />
+  		Contact Us: beetle@beetle-developers.com</p>
+  	</div>
+  </div>
+
   <div id="show-wrapper">
   <h3 style="color: #FFF; font-size: 20px;">Food Menu</h3><hr />
   	<table>
   		<tr>
-  			<td>Item ID</td>
   			<td>Food Items</td>
   			<td>Price</td>
   			<td>Quantity</td>
@@ -56,11 +118,15 @@
   		</tr>
   		<% @menu.each do |menu|%>
   			<tr>
+
   				<td><%= menu.id %></td>
-  				<td><%= menu.item_name %><%=link_to ' Edit', edit_menu_path(menu), :rel => 'facebox' %><%= link_to "delete", menu, method: :delete, data: { confirm: "You sure?" } %><br /></td>
+  				<td><%= menu.item_name %><br /></td>
   				<td></td>
   				<td><input type="textbox" /></td>
   				<td></td>
+  				<td><a class="addtocart" href="#"><span class="icon icon-plus-sign-alt"> Add To Cart</span></a></td>
+  				<td style="width: auto;"><%= link_to "edit", edit_menu_path(menu), :rel => 'facebox' %></div></td>
+  				<td style="width: auto;"><%= link_to "delete", menu, method: :delete, data: { confirm: "You sure?" } %></div></td>
   			</tr>
   		<%end%>
   	</table>
