@@ -1175,3 +1175,25 @@ input[type="submit"]:hover {
 textarea {
 	width: 400px;
 }
+
+
+/** Custom Button **/
+#custom_button
+	{
+		width: 75px;
+		text-align: center;
+		margin: 0 10px;
+		padding: 10px 25px;
+		background: #2a0c28;
+		font-weight: 100;
+		cursor: pointer;
+		cursor: hand;
+		text-transform: uppercase;
+		font-family: 'Source Sans Pro', sans-serif;
+		border-radius: 5px;
+		border-style: none;
+	}
+
+	#custom_button:hover {
+		font-weight: 300;
+	}
