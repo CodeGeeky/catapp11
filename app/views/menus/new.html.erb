@@ -12,7 +12,7 @@
 		<%= form_for @menu do |f| %>
 		<h3 style="color: #FFF; font-size: 20px;">Add new Item</h3><hr />
 		<%= f.label :item_name%><br />
-		<%= f.file_field :item_name%><br />
+		<%= f.text_field :item_name%><br />
 		<%= f.submit "Add"%>
 		<% end %>
 	</body>

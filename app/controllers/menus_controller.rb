@@ -1,8 +1,23 @@
 class MenusController < ApplicationController
-<<<<<<< HEAD
+
   before_action :log_in_required
   
   def new
+    @menu = Menu.new
+  end
+  def create 
+    @menu = Menu.new(menu_params)
+    if @menu.save
+      redirect_to :back
+    else
+      redirect_to root_url
+    end
+  end
+  
+  private
+  def menu_params
+    params.require(:menu).permit(:id, :item_name)
+  end 
   
   def log_in_required
     if current_user
@@ -13,9 +28,4 @@ class MenusController < ApplicationController
       redirect_to root_url
     end
   end
-=======
-	def show
-	end
-
->>>>>>> ad034b7d6e70df18b7087e426ad6fe1266b3d838
 end
