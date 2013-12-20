@@ -17,6 +17,7 @@ Catreen101::Application.routes.draw do
   resources :pages
   resources :inquiries, :only => [:new, :create]
   resources :welcome
+  resources :menus
   # You can have the root of your site routed with "root"
  
 
