@@ -1,5 +1,10 @@
 <style type="text/css">
-	label, p {
+	#form-wrapper {
+		font-family: 'Source Sans Pro', sans-serif;
+		font-weight: 100;
+	}
+
+	#form-wrapper label, #form-wrapper p {
 		font-family: 'Source Sans Pro', sans-serif;
 		font-weight: 100;
 		text-align: left;
@@ -9,20 +14,17 @@
 </style>
 
 <hr /><br />
+<div id="form-wrapper">
 <%= form_for inquiry do |f| %>
 	<div>
 	<%= f.label :name %><br/>
 	<%= f.text_field :name %>
-	</div>
-	<div>
 	<%= f.label :email %><br/>
 	<%= f.text_field :email %>
-	</div>
-	<div>
 	<%= f.label :message %><br/>
 	<%= f.text_area :message, :size => "45x10" %>
-	</div>
 	<div style="width: 75px; margin-left: auto; margin-right: auto; font-size: 12px;">
 	<%= f.submit "Send" %>
 	</div>
 <% end %>
+</div>
