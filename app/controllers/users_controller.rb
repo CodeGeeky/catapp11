@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if simple_captcha_valid?
       if @user.save
+        flash[:sign_up] = true
         redirect_to root_url #, :notice => "Signed up!"
       else
         flash[:error_signup] = true
