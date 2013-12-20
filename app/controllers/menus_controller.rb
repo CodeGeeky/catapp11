@@ -5,7 +5,7 @@ class MenusController < ApplicationController
     @menu = Menu.new
   end
   def create 
-    @menu = Menu.new(menu_params)
+    @menu = Menu.new(menu_params, user_id: current_user.id)
     if @menu.save
       redirect_to :back
     else
@@ -39,7 +39,7 @@ class MenusController < ApplicationController
   
   def log_in_required
     if current_user
-      if current_user.phone != '9800000000'
+      if current_user.phone != '9800000000' and current_user.role != 'admin'
         redirect_to root_url
       end
     else
