@@ -25,12 +25,15 @@
 		color: #FFF;
 		font-size: 12px;
 	}
-	#captcha {
+	.captcha {
 
 	}
 </style>
 <script type="text/javascript">
-	$('#captcha').load(document.URL +  '#captcha');
+  function reload()
+  {
+    $('.captcha').load('.captcha');
+  }
 </script>
 </head>
 
@@ -50,7 +53,7 @@
 		<%= f.text_field :phone %><br />
 		<%= f.label :email %><br />
 		<%= f.text_field :email  %><br />
-		<div id="captcha"><%= show_simple_captcha(:label => "", :placeholder => "", :code_type => "numeric") %></div>		
+		<div class="captcha"><%= show_simple_captcha(:label => "", :placeholder => "", :code_type => "numeric") %></div>		
 		
 		<%= f.submit "Sign Up"%>
 <% end %>
