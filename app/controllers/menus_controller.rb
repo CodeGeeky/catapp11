@@ -12,7 +12,9 @@ class MenusController < ApplicationController
       redirect_to root_url
     end
   end
-  
+  def show
+    @menu = Menu.find(:all)
+  end
   private
   def menu_params
     params.require(:menu).permit(:id, :item_name)
