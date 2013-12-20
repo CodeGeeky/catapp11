@@ -5,7 +5,7 @@ class MenusController < ApplicationController
     @menu = Menu.new
   end
   def create 
-    @menu = Menu.new(menu_params, user_id: current_user.id)
+    @menu = current_user.menus.build(menu_params)
     if @menu.save
       redirect_to :back
     else
