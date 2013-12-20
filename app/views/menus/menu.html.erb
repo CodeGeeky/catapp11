@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<%= stylesheet_link_tag "default.css" %>
+	<%= stylesheet_link_tag "fonts.css"%>
+	<%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" %>
+
+	<style type="text/css">
+		body {
+			color: #ffffff;
+			font-weight: 100;
+
+		}
+	</style>
+</head>
+<body>
+<h3 style="color: #FFF; font-size: 20px; font-weight: 300;">Checklist your order.</h3><hr />
+<table>
+	<tr>
+		<td>ID</td>
+		<td>Food Item</td>
+		<td>Quantity</td>
+	</tr>
+	<% @menu.each do |menu| %>
+		<td> menu.id </td>
+		<td> menu.item_name </td>
+		<td> <input type="textbox" /> </td>
+	<% end %>
+	<tr>
+		<td>1. </td>
+		<td>Mo: Mo:</td>
+		<td> </td>
+	</tr>
+
+</table>
+</body>
+</html>
