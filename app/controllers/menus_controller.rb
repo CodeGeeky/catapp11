@@ -29,7 +29,7 @@ class MenusController < ApplicationController
   end
   def destroy
    Menu.find(params[:id]).destroy
-   redirect_to root_url   
+   redirect_to :back  
   end
   
   private
