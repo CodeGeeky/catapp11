@@ -141,8 +141,8 @@
 		<% end %>
 	<% end %>
 	<%if !current_user %>
-		Please <%= link_to "Sign in!", 'pages/login', :rel => 'facebox' %> to order.<br />
-		Not registered? <%= link_to "Sign Up!", 'users/new', :rel => 'facebox' %> <br />
+		Please <%= link_to "Sign in!", '/pages/login', :rel => 'facebox' %> to order.<br />
+		Not registered? <%= link_to "Sign Up!", '/users/new', :rel => 'facebox' %> <br />
 		Contact Us: beetle@beetle-developers.com
 	<% end %>
 	</p>
