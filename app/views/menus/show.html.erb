@@ -109,7 +109,7 @@
   <%= render :partial => 'banner/banner' %>
   <div id="menu-page-header">
 	<div class="left">
-		<p>Hello! User, Check out the food items.</p>
+		<p>Hello! <%= current_user.name %> Check out the food items.</p>
 		<p>View the food Categories : 
 		<select>
 			<option value="appetizer">Appetizer</option>
