@@ -109,7 +109,17 @@
   <%= render :partial => 'banner/banner' %>
   <div id="menu-page-header">
 	<div class="left">
-		<p>Hello! User, Check out the food items.</p>
+		<% if !current_user %>
+			<p>Hello! Guest, Check out our food items.</p>
+		<% end %>
+		<% if current_user %>
+			<% if current_user.role != 'admin' and current_user.phone != '9800000000' %>
+				<p>Hello! <%= current_user.name %>, Check out our food items.</p>
+			<% end %>
+			<% if current_user.role != 'admin' or current_user.phone != '9800000000' %>
+				<p>Hello! <%= current_user.name %>
+			<% end %>
+		<% end %>
 		<p>View the food Categories : 
 		<select>
 			<option value="appetizer">Appetizer</option>
