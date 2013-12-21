@@ -26,7 +26,7 @@
 			font-family: 'Source Sans Pro', sans-serif;
 			font-weight: 100;
 			text-align: left;
-			color: #FFF;
+			color: #FFFFFF;
 			font-size: 12px;
 		}
 		#show-wrapper a:hover {
@@ -36,6 +36,7 @@
 			width: 800px;
 			margin-left: auto;
 			margin-right: auto;
+			padding-top: 50px;
 			margin-top: 50px;
 		}
 		#show-wrapper input[type="textbox"] {
@@ -61,12 +62,26 @@
 			padding-top: 10px;
 		}
 
+		#menu-page-header a {
+			font-family: 'Source Sans Pro', sans-serif;
+			font-weight: 100;
+			text-align: left;
+			color: #FFFFFF;
+			font-size: 12px;
+			text-decoration: none;
+		}
+
+		#menu-page-header a:hover {
+			font-weight: 300;
+		}
+
 		#menu-page-header .left {
 			width: 450px;
 			margin-left: 0;
 			margin-top: 0;
 			float: left;
 			text-align: left;
+			height: 100%;
 		}
 
 		#menu-page-header .right {
@@ -75,6 +90,7 @@
 			margin-right: 0;
 			float: right;
 			text-align: right;
+			height: 100%;
 		}
 
 		#menu-page-header select {
@@ -92,30 +108,42 @@
   <body>
   <%= render :partial => 'banner/banner' %>
   <div id="menu-page-header">
-  	<div class="left">
-  		<p>Hello! User, Check out the food items.</p>
-  		<p>View the food Categories : 
-  		<select>
-  			<option value="appetizer">Appetizer</option>
-  			<option value="breakfast">Breakfast</option>
-  			<option value="salad">Salad</option>
-  			<option value="Dessert">Dessert</option>
-  			<option value="lunch">Lunch</option>
-  			<option value="tandoori">Tandoori</option>
-  			<option value="dine">Dine</option>
-  		</select>
-  		</p>
-  	</div>
-  	<div id="right">
-  		<p style="text-align: right;">You have 0 items on your order list. <br />
-  		Contact Us: beetle@beetle-developers.com</p>
-  	</div>
+	<div class="left">
+		<p>Hello! User, Check out the food items.</p>
+		<p>View the food Categories : 
+		<select>
+			<option value="appetizer">Appetizer</option>
+			<option value="breakfast">Breakfast</option>
+			<option value="salad">Salad</option>
+			<option value="Dessert">Dessert</option>
+			<option value="lunch">Lunch</option>
+			<option value="tandoori">Tandoori</option>
+			<option value="dine">Dine</option>
+		</select>
+		</p>
+	</div>
+	<div class="right">
+	<p style="text-align: right;">
+	<% if current_user %>
+		<% if current_user.role != 'admin' and current_user.phone != '9800000000' %>
+			You have 0 items on your order list. <br />
+			
+		<% end %>
+	<% end %>
+	<%if !current_user %>
+		Please <%= link_to "Sign in!", 'pages/login', :rel => 'facebox' %> to order.<br />
+		Not registered? <%= link_to "Sign Up!", 'users/new', :rel => 'facebox' %> <br />
+		Contact Us: beetle@beetle-developers.com
+	<% end %>
+	</p>
+	</div>
   </div>
 
   <div id="show-wrapper">
-  <h3 style="color: #FFF; font-size: 20px;">Food Menu</h3><hr />
+  <h3 style="color: #FFF; font-size: 20px;">Food Menu <a href="#"> Add Food Item</a></h3><hr />
   	<table>
   		<tr>
+  			<td>S. No.</td>
   			<td>Food Items</td>
   			<td>Price</td>
   			<%if current_user%>
@@ -126,10 +154,12 @@
   			<%end%>
 
   		</tr>
+  		<% @counter = 1 %>
   		<% @menu.each do |menu|%>
   			<tr>
+  				<td><%= @counter %></td>
   				<td><%= menu.item_name %><br /></td>
-  				<td><%= menu.price %></td>
+  				<td>Rs. <%= menu.price %></td>
   				<% if current_user %>
   					<%if current_user.role != 'admin' and current_user.phone != '9800000000'%>
 		  				<td><input type="textbox" /></td>		  		
@@ -142,6 +172,7 @@
 		  			<%end%>
 	  			<%end%>
   			</tr>
+  			<% @counter = @counter + 1 %>
   		<%end%>
   	</table>
   	
