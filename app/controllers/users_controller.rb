@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   
   before_action :log_in_required, only: [:show, :edit, :update, :destroy]
+  after_filter "save_my_previous_url", only: [:new]
   
   def new
     @user = User.new
@@ -11,7 +12,7 @@ class UsersController < ApplicationController
     if simple_captcha_valid?
       if @user.save
         flash[:sign_up] = true
-        redirect_to root_url #, :notice => "Signed up!"
+        redirect_to session[:my_previous_url] #, :notice => "Signed up!"
       else
         flash[:error_signup] = true
         flash[:notice] = @user.errors.full_messages
@@ -58,5 +59,8 @@ class UsersController < ApplicationController
     else
       redirect_to root_url
     end
+  end
+  def save_my_previous_url
+    session[:my_previous_url] = URI(request.referer).path
   end
 end

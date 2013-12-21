@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  after_filter "save_my_previous_url", only: [:new]
   def login
   	
   end
@@ -9,7 +10,7 @@ class PagesController < ApplicationController
     user = User.authenticate(params[:phone], params[:password])
     if user
       session[:user_id] = user.id
-      redirect_to root_url #, :notice => "Logged in"
+      redirect_to session[:my_previous_url] #, :notice => "Logged in"
     else
       
       #flash.now.alert = "Invalid phone or password"
@@ -23,6 +24,10 @@ class PagesController < ApplicationController
     session[:user_id] = nil
     redirect_to root_url #, :notice => "Logged Out"
     #render 'welcome/index'
+  end
+  
+  def save_my_previous_url
+    session[:my_previous_url] = URI(request.referer).path
   end
   
 end
