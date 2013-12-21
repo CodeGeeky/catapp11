@@ -116,7 +116,7 @@
 			<% if current_user.role != 'admin' and current_user.phone != '9800000000' %>
 				<p>Hello! <%= current_user.name %>, Check out our food items.</p>
 			<% end %>
-			<% if current_user.role != 'admin' or current_user.phone != '9800000000' %>
+			<% if current_user.role == 'admin' or current_user.phone == '9800000000' %>
 				<p>Hello! <%= current_user.name %>
 			<% end %>
 		<% end %>
@@ -150,7 +150,14 @@
   </div>
 
   <div id="show-wrapper">
-  <h3 style="color: #FFF; font-size: 20px;">Food Menu <a href="#"> Add Food Item</a></h3><hr />
+  <h3 style="color: #FFF; font-size: 20px;">Food Menu
+  	<%if current_user%>
+		<%if current_user.role == 'admin' or current_user.phone == '9800000000'%>
+  		<%= link_to ' [Add Food Item]',new_menu_path %>
+  		<%end%>
+  	<%end%>
+  	</h3><hr />
+  	
   	<table>
   		<tr>
   			<td>S. No.</td>
