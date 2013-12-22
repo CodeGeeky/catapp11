@@ -59,3 +59,6 @@ group :production do
 	gem 'rails_12factor', '0.0.2'
 end
 
+
+#Use Client Variable
+gem 'client_variable'
