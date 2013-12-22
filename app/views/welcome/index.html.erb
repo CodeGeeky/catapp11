@@ -13,7 +13,58 @@
 		cursor: pointer;
 		cursor: hand;
 	}
+
+
+
 </style>
+
+
+<script>
+
+  $(document).ready(function() {
+  
+    var date = new Date();
+    var d = date.getDate();
+    var m = date.getMonth();
+    var y = date.getFullYear();
+    
+    var calendar = $('#calendar').fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+      },
+      selectable: true,
+      selectHelper: true,
+      select: function(start, end, allDay) {
+        var phone = prompt('Book Now!!!','Enter your phone number!');
+        var mday = start.getDate();
+        var mmonth = start.getMonth();
+        mmonth++;
+        var myear = start.getFullYear();
+        var _fulldate = mday+'-'+mmonth+'-'+myear;
+        //return phone, _fulldate;
+        if (phone) {calendar.fullCalendar('renderEvent',{},
+            true // make the event "stick"
+          );
+        }
+        calendar.fullCalendar('unselect');
+      },
+      editable: true,
+    });
+  });
+</script>
+<script type="text/javascript">
+	function validatePhone(txtPhone) {
+	    var filter = /^[0-9-+]+$/;
+	    if (filter.test(txtPhone)) {
+	        return true;
+	    }
+	    else {
+	        return false;
+	    }
+	}​
+</script>
 
 <body>
 <div id="header-wrapper">
@@ -134,7 +185,7 @@
 		<div class="immersive_slider" onmouseover="setVisibility('panelButtons_Holder', 'inline');" onmouseout="setVisibility('panelButtons_Holder', 'none');">
 			<% if current_user and (current_user.phone == '9800000000' or current_user.role == "admin") %>					
 			<div id="panelButtons_Holder" style="display: none;">
-				<a href="#"><span style="color: #FFF; text-decoration: blink;"><img src="/images/Settings.png" /> Settings</span></a>
+				<a href="#"><span style="color: #FFF; text-decoration: blink;"><img src="/images/settings.png" /> Settings</span></a>
 			</div>	
 			<%end%>
           <div class="slide" data-blurred="/img/transparent.png">
@@ -214,6 +265,7 @@
 				<p></p>
 				<div id="calender-wrapper">
 					<%= render :partial => 'calender/full_calender' %>
+
 				</div>
 			</div>
 			

@@ -1,0 +1,5 @@
+development:
+  app_name: Catreen101
+
+production:
+  app_name: Catreen101

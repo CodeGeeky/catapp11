@@ -13,7 +13,8 @@
 <%= javascript_include_tag "facebox.js" %>
 <%= javascript_include_tag "tabs.js" %>
 <%= stylesheet_link_tag "facebox.css" %>
-
+<%= javascript_include_tag "respond.min.js" %>
+<%= javascript_include_tag "//html5shiv.googlecode.com/svn/trunk/html5.js" %>
 <%= stylesheet_link_tag "fullcalendar.css" %>
   <%= stylesheet_link_tag "fullcalendar.print.css" %>
   <%= javascript_include_tag "jquery-ui.custom.min.js" %>
@@ -67,7 +68,7 @@
 	{
 		z-index: 50;		
 		width: 100%;
-		height: 55px;
+		height: 7%;
 		/**background-color: transparent**/
 		background: '#551950';
 		/*box-shadow: 0 8px 30px rgba(0,0,0,.2);*/
@@ -228,45 +229,7 @@
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
 
-<script>
 
-  $(document).ready(function() {
-  
-    var date = new Date();
-    var d = date.getDate();
-    var m = date.getMonth();
-    var y = date.getFullYear();
-    
-    var calendar = $('#calendar').fullCalendar({
-      header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'month,agendaWeek,agendaDay'
-      },
-      selectable: true,
-      selectHelper: true,
-      select: function(start, end, allDay) {
-        var title = prompt('Book Now!!!','Enter your phone number!');
-        //var phone = prompt('Phone No.:')
-        if (title) {
-          calendar.fullCalendar('renderEvent',
-            {
-              title: title,
-              start: start,
-              end: end,
-              allDay: allDay
-            },
-            true // make the event "stick"
-          );
-        }
-        calendar.fullCalendar('unselect');
-      },
-      editable: true,
-    });
-    
-  });
-
-</script>
 <style>
   #calendar {
     width: 600px;
