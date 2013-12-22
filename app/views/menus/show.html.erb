@@ -193,7 +193,7 @@
 		  				<td><input type="textbox" name="quantity" id="qty" /></td>		  		
 		  				<td><p id="subamount"></p></td>	  			
 		  				<td><a class="custom_button_small" href="#"><span class="icon icon-plus-sign-alt"> 
-		  					<%= link_to 'Add To Cart', :controller => 'carts', :action => 'add', :menu => menu%></span></a></td>
+		  					<%= link_to 'Add To Cart', :controller => 'citems', :action => 'add', :menu => menu%></span></a></td>
 		  			<%end%>
 		  			<%if current_user.role == 'admin' or current_user.phone == '9800000000'%>
 		  				<td style="width: auto;"><%= link_to "edit", edit_menu_path(menu), :rel => 'facebox' %></div></td>
