@@ -6,7 +6,7 @@ Catreen101::Application.routes.draw do
   get 'welcome/index'
   get 'inquiries/new', :as => 'inquiry'
   root :to => 'welcome#index'
-  get 'carts/add', :as=>'addtocart'
+  get 'citems/add', :as=>'addtocart'
   #get "logout" => "sessions#destroy", :as => "logout"
   #get "login" => "sessions#new", :as => "login"
   #get "sign_up" => "users#new", :as => "sign_up"
@@ -18,10 +18,8 @@ Catreen101::Application.routes.draw do
   resources :inquiries, :only => [:new, :create]
   resources :welcome
   resources :menus
-  resources :carts  do
-    resources :citems
-  end
-
+  resources :carts
+  resources :citems
   # You can have the root of your site routed with "root"
  
 
