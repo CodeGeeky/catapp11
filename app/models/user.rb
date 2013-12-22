@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :menus
+  has_one :cart
   attr_accessor :password
   before_save :encrypt_password
   has_attached_file :photo, :styles => {:small => "150x150>"},
