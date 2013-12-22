@@ -147,7 +147,7 @@
 	<p style="text-align: right;">
 	<% if current_user %>
 		<% if current_user.role != 'admin' and current_user.phone != '9800000000' %>
-			You have 0 items on your order list. <br />
+			You have [<%= link_to count, '/citems/show' %>] items on your order list. <br />
 			
 		<% end %>
 	<% end %>
