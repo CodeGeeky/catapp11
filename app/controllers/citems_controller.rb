@@ -1,0 +1,2 @@
+class CitemsController < ApplicationController
+end
