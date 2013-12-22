@@ -14,6 +14,8 @@ class PagesController < ApplicationController
       @cart = Cart.new(params[:id])
       @cart.user_id = current_user.id
       @cart.save
+      
+      session[:cart_id] = @cart.id
       redirect_to session[:my_previous_url] #, :notice => "Logged in"
     else
       
