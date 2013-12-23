@@ -16,11 +16,14 @@
 <%= javascript_include_tag "respond.min.js" %>
 <%= javascript_include_tag "//html5shiv.googlecode.com/svn/trunk/html5.js" %>
 <%= stylesheet_link_tag "fullcalendar.css" %>
-  <%= stylesheet_link_tag "fullcalendar.print.css" %>
-  <%= javascript_include_tag "jquery-ui.custom.min.js" %>
-  <%= javascript_include_tag "fullcalendar.min.js" %>
-  <%= javascript_include_tag "GoScroll.js" %>
+<%= stylesheet_link_tag "fullcalendar.print.css" %>
+<%= javascript_include_tag "jquery-ui.custom.min.js" %>
+<%= javascript_include_tag "fullcalendar.min.js" %>
+
+<%= javascript_include_tag "GoScroll.js" %>
   
+<%= javascript_include_tag "//code.jquery.com/ui/1.10.3/jquery-ui.js" %>
+
   <script>
     $(window).load(function(){ 
       $("#menu-area").sticky({ topSpacing: 0 });
@@ -242,7 +245,6 @@
     width: 600px;
     margin: 20px 20px;
     }
-
 </style>
 
 </head>
