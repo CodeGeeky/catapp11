@@ -19,6 +19,7 @@
   <%= stylesheet_link_tag "fullcalendar.print.css" %>
   <%= javascript_include_tag "jquery-ui.custom.min.js" %>
   <%= javascript_include_tag "fullcalendar.min.js" %>
+  <%= javascript_include_tag "GoScroll.js" %>
   
   <script>
     $(window).load(function(){ 
@@ -32,6 +33,12 @@
         	closeImage   : '/images/closelabel.png'
       	})
     })
+  </script>
+
+  <script type="text/javascript">
+  function scrollToTop() {
+    GoScrollTo.scrollVerticalToElementById('wrapper', 0);
+  }
   </script>
   <style>
 
@@ -149,21 +156,6 @@
 	function setVisibility(id, visibility) {
 		document.getElementById(id).style.display = visibility;
 	}
-
-  function pageScrollDown(id1, id2, visibility1, visibility2) {
-      window.scrollTo(0, 630)
-      // horizontal and vertical scroll increments
-      //scrolldelay = setTimeout('pageScroll()',100); // scrolls every 100 milliseconds
-      document.getElementById(id1).style.display = visibility1;
-      document.getElementById(id2).style.display = visibility2;
-  }
-  function pageScrollUp(id1, id2, visibility1, visibility2) {
-    window.scrollTo(0,0); // horizontal and vertical scroll increments
-      //scrolldelay = setTimeout('pageScroll()',100); // scrolls every 100 milliseconds
-      document.getElementById(id1).style.display = visibility1;
-      document.getElementById(id2).style.display = visibility2;
-      
-  }
 </script>
 <style>
 	.immersive_slider .is-slide .content h2{
@@ -190,10 +182,10 @@
     {
       float: right;
       width: auto;
-      /*background: none repeat scroll 0 0 #192441;*/
+      background: none repeat scroll 0 0 #2a0c28;
       color: #FFFFFF;
       font-size: 14px;
-      margin-top: -45px;
+      margin-top: 40%;
       padding: 10px;
       opacity: .7;
       cursor: hand;
@@ -206,17 +198,19 @@
     }
     #scroll-up
     {
-      float: right;
-      width: auto;
-      /*background: none repeat scroll 0 0 #192441;*/
+      width: 3%;
+      background: none repeat scroll 0 0 #2a0c28;
+      border-radius: 5px;
+      position: fixed;
       color: #FFFFFF;
-      font-size: 14px;
-      margin-top: -45px;
+      font-size: 21px;
+      margin-top: 40%;
       padding: 10px;
-      opacity: .7;
+      opacity: .6;
       cursor: hand;
       cursor: pointer;
-      margin-right: 20px;
+      margin-left: 96%;
+      display: none;
     }
     #scroll-up:hover
     {
@@ -227,7 +221,20 @@
 </style>
 
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
-
+<script type="text/javascript">
+  var isVisible = false;
+  $(window).scroll(function(){
+       var shouldBeVisible = $(window).scrollTop()>400;
+       if (shouldBeVisible && !isVisible) {
+            isVisible = true;
+            $('#scroll-up').fadeIn("slow");
+       } else if (isVisible && !shouldBeVisible) {
+            isVisible = false;
+            $('#scroll-up').fadeOut("slow");
+            setVisibility('scroll-up', none)
+      }
+  });
+</script>
 
 
 <style>
