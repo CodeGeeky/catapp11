@@ -7,6 +7,9 @@ class CitemsController < ApplicationController
   end
   
   def show
-    @list = Citem.where(cart_id: current_cart.id).to_a  
+    list = Citem.where(cart_id: current_cart.id)  
+    for menu in list.menus do
+      @l = menu
+    end 
   end
 end
