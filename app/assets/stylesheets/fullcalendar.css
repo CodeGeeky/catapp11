@@ -593,3 +593,15 @@ table.fc-border-separate {
 	}
 	
 	
+#fc-day-bg {
+	display: none;
+    width: 85px;
+    height: 80px;
+    background: #551950;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -999;
+}

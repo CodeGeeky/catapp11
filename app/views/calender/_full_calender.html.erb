@@ -5,7 +5,20 @@
 		font-weight: 300;
 	}
 </style>
+<script type="text/javascript">
 
+//CALANDER BG EFFECT
+	$(function() {
+	  $(".fc-day-content").find("span")
+	  .hide() // Finds span hide.
+	  .end() // After find stop.
+	  .hover(function() { // On hover find and fadein then fadeout
+	    $(this).find("span").stop(true, true).fadeIn();
+	  }, function() {
+	    $(this).find("span").stop(true, true).fadeOut();
+	  });
+});
+</script>
 <div id='calendar'>
 	<h4 style="text-align: center;"><strong>Note:</strong> Click on the desired day and leave your phone number.
 We'll inform you the booking.</h4>

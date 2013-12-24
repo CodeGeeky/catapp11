@@ -2391,6 +2391,8 @@ function BasicView(element, calendar, viewName) {
 			"<div style='position:relative'>&nbsp;</div>" +
 			"</div>" +
 			"</div>" +
+			"<span id='fc-day-bg'>" +
+			"</span>" +
 			"</td>";
 
 		return html;
