@@ -10,7 +10,8 @@ class IbooksController < ApplicationController
   end
   
   def show
-    @ibook = Ibook.find(:all)
+    @ibook = Ibook.find(:all, :include=>:user)
+    
   end
   
   def log_in_required

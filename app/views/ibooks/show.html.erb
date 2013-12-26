@@ -1,7 +1,13 @@
+<tr>id</tr>
+<tr>user name</tr>
+<tr>Cart id</tr>
+<tr>Ordered date</tr><br />
 <% @ibook.each do |ibook| %>
 <tr>
-	<td>id: <%= ibook.id %><br /></td>
-	<td>user: <%= ibook.user_id %><br /></td>
-	<td>cart: <%= ibook.cart_id %><br /></td>
+	<td><%= ibook.id %></td>
+	<td><%= ibook.user.name %></td>
+	<td><%= link_to ibook.cart_id, :controller => 'citems', :action => 'list', :ibook => ibook.cart_id %></td>
+	<td><%= ibook.created_at.strftime("%d %b. %Y") %></td><br />
 </tr>
 <%end%>
+</table>
