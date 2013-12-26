@@ -2,3 +2,4 @@
 <%= list.menu.item_name %> <%=link_to "remove from cart", :controller => 'citems', :action => 'remove', :list => list%><br />
 <% end %>
 <%= link_to "confirm order", :controller => 'ibooks', :action => 'confirm'%>
+<%= link_to "cancel order", :controller => 'citems', :action => 'removeall'%>

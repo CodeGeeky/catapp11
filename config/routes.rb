@@ -9,8 +9,9 @@ Catreen101::Application.routes.draw do
   get 'citems/add', :as=>'addtocart'
   get 'citems/remove', :as=>'removefromcart'
   get 'ibooks/confirm', :as=>'confirm'
-
+  get 'citems/removeall', :as=>'cancelorder'
   get 'citems/list', :as=>'listorder'
+  get 'menus/show', :as=>'showmenus'
 
   #get "logout" => "sessions#destroy", :as => "logout"
   #get "login" => "sessions#new", :as => "login"
