@@ -1,0 +1,32 @@
+<%= render :partial => 'header/header' %>
+<style type="text/css">
+	body, h3 {
+		font-family: 'Source Sans Pro', sans-serif;
+		font-weight: 100;
+		background: #FFF;
+	}
+	h3 {
+		color: #FFF;
+	}
+	#calender-wrapper label, #calender-wrapper p, #calender-wrapper a {
+		font-family: 'Source Sans Pro', sans-serif;
+		font-weight: 100;
+		text-align: left;
+		font-size: 12px;
+	}
+	#calender-wrapper a:hover {
+		font-weight: 300;
+	}
+	#calender-wrapper {
+		width: 640px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 50px;
+	}
+</style>
+<body>
+	<%= render :partial => 'banner/banner' %>
+	<div id="calender-wrapper">
+		<%= render :partial => 'calender/full_calender' %>
+	</div>
+</body>

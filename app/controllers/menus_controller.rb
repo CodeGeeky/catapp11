@@ -1,4 +1,6 @@
 class MenusController < ApplicationController
+  require 'date'
+
   before_action :log_in_required, only: [:new, :create, :edit, :update, :destroy]
   
   def new
@@ -18,6 +20,9 @@ class MenusController < ApplicationController
     # @ibook.save
     @menu = Menu.find(:all)
     @for_when = params[:mdate]
+    if @for_when
+      @dateT = Date.parse(@for_when)
+    end
   end
   def edit
     @menu = Menu.find(params[:id])
