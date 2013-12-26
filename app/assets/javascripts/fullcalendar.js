@@ -3234,7 +3234,7 @@ function AgendaView(element, calendar, viewName) {
 			gutterCells = gutterCells.add(allDayTable.find('th.fc-agenda-gutter'));
 		}
 
-		var slotTableWidth = slotScroller[0].clientWidth; // needs to be done after axisWidth (for IE7)
+		var slotTableWidth = slotScroller[0].clientWidth; // needs to be done after axisWidth (for ex)
 		
 		gutterWidth = slotScroller.width() - slotTableWidth;
 		if (gutterWidth) {

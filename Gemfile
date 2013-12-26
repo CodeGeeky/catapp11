@@ -60,5 +60,5 @@ group :production do
 end
 
 
-#Use Client Variable
+# Use Client Variable
 gem 'client_variable'

@@ -44,6 +44,7 @@
         var myear = start.getFullYear();
         var _fulldate = mday+'-'+mmonth+'-'+myear;
         //return phone, _fulldate;
+        
         if (phone) {calendar.fullCalendar('renderEvent',{},
             true // make the event "stick"
           );
@@ -149,7 +150,7 @@
 						<a href="pages/login" rel='facebox'><span class="icon icon-signin"></span></a>
 					</h4>
 
-					<p style="font-size: 12px; color: #FFF; font-weight: normal; line-height: 20%;">Not Registered?
+					<p style="font-size: 12px; color: #FFF; font-weright: normal; line-height: 20%;">Not Registered?
 						<% if flash[:error_captcha] %>
 							<script type="text/javascript">
 								alert("Captcha Verification Failed!")
