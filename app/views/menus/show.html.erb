@@ -168,7 +168,7 @@
 	<p style="text-align: right;">
 	<% if current_user %>
 		<% if current_user.role != 'admin' and current_user.phone != '9800000000' %>
-			You have [<%= link_to count, '/citems/show' %>] items on your order list. <br />
+			You have [<%= link_to count, :controller=>'citems', :action=>'show', :for_when => @for_when %>] items on your order list. <br />
 			
 		<%else%>
 			You have [<%= link_to order, '/ibooks/show' %>] order. <br />
@@ -215,7 +215,7 @@
 		  				<td><input type="textbox" name="qty" id="qty" /></td> 				
 		  				<td><p id="subamount"></p></td>	  			
 		  				<td id="addCart"><a class="custom_button_small" href="#"><span class="icon icon-plus-sign-alt">		  					
-		  				<%= link_to 'Add To Cart', :controller => 'citems', :action => 'add', :menu => menu %></span></a></td>
+		  				<%= link_to 'Add To Cart', :controller => 'citems', :action => 'add', :menu => menu, :for_when => @for_when %></span></a></td>
 		  			<%end%>
 		  			<%if current_user.role == 'admin' or current_user.phone == '9800000000'%>
 		  				<td style="width: auto;"><%= link_to "edit", edit_menu_path(menu), :rel => 'facebox' %></div></td>
