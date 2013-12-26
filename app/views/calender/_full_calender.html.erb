@@ -48,7 +48,7 @@
         var cmonth = cdate.getMonth();
         cmonth++;
         var cyear = cdate.getFullYear();
-        if (mday > cday && mmonth > cmonth && myear > cyear) {
+        if (mday > cday && mmonth >= cmonth && myear >= cyear) {
           //return phone, _fulldate;
           var book = confirm("Do you want to book for " + _fulldate +"?");
 
