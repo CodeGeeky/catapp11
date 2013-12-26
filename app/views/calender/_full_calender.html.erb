@@ -23,8 +23,6 @@
 <script>
 
   $(document).ready(function() {
-  	var phone;
-  	var _fulldate;
     var date = new Date();
     var d = date.getDate();
     var m = date.getMonth();
@@ -39,20 +37,19 @@
       selectable: true,
       selectHelper: true,
       select: function(start, end, allDay) {
-        phone = prompt('Book Now!!!','Enter your phone number!');
         var mday = start.getDate();
         var mmonth = start.getMonth();
         mmonth++;
         var myear = start.getFullYear();
-        _fulldate = mday+'-'+mmonth+'-'+myear;
+        var _fulldate = mday+'-'+mmonth+'-'+myear;
         //return phone, _fulldate;
-        
-        if (phone) {calendar.fullCalendar('renderEvent',{},
+        var book = confirm("Do you want to book for " + _fulldate +"?");
+
+        if (book) {calendar.fullCalendar('renderEvent',{},
             true // make the event "stick"
           );
-        	alert('Booking Confirmed!'); //push data to DB
-        	window.open("localhost:3000//calendar/create?mdate="+mdate+"&phone="+_fulldate,"_self")
-        	//$.post("/bookings/create?mdate=" + _fulldate + "&phone="+ phone, "_self");
+        	//window.open("localhost:3000//menus/show?mdate="+mdate,"_self")
+        	window.open("/menus/show?mdate=" + _fulldate , "_self");
         }
         else {
         	alert('Your booking is cancelled!');

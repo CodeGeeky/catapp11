@@ -14,6 +14,8 @@ class MenusController < ApplicationController
     end
   end
   def show
+    @ibook = Ibook.new(:for_when => params[:mdate])
+    @ibook.save
     @menu = Menu.find(:all)
   end
   def edit
