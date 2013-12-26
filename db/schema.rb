@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131226142039) do
+ActiveRecord::Schema.define(version: 20131226144719) do
 
   create_table "bookings", force: true do |t|
     t.date     "book_date"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20131226142039) do
     t.integer  "cart_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "quantity"
   end
 
   create_table "ibooks", force: true do |t|
