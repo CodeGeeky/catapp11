@@ -8,10 +8,13 @@ class CitemsController < ApplicationController
   end
   
   def show
-    #@list = Citem.where(cart_id: current_cart.id)
+    # join Citem and Menu table    
     @list = Citem.joins(:menu).where(cart_id: current_cart.id)
   end
   
+  def remove
+    # remove item from cart.
+  end
   def log_in_required
     if not current_user
       redirect_to root_url
