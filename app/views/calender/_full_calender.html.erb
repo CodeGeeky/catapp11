@@ -42,17 +42,28 @@
         mmonth++;
         var myear = start.getFullYear();
         var _fulldate = mday+'-'+mmonth+'-'+myear;
-        //return phone, _fulldate;
-        var book = confirm("Do you want to book for " + _fulldate +"?");
 
-        if (book) {calendar.fullCalendar('renderEvent',{},
-            true // make the event "stick"
-          );
-        	//window.open("localhost:3000//menus/show?mdate="+mdate,"_self")
-        	window.open("/menus/show?mdate=" + _fulldate , "_self");
+        var cdate = new Date();
+        var cday = cdate.getDate();
+        var cmonth = cdate.getMonth();
+        cmonth++;
+        var cyear = cdate.getFullYear();
+        if (mday > cday && mmonth > cmonth && myear > cyear) {
+          //return phone, _fulldate;
+          var book = confirm("Do you want to book for " + _fulldate +"?");
+
+          if (book) {calendar.fullCalendar('renderEvent',{},
+              true // make the event "stick"
+            );
+          	//window.open("localhost:3000//menus/show?mdate="+mdate,"_self")
+          	window.open("/menus/show?mdate=" + _fulldate , "_self");
+          }
+          else {
+          	alert('Your booking is cancelled!');
+          }
         }
         else {
-        	alert('Your booking is cancelled!');
+          alert('You cannot book for past!');
         }
         calendar.fullCalendar('unselect');
       },

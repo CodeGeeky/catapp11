@@ -2,10 +2,14 @@ class IbooksController < ApplicationController
   before_action :admin_required, only: [:show]
   before_action :log_in_required
   def confirm
-    @ibook = Ibook.new(:user_id => current_user.id, :cart_id => current_cart.id, :for_when => params[:for_when])
-    if @ibook.save()
-      flash[:notice_book] = true
-      redirect_to root_url
+    if params[:for_when]
+      @ibook = Ibook.new(:user_id => current_user.id, :cart_id => current_cart.id, :for_when => params[:for_when])
+      if @ibook.save()
+        flash[:notice_book] = true
+        redirect_to root_url
+      end
+    else
+      redirect_to '/calender/calender'
     end
   end
   
