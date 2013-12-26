@@ -62,6 +62,9 @@
           	alert('Your booking is cancelled!');
           }
         }
+        else if (mday == cday && mmonth == cmonth && myear == cyear) {
+          alert('Booking for today is impossible');
+        }
         else {
           alert('You cannot book for past!');
         }
