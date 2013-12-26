@@ -17,44 +17,6 @@
 
 
 </style>
-
-
-<script>
-
-  $(document).ready(function() {
-  
-    var date = new Date();
-    var d = date.getDate();
-    var m = date.getMonth();
-    var y = date.getFullYear();
-    
-    var calendar = $('#calendar').fullCalendar({
-      header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'month,agendaWeek,agendaDay'
-      },
-      selectable: true,
-      selectHelper: true,
-      select: function(start, end, allDay) {
-        var phone = prompt('Book Now!!!','Enter your phone number!');
-        var mday = start.getDate();
-        var mmonth = start.getMonth();
-        mmonth++;
-        var myear = start.getFullYear();
-        var _fulldate = mday+'-'+mmonth+'-'+myear;
-        //return phone, _fulldate;
-        
-        if (phone) {calendar.fullCalendar('renderEvent',{},
-            true // make the event "stick"
-          );
-        }
-        calendar.fullCalendar('unselect');
-      },
-      editable: true,
-    });
-  });
-</script>
 <script type="text/javascript">
 	function validatePhone(txtPhone) {
 	    var filter = /^[0-9-+]+$/;

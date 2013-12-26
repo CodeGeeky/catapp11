@@ -42,27 +42,12 @@ ActiveRecord::Schema.define(version: 20131226072337) do
     t.datetime "updated_at"
   end
 
-  create_table "line_items", force: true do |t|
-    t.integer  "menu_id"
-    t.integer  "cart_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id"
-  add_index "line_items", ["menu_id"], name: "index_line_items_on_menu_id"
-
   create_table "menus", force: true do |t|
     t.string   "item_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "quantity"
     t.float    "price"
-  end
-
-  create_table "orders", force: true do |t|
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "simple_captcha_data", force: true do |t|
@@ -87,7 +72,6 @@ ActiveRecord::Schema.define(version: 20131226072337) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.integer  "cart_id"
   end
 
 end

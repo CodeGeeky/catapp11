@@ -19,6 +19,50 @@
 	  });
 });
 </script>
+
+<script>
+
+  $(document).ready(function() {
+  	var phone;
+  	var _fulldate;
+    var date = new Date();
+    var d = date.getDate();
+    var m = date.getMonth();
+    var y = date.getFullYear();
+    
+    var calendar = $('#calendar').fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+      },
+      selectable: true,
+      selectHelper: true,
+      select: function(start, end, allDay) {
+        phone = prompt('Book Now!!!','Enter your phone number!');
+        var mday = start.getDate();
+        var mmonth = start.getMonth();
+        mmonth++;
+        var myear = start.getFullYear();
+        _fulldate = mday+'-'+mmonth+'-'+myear;
+        //return phone, _fulldate;
+        
+        if (phone) {calendar.fullCalendar('renderEvent',{},
+            true // make the event "stick"
+          );
+        	alert('Booking Confirmed!'); //push data to DB
+        	window.open("localhost:3000//calendar/create?mdate="+mdate+"&phone="+_fulldate,"_self")
+        	//$.post("/bookings/create?mdate=" + _fulldate + "&phone="+ phone, "_self");
+        }
+        else {
+        	alert('Your booking is cancelled!');
+        }
+        calendar.fullCalendar('unselect');
+      },
+      editable: true,
+    });
+  }); 
+</script>
 <div id='calendar'>
 	<h4 style="text-align: center;"><strong>Note:</strong> Click on the desired day and leave your phone number.
 We'll inform you the booking.</h4>
