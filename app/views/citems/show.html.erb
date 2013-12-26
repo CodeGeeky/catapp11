@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,9 +52,8 @@
 	<% @list.each do |list| %>
 		<%=link_to "[remove]", :controller => 'citems', :action => 'remove', :list => list%><%= list.menu.item_name %> <br />
 	<% end %>
-	<%= link_to "[confirm order] ", :controller => 'ibooks', :action => 'confirm'%>
+	<%= link_to "[confirm order] ", :controller => 'ibooks', :action => 'confirm', :for_when => params[:for_when]%>
 	<%= link_to " [cancel order]", :controller => 'citems', :action => 'removeall'%>
 </div>
 </body>
 </html>
-

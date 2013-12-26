@@ -12,7 +12,7 @@ Catreen101::Application.routes.draw do
   get 'citems/removeall', :as=>'cancelorder'
   get 'citems/list', :as=>'listorder'
   get 'menus/show', :as=>'showmenus'
-
+  get 'citems/show', :as=>'showitemsincart'
   #get "logout" => "sessions#destroy", :as => "logout"
   #get "login" => "sessions#new", :as => "login"
   #get "sign_up" => "users#new", :as => "sign_up"

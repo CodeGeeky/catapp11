@@ -57,17 +57,18 @@
 			<td>Client Name</td>
 			<td>Cart ID</td>
 			<td>Order Date</td>
+			<td>Ordered For</td>
 		</tr>
 		<% @ibook.each do |ibook| %>
 		<tr>
 			<td><%= ibook.id %></td>
 			<td><%= ibook.user.name %></td>
 			<td><%= link_to ibook.cart_id, :controller => 'citems', :action => 'list', :ibook => ibook.cart_id %></td>
-			<td><%= ibook.created_at.strftime("%d %b. %Y") %></td><br />
+			<td><%= ibook.created_at.strftime("%d %b. %Y") %></td>
+			<td><%= ibook.for_when%></td>
 		</tr>
 		<%end%>
 	</table>
 	</div>
 </body>
 </html>
-
