@@ -12,6 +12,10 @@ class CitemsController < ApplicationController
     @list = Citem.joins(:menu).where(cart_id: current_cart.id)
   end
   
+  def list
+    @list = Citem.where(cart_id: params[:ibook]).find(:all, :include => :menu)
+  end
+  
   def remove
     # remove item from cart.
     Citem.find(params[:list]).destroy
