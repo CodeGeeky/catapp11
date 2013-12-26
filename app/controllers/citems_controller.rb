@@ -1,9 +1,14 @@
 class CitemsController < ApplicationController
   before_action :log_in_required
   def add
-    @cartitem = Citem.new(:menu_id => params[:menu], :cart_id => current_cart.id)
-    if @cartitem.save()
+    if Citem.exists?(:cart_id => current_cart.id, :menu_id => params[:menu])
+      flash[:exist] = true
       redirect_to :back
+    else
+      @cartitem = Citem.new(:menu_id => params[:menu], :cart_id => current_cart.id)
+      if @cartitem.save()
+        redirect_to :back
+      end
     end
   end
   
@@ -28,6 +33,7 @@ class CitemsController < ApplicationController
     redirect_to :controller => 'menus', :action => 'show'
   end
   
+  private
   def log_in_required
     if not current_user
       redirect_to root_url
