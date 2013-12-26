@@ -16,7 +16,7 @@ class PagesController < ApplicationController
       @cart.save
       
       session[:cart_id] = @cart.id
-      redirect_to session[:my_previous_url] #, :notice => "Logged in"
+      redirect_to root_url #session[:my_previous_url] #, :notice => "Logged in"
     else
       
       #flash.now.alert = "Invalid phone or password"

@@ -1,3 +1,2 @@
-class Menu < ActiveRecord::Base
-   
+class Menu < ActiveRecord::Base   
 end

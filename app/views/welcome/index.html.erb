@@ -70,6 +70,11 @@
 <div id="scroll-up" onclick="scrollToTop()">
 	<span class="icon icon-arrow-up"></span>
 </div>
+<% if flash[:notice_book] %>
+	<script>
+		alert("Your order has been booked!\nWe will call you as soon as possible.\nThankyou")
+	</script>
+<%end%>
 <div id="header-wrapper">
 	<div id="sticky-wrapper" style="width:100%">
 		<div id="sticky" style="margin-top: -41px;">

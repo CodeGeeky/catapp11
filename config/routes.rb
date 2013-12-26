@@ -7,6 +7,8 @@ Catreen101::Application.routes.draw do
   get 'inquiries/new', :as => 'inquiry'
   root :to => 'welcome#index'
   get 'citems/add', :as=>'addtocart'
+  get 'citems/remove', :as=>'removefromcart'
+  get 'ibooks/confirm', :as=>'confirm'
   #get "logout" => "sessions#destroy", :as => "logout"
   #get "login" => "sessions#new", :as => "login"
   #get "sign_up" => "users#new", :as => "sign_up"
@@ -20,6 +22,7 @@ Catreen101::Application.routes.draw do
   resources :menus
   resources :carts
   resources :citems
+  resources :ibooks
   # You can have the root of your site routed with "root"
  
 
