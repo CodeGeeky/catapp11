@@ -217,8 +217,9 @@
 		  				<td><%= number_field_tag :qty %></td>
 		  				
 		  				<td><p id="subamount"></p></td>	  			
-		  				<td id="addCart"><a class="custom_button_small" href="#"><span class="icon icon-plus-sign-alt"> 
-		  					<%= link_to 'Add To Cart', :controller => 'citems', :action => 'add', :menu => menu%></span></a></td>
+		  				<td id="addCart"><a class="custom_button_small" href="#"><span class="icon icon-plus-sign-alt">		  					
+		  				<%= link_to 'Add To Cart', :controller => 'citems', :action => 'add', :menu => menu%></span></a></td>
+		  				
 		  			<%end%>
 		  			<%if current_user.role == 'admin' or current_user.phone == '9800000000'%>
 		  				<td style="width: auto;"><%= link_to "edit", edit_menu_path(menu), :rel => 'facebox' %></div></td>
@@ -228,6 +229,11 @@
   			</tr>
   			<% @counter = @counter + 1 %>
   		<%end%>
+  		<%if flash[:exist]%>
+			<script>
+				alert("Item already exist.\nPlease select other menus\nThank You");
+			</script>		  					
+		<%end%>		
   	</table>
   	
   </div>
