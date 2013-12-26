@@ -213,7 +213,8 @@
   				<td>Rs. <%= menu.price %></td>
   				<% if current_user %>
   					<%if current_user.role != 'admin' and current_user.phone != '9800000000'%>
-		  				<td><input type="textbox" name="quantity" id="qty" /></td>
+		  				<!--<td><input type="textbox" name="quantity" id="qty" /></td>-->
+		  				<td><%= number_field_tag :qty %></td>
 		  				
 		  				<td><p id="subamount"></p></td>	  			
 		  				<td id="addCart"><a class="custom_button_small" href="#"><span class="icon icon-plus-sign-alt"> 
