@@ -7,6 +7,7 @@ Catreen101::Application.routes.draw do
   get 'inquiries/new', :as => 'inquiry'
   root :to => 'welcome#index'
   get 'citems/add', :as=>'addtocart'
+  get 'citems/remove', :as=>'removefromcart'
   #get "logout" => "sessions#destroy", :as => "logout"
   #get "login" => "sessions#new", :as => "login"
   #get "sign_up" => "users#new", :as => "sign_up"

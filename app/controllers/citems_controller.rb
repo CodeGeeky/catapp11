@@ -14,6 +14,8 @@ class CitemsController < ApplicationController
   
   def remove
     # remove item from cart.
+    Citem.find(params[:list]).destroy
+    redirect_to :back
   end
   def log_in_required
     if not current_user
