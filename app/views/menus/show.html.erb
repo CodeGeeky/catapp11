@@ -170,6 +170,8 @@
 		<% if current_user.role != 'admin' and current_user.phone != '9800000000' %>
 			You have [<%= link_to count, '/citems/show' %>] items on your order list. <br />
 			
+		<%else%>
+			You have [<%= link_to order, '/ibooks/show' %>] order. <br />
 		<% end %>
 	<% end %>
 	<%if !current_user %>
