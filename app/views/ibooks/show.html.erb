@@ -1,12 +1,73 @@
-<tr>id</tr>
-<tr>user name</tr>
-<tr>Cart id</tr>
-<tr>Ordered date</tr><br />
-<% @ibook.each do |ibook| %>
-<tr>
-	<td><%= ibook.id %></td>
-	<td><%= ibook.user.name %></td>
-	<td><%= link_to ibook.cart_id, :controller => 'citems', :action => 'list', :ibook => ibook.cart_id %></td>
-	<td><%= ibook.created_at.strftime("%d %b. %Y") %></td><br />
-</tr>
-<%end%>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" %>
+	<%= stylesheet_link_tag "default.css" %>
+	<%= stylesheet_link_tag "fonts.css"%>
+	<style type="text/css">
+		body, h3 {
+			font-family: 'Source Sans Pro', sans-serif;
+			font-weight: 100;
+			color: #FFF;
+		}
+
+		#ibooks-wrapper label, #ibooks-wrapper p, #ibooks-wrapper a {
+			font-family: 'Source Sans Pro', sans-serif;
+			font-weight: 100;
+			text-align: left;
+			color: #FFF;
+			font-size: 12px;
+		}
+		#ibooks-wrapper a:hover {
+			font-weight: 300;
+		}
+		#ibooks-wrapper {
+			width: 400px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 50px;
+		}
+		#ibooks-wrapper input[type="text"], #ibooks-wrapper textarea
+		{
+			width: 200px;
+		}
+
+		#ibooks-wrapper select {
+			/*background: #551950;
+			color: #FFF;
+			border-style: .5px solid #2a0c28;*/
+			font-family: 'Source Sans Pro', sans-serif;
+			font-weight: 300;
+			font-size: 12px;
+			width: 200px;
+		}
+		#ibooks-wrapper table {
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+<%= render :partial => 'banner/banner' %>
+<div id='ibooks-wrapper'>
+<h3 style="font-size: 20px;">Customer Order List</h3><hr />
+	<table>
+		<tr>
+			<td>ID</td>
+			<td>Client Name</td>
+			<td>Cart ID</td>
+			<td>Order Date</td>
+		</tr>
+		<% @ibook.each do |ibook| %>
+		<tr>
+			<td><%= ibook.id %></td>
+			<td><%= ibook.user.name %></td>
+			<td><%= link_to ibook.cart_id, :controller => 'citems', :action => 'list', :ibook => ibook.cart_id %></td>
+			<td><%= ibook.created_at.strftime("%d %b. %Y") %></td><br />
+		</tr>
+		<%end%>
+	</table>
+	</div>
+</body>
+</html>
+
