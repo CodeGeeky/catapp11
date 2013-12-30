@@ -52,7 +52,7 @@
 			font-weight: 100;
 			text-align: left;
 			color: #FFFFFF;
-			font-size: 12px;
+			font-size: 14px;
 		}
 		#show-wrapper a:hover {
 			font-weight: 300;
@@ -92,7 +92,7 @@
 			font-weight: 100;
 			text-align: left;
 			color: #FFFFFF;
-			font-size: 12px;
+			font-size: 14px;
 			text-decoration: none;
 		}
 
@@ -170,9 +170,10 @@
 		<% if current_user.role != 'admin' and current_user.phone != '9800000000' %>
 			You have [<%= link_to count, :controller=>'citems', :action=>'show', :for_when => @for_when %>] items on your order list. <br />
 			<% if @for_when %>
-				<p>Your order is for <%= link_to @dateT, "#" %>.</p>
+				<p>Your order is for <%= link_to @dateT, "#" %>.<br/ ><%= link_to "[change date]", "/calender/calender" %></p>
+
 			<% else %>
-				<p style="text-align: right;">You didn't tell us for when this order is.<br />Choose <%= link_to "order date", "/calender/calender", :rel => 'facebox' %>.</p>
+				<p style="text-align: right;">You didn't tell us for when this order is.<br />Choose <%= link_to "order date", "/calender/calender" %>.</p>
 			<% end %>
 		<%else%>
 			You have [<%= link_to order, '/ibooks/show' %>] order. <br />
