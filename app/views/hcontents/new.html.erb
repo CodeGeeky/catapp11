@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<%= javascript_include_tag "facebox.js" %>
+	<%= stylesheet_link_tag "facebox.css" %>
+	<%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" %>
+	<%= stylesheet_link_tag "default.css" %>
+	<%= stylesheet_link_tag "fonts.css"%>
+<style type="text/css">
+	#signup-wrapper {
+		width: 400px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 50px;
+	}
+	body, h3 {
+		font-family: 'Source Sans Pro', sans-serif;
+		font-weight: 100;
+	}
+	#signup-wrapper label, #signup-wrapper p {
+		font-family: 'Source Sans Pro', sans-serif;
+		font-weight: 100;
+		text-align: left;
+		color: #FFF;
+		font-size: 12px;
+	}
+	.captcha {
+
+	}
+</style>
+<script type="text/javascript">
+  function reload()
+  {
+    $('.captcha').load('.captcha');
+  }
+</script>
+</head>
+
+<%= render :partial => 'banner/banner' %>
+<div id="signup-wrapper">
+<%= form_for @hcon do |f| %>
+		<h3 style="color: #FFF; font-size: 20px;">Add New Articles</h3><hr />
+		<%= f.label :title %><br />
+		<%= f.text_field :title %><br />
+		<%= f.label :subtitle %><br />
+		<%= f.text_field :subtitle %><br />
+		<%= f.label :content %><br />
+		<%= f.text_area :content, :size => "30x10" %><br />
+		<%= f.submit "Add"%>
+<% end %>
+</div>
+</body>
+</html>
+

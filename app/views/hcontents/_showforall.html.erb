@@ -1,0 +1,7 @@
+<% @hcon = Hcontent.find(:all)%>
+<% @hcon.each do |hcon|%>
+	<%= hcon.title %>
+	<%= hcon.subtitle %><br />
+	<%= hcon.content %>
+	<br /><br /><br />	
+<%end%>

@@ -1,0 +1,36 @@
+<style type="text/css">
+	#edit-wrapper {
+		width: 400px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 50px;
+	}
+	body, h3 {
+		font-family: 'Source Sans Pro', sans-serif;
+		font-weight: 100;
+	}
+	#edit-wrapper label, #edit-wrapper p {
+		font-family: 'Source Sans Pro', sans-serif;
+		font-weight: 100;
+		text-align: left;
+		color: #FFF;
+		font-size: 12px;
+	}
+</style>
+
+
+<%= render :partial => 'banner/banner' %>
+<div id="edit-wrapper">
+<%= form_for @hcon, url: user_path(@hcon), method: :patch do |f| %>	
+		<h3 style="color: #FFF; font-size: 20px;">Edit Article</h3><hr />
+		<%= f.label :title %><br />
+		<%= f.text_field :title %><br />
+		<%= f.label :subtitle %><br />
+		<%= f.text_field :subtitle %><br />
+		<%= f.label :content %><br />
+		<%= f.text_area :content, :size => "30x10" %><br />
+		<div style="width: 50px; margin-left: auto; margin-right:auto;">
+			<%= f.submit "Update"%>
+		</div>
+<% end %>
+</div>
