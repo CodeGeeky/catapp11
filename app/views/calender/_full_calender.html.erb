@@ -88,22 +88,7 @@
 
         var cyear = cdate.getFullYear();
         
-        
-        if (myear == cyear+1) {
-          //return phone, _fulldate;
-          var book = confirm("Do you want to book for " + mday + " " + strMonth + " " + myear +"?");
-
-          if (book) {calendar.fullCalendar('renderEvent',{},
-              true // make the event "stick"
-            );
-          	//window.open("localhost:3000//menus/show?mdate="+mdate,"_self")
-          	window.open("/menus/show?mdate=" + _fulldate , "_blank");
-          }
-          else {
-          	alert('Your booking is cancelled!');
-          }
-        }
-        else if (myear == cyear && mmonth >= cmonth && mday >= cday) {
+        if (myear == cyear && mmonth >= cmonth && mday > cday) {
           //return phone, _fulldate;
           var book = confirm("Do you want to book for " + mday + " " + strMonth + " " + myear +"?");
 
@@ -116,6 +101,57 @@
           else {
             alert('Your booking is cancelled!');
           }
+        }
+        else if (myear > cyear) {
+          //return phone, _fulldate;
+          var book = confirm("Do you want to book for " + mday + " " + strMonth + " " + myear +"?");
+
+          if (book) {calendar.fullCalendar('renderEvent',{},
+              true // make the event "stick"
+            );
+            //window.open("localhost:3000//menus/show?mdate="+mdate,"_self")
+            window.open("/menus/show?mdate=" + _fulldate , "_blank");
+          }
+          else {
+            alert('Your booking is cancelled!');
+          } 
+        }
+        else if (myear >= cyear && myear <= cyear+1) {
+          //return phone, _fulldate;
+          if (mmonth == cmonth) {
+            if (mday > cday) {
+              var book = confirm("Do you want to book for " + mday + " " + strMonth + " " + myear +"?");
+
+              if (book) {calendar.fullCalendar('renderEvent',{},
+                  true // make the event "stick"
+                );
+              	//window.open("localhost:3000//menus/show?mdate="+mdate,"_self")
+              	window.open("/menus/show?mdate=" + _fulldate , "_blank");
+              }
+              else {
+              	alert('Your booking is cancelled!');
+              }
+            }
+            else {
+              alert('You cannot book for past!');    
+            }
+          }
+          else if (mmonth > cmonth) {
+              var book = confirm("Do you want to book for " + mday + " " + strMonth + " " + myear +"?");
+
+              if (book) {calendar.fullCalendar('renderEvent',{},
+                  true // make the event "stick"
+                );
+                //window.open("localhost:3000//menus/show?mdate="+mdate,"_self")
+                window.open("/menus/show?mdate=" + _fulldate , "_blank");
+              }
+              else {
+                alert('Your booking is cancelled!');
+              }
+          }
+          else {
+            alert('You cannot book for past!');;
+          } 
         }
         else if (mday == cday && mmonth == cmonth && myear == cyear) {
           alert('Booking for today is impossible');
