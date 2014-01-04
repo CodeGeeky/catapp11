@@ -50,7 +50,6 @@
 		#show-wrapper label, #show-wrapper p, #show-wrapper a {
 			font-family: 'Source Sans Pro', sans-serif;
 			font-weight: 100;
-			text-align: left;
 			color: #FFFFFF;
 			font-size: 14px;
 		}
@@ -58,7 +57,7 @@
 			font-weight: 300;
 		}
 		#show-wrapper {
-			width: 800px;
+			width: 786px;
 			margin-left: auto;
 			margin-right: auto;
 			padding-top: 50px;
@@ -196,47 +195,126 @@
   		<%end%>
   	<%end%>
   	</h3><hr />
-  	
-  	<table>
-  		<tr>
-  			<td>S. No.</td>
-  			<td>Food Items</td>
-  			<td>Price</td>
-  			<%if current_user%>
-  				<%if current_user.role != 'admin' and current_user.phone != '9800000000'%>
-	  				<td>Quantity</td>	  			
-	  				<td>Amount</td>
-	  			<%end%>
-  			<%end%>
-  		</tr>
   		<% @counter = 1 %>
   		<% @menu.each do |menu|%>
-  			<tr>
-  				<td><%= @counter %></td>
-  				<td><%= menu.item_name %><br /></td>
-  				<td>Rs. <%= menu.price %></td>
-  				<% if current_user %>
-  					<%if current_user.role != 'admin' and current_user.phone != '9800000000'%>
-		  				<td><input type="textbox" name="qty" id="qty" /></td> 				
-		  				<td><p id="subamount"></p></td>	  			
-		  				<td id="addCart"><a class="custom_button_small" href="#"><span class="icon icon-plus-sign-alt">		  					
-		  				<%= link_to 'Add To Cart', :controller => 'citems', :action => 'add', :menu => menu, :for_when => @for_when %></span></a></td>
-		  			<%end%>
-		  			<%if current_user.role == 'admin' or current_user.phone == '9800000000'%>
-		  				<td style="width: auto;"><%= link_to "edit", edit_menu_path(menu), :rel => 'facebox' %></div></td>
-		  				<td style="width: auto;"><%= link_to "delete", menu, method: :delete, data: { confirm: "You sure?" } %></div></td>
-		  			<%end%>
-	  			<%end%>
-  			</tr>
-  			<% @counter = @counter + 1 %>
+  		<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+			<div class="flipper">
+				<div class="front">
+					<div class="img-cls">
+						<img src="/images/no-picture.png" />
+					</div>
+					<div class="caption-cls">
+						<%= @counter %><br />
+	  					<%= menu.item_name %><br />
+  					</div>
+  				</div>
+				<div class="back">		
+  					Rs. <input type="textbox" name="rate" class="rate<%= @counter %>" value=" <%= menu.price %>" disabled style="background: none;"><br />
+  					<% if current_user %>
+  						<%if current_user.role != 'admin' and current_user.phone != '9800000000'%>
+							<p id="addCart"><a class="custom_button_small" href="#"><span class="icon icon-plus-sign-alt"><%= link_to 'Add To Cart', :controller => 'citems', :action => 'add', :menu => menu, :for_when => @for_when %></span></a></p>
+			  			<%end%>
+						<%if current_user.role == 'admin' or current_user.phone == '9800000000'%>
+							<p style="width: auto;"><%= link_to "edit", edit_menu_path(menu), :rel => 'facebox' %></div></p>
+							<p style="width: auto;"><%= link_to "delete", menu, method: :delete, data: { confirm: "You sure?" } %></div></p>
+						<%end%>
+	  				<%end%>
+	  			</div>
+			</div>
+  		</div>
+  		<% @counter = @counter + 1 %>
   		<%end%>
   		<%if flash[:exist]%>
 			<script>
 				alert("Item already exist.\nPlease select other menus\nThank You");
 			</script>		  					
 		<%end%>		
-  	</table>
-  	
   </div>
+  <script>
+  	$(document).ready(function()
+	{
+    /*
+    * binding onChange event here
+    * you can replace .change with .blur
+    */
+	var number = "<%= @counter %>";
+	for (i=1; i<number;i++)
+		var qtyidtemp = '.qty'+i;
+		$('qtyid').change(UpdateInfo(i));
+	}
+	});
+   function UpdateInfo()
+   {
+   	var qtyid = '.qty'+i;
+   	var rateid = '.rate'+i;
+   	var subtotalid = '.subtotal'+i;
+     var qty = $(qtyid).val();
+     var rate = $(rateid).val();
+     var subtotal = qty * rate;
+     $(subtotalid).val(subtotal);
+   }
+  </script>
+  <style type="text/css">
+  /* entire container, keeps perspective */
+	.flip-container {
+		perspective: 1000;
+		display: inline-block;
+		margin: 5px;
+		border-style: solid 5px #2A0C28;
+	}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+	.flip-container a, .front a, .back a,
+	.flip-container p, .front p, .back p {
+		text-align: center;
+	}
+	.flip-container, .front, .back {
+		width: 250px;
+		height: 200px;
+		background: #2A0C28;
+		border-radius: 10px;
+		text-align: center;
+
+	}
+
+	.img-cls {
+		height: 150px;
+		width: auto;
+	}
+
+	.caption-cls {
+		height: 50px;
+		width: auto;
+	}
+	/* flip speed goes here */
+	.flipper {
+		transition: 0.6s;
+		transform-style: preserve-3d;
+
+		position: relative;
+	}
+
+	/* hide back of pane during swap */
+	.front, .back {
+		backface-visibility: hidden;
+
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	/* front pane, placed above back */
+	.front {
+		z-index: 2;
+	}
+
+	/* back, initially hidden pane */
+	.back {
+		transform: rotateY(180deg);
+	}
+  </style>
   </body>
 </html>
