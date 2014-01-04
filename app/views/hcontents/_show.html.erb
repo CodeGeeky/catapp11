@@ -1,0 +1,9 @@
+<% @hcon = Hcontent.find(:all)%>
+<% @hcon.each do |hcon|%>
+	<%= hcon.title %>
+	<%= link_to ' Edit', edit_hcontent_path(hcon), :rel => 'facebox' %><br />
+	<%= hcon.subtitle %><br />
+	<%= hcon.content %>
+	<%= button_to "delete", hcon, method: :delete, data: { confirm: "You sure?" } %>
+	<br /><br /><br />	
+<%end%>

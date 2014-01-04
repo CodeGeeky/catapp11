@@ -28,6 +28,7 @@ Catreen101::Application.routes.draw do
   resources :carts
   resources :citems
   resources :ibooks
+  resources :hcontents
   # You can have the root of your site routed with "root"
  
 

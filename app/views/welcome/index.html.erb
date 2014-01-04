@@ -239,7 +239,14 @@
 
 				</div>
 			</div>
+			<!-- Need a model here from where data's can be fetched out-->
+			<% if current_user and (current_user.phone == '9800000000' or current_user.role == 'admin')%>
+				<%= render :partial => 'hcontents/show'%>
+			<%else%>
+				<%= render :partial => 'hcontents/showforall'%>
+			<%end%>	
 			
+			<!-- Display in this format 
 			<div class="ebox2">
 				<div class="title">
 					<h2>Easy Payment! Easy Dealing!</h2>
@@ -247,17 +254,11 @@
 				</div>
 				<p><a href="#">CaMS(Catering Management System)</a> is easy dealing online catering booking system. We allow you the cash on event day or advance payment. We have <a href="#">eSewa</a>, <a href="#">Bank Transfer</a>, <a href="#">Online Banking Transfer</a> or Cash on Event Day. Just leave your phone number in our calender, we'll call you. No <a href="#">Registration</a> Required. Easy! Fast!! Reliable!!!</p>
 				<a href="#" class="button">Read more...</a>
-			</div>		
-
-			<div class="ebox3">
-				<div class="title">
-					<h2>Catering Management System(CaMS) | RoR Project</h2>
-					<span class="byline">CaMS is developed in RoR platform.</span>
-				</div>
-				<p>Catering Management System(CaMS) is the online Catering Booking System. This system is facilated by embedded e-payment system.</p>
-				<a href="#" class="button">Read More...</a>
-			</div>		
-
+			</div><br />
+			-->
+			<% if current_user and (current_user.phone == '9800000000' or current_user.role == "admin") %>					
+				<span style="text-decoration: blink;"><img src="/images/settings.png" /><%= link_to "Add New Articles", "hcontents/new", :rel=>'facebox'%></span>
+			<%end%>
 		</div>	
 	</div>
 </div>
