@@ -1,0 +1,8 @@
+<% @slide = Slide.find(:all)%>
+<% @slide.each do |slide|%>
+	<%= slide.title %>
+	<%= link_to ' Edit', edit_slide_path(slide), :rel => 'facebox' %><br />
+	<%= slide.description %><br />
+	<%= image_tag slide.photo.url(:medium) %>
+	<%= button_to "delete", slide, method: :delete, data: { confirm: "You sure?" } %>
+<%end%>

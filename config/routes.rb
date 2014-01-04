@@ -29,6 +29,7 @@ Catreen101::Application.routes.draw do
   resources :citems
   resources :ibooks
   resources :hcontents
+  resources :slides
   # You can have the root of your site routed with "root"
  
 

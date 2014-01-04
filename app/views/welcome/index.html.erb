@@ -156,9 +156,22 @@
 		<div class="immersive_slider" onmouseover="setVisibility('panelButtons_Holder', 'inline');" onmouseout="setVisibility('panelButtons_Holder', 'none');">
 			<% if current_user and (current_user.phone == '9800000000' or current_user.role == "admin") %>					
 			<div id="panelButtons_Holder" style="display: none;">
-				<a href="#"><span style="color: #FFF; text-decoration: blink;"><img src="/images/settings.png" /> Settings</span></a>
+				<span style="color: #FFF; text-decoration: blink;"><img src="/images/settings.png" /> <%= link_to 'Add Slide', 'slides/new', :style => 'color:#fff'%></span>
 			</div>	
 			<%end%>
+			
+		<!-- La Hemant dai yo garnu=-->
+		<% if current_user and (current_user.phone == '9800000000' or current_user.role == 'admin')%>
+				<%= render :partial => 'slides/show'%>
+		<%else%>
+				<%= render :partial => 'slides/showforall'%>
+		<%end%>	
+		
+		
+		
+		
+		
+		
           <div class="slide" data-blurred="/img/transparent.png">
             <div class="content">
             	<h2><a href="#" target="_blank">Beetle<img src="/images/beetle/beetle-18x16.png"/> Developers</a></h2>

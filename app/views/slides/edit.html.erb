@@ -21,14 +21,14 @@
 
 <%= render :partial => 'banner/banner' %>
 <div id="edit-wrapper">
-<%= form_for @hcon, url: hcon_path(@hcon), method: :patch do |f| %>	
+<%= form_for @slide, url: slide_path(@slide), method: :patch do |f| %>	
 		<h3 style="color: #FFF; font-size: 20px;">Edit Article</h3><hr />
 		<%= f.label :title %><br />
 		<%= f.text_field :title %><br />
-		<%= f.label :subtitle %><br />
-		<%= f.text_field :subtitle %><br />
-		<%= f.label :content %><br />
-		<%= f.text_area :content, :size => "30x10" %><br />
+		<%= f.label :description %><br />
+		<%= f.text_area :description, :size => "30x10" %><br />
+		<%= f.label :image %><br />
+		<%= f.file_field :photo%><br />
 		<div style="width: 50px; margin-left: auto; margin-right:auto;">
 			<%= f.submit "Update"%>
 		</div>

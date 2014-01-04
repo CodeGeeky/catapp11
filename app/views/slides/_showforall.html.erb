@@ -1,0 +1,6 @@
+<% @slide = Slide.find(:all)%>
+<% @slide.each do |slide|%>
+	<%= slide.title %><br />
+	<%= slide.description %><br />
+	<%= image_tag slide.photo.url(:medium) %>
+<%end%>
