@@ -1,7 +1,8 @@
 <% @hcon = Hcontent.find(:all)%>
 <% @hcon.each do |hcon|%>
-	<%= hcon.title %><br />
-	<%= hcon.subtitle %><br />
-	<%= hcon.content %>
-	<br /><br /><br />	
+	<div class="title">
+		<h2><%= hcon.title %></h2>
+		<span class="byline"><%= hcon.subtitle %></span>
+	</div>
+	<p><%= hcon.content %></p>
 <%end%>
