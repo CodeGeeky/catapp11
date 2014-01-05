@@ -201,7 +201,9 @@
 			<div class="flipper">
 				<div class="front">
 					<div class="img-cls">
-						<img src="/images/no-picture.png" />
+						
+							<%= image_tag menu.photo.url(:small) %>
+						
 					</div>
 					<div class="caption-cls">
 						<%= @counter %><br />
@@ -219,6 +221,7 @@
 							<p style="width: auto;"><%= link_to "delete", menu, method: :delete, data: { confirm: "You sure?" } %></div></p>
 						<%end%>
 	  				<%end%>
+	  				<br /><%= menu.description %>
 	  			</div>
 			</div>
   		</div>

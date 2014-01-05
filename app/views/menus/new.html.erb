@@ -60,8 +60,12 @@
 
 					</tr>
 					<tr>
-						<td><p>Price</p></td>
-						<td><input type="text" /></td>
+						<td><%= f.label :image %></td>
+						<td><%= f.file_field :photo%></td>
+					</tr>
+					<tr>
+						<td><%= f.label :price %></td>
+						<td><%= f.text_field :price%></td>
 					</tr>
 					<tr>
 						<td><p>Category</p></td>
@@ -79,8 +83,8 @@
 						<td><a class="custom_button_small" href="#">Add New Catagories</a></td>
 					</tr>
 					<tr>
-						<td><p>Description</p></td>
-						<td><textarea></textarea></td>
+						<td><%= f.label :description %></td>
+						<td><%= f.text_area :description, :size => "30x10" %></td>
 					</tr>
 				</table>
 				<%= f.submit "Add"%>

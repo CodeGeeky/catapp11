@@ -43,8 +43,13 @@
 		<h3 style="color: #FFF; font-size: 20px;">Menu Settings</h3><hr />		
 		<%= f.label :item_name %><br />
 		<%= f.text_field :item_name %><br />
+		<%= f.label :image %><br />
+		<%= f.file_field :photo%><br />
 		<%= f.label :price %><br />
 		<%= f.text_field :price %><br />
+		<%= f.label :description %><br />
+		<%= f.text_area :description, :size => '30x10'%><br />
+		
 		<div style="width: 50px; margin-left: auto; margin-right:auto;">
 			<%= f.submit "Update"%>
 		</div>
