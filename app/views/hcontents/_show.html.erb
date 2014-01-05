@@ -1,9 +1,10 @@
 <% @hcon = Hcontent.find(:all)%>
 <% @hcon.each do |hcon|%>
-	<%= hcon.title %>
-	<%= link_to ' Edit', edit_hcontent_path(hcon), :rel => 'facebox' %><br />
-	<%= hcon.subtitle %><br />
-	<%= hcon.content %>
-	<%= button_to "delete", hcon, method: :delete, data: { confirm: "You sure?" } %>
-	<br /><br /><br />	
+	<div class="title">
+		<h2><%= hcon.title %></h2>
+		<span class="byline"><%= hcon.subtitle %></span>
+	</div>
+	<p><%= hcon.content %></p>
+	<%= link_to ' Edit', edit_hcontent_path(hcon), :rel => 'facebox' %><%= button_to "delete", hcon, method: :delete, data: { confirm: "You sure?" } %>
+	<br />
 <%end%>

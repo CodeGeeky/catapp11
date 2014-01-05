@@ -254,9 +254,13 @@
 			</div>
 			<!-- Need a model here from where data's can be fetched out-->
 			<% if current_user and (current_user.phone == '9800000000' or current_user.role == 'admin')%>
-				<%= render :partial => 'hcontents/show'%>
+				<div class="ebox2">
+					<%= render :partial => 'hcontents/show'%>
+				</div>
 			<%else%>
-				<%= render :partial => 'hcontents/showforall'%>
+				<div class="ebox2">
+					<%= render :partial => 'hcontents/showforall'%>
+				</div>
 			<%end%>	
 			
 			<!-- Display in this format 

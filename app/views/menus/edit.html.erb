@@ -14,10 +14,28 @@
 		font-weight: 100;
 		text-align: left;
 		color: #FFF;
-		font-size: 12px;
+		font-size: 14px;
 	}
 </style>
+	<%= javascript_include_tag "application.js" %>
+	<%= javascript_include_tag "jquery_ujs.js" %>
+	<%= javascript_include_tag "facebox.js" %>
+	<%= stylesheet_link_tag "facebox.css" %>
+	<%= javascript_include_tag :defaults %>
+	<%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" %>
+	<%= stylesheet_link_tag "default.css" %>
+	<%= stylesheet_link_tag "fonts.css"%>
+	<%= csrf_meta_tags %>
+	<%= javascript_include_tag "jquery-1.10.2.js" %>
+	<%= javascript_include_tag "jquery-1.7.1.min.js" %>
+	<%= javascript_include_tag "jquery.min.js" %>
+	<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" %>
+	<%= javascript_include_tag "respond.min.js" %>
+	<%= javascript_include_tag "//html5shiv.googlecode.com/svn/trunk/html5.js" %>
 
+	<%= javascript_include_tag "//code.jquery.com/ui/1.10.3/jquery-ui.js" %>
+
+	<%= stylesheet_link_tag "//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" %>
 
 <%= render :partial => 'banner/banner' %>
 <div id="edit-wrapper">
