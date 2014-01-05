@@ -192,7 +192,7 @@
   	<%if current_user%>
 		<%if current_user.role == 'admin' or current_user.phone == '9800000000'%>
   		<%= link_to ' [Add Food Item]',new_menu_path %>
-  		<%end%>
+  		<% end %>
   	<%end%>
   	</h3><hr />
   		<% @counter = 1 %>
@@ -215,8 +215,8 @@
 							<p id="addCart"><a class="custom_button_small" href="#"><span class="icon icon-plus-sign-alt"><%= link_to 'Add To Cart', :controller => 'citems', :action => 'add', :menu => menu, :for_when => @for_when %></span></a></p>
 			  			<%end%>
 						<%if current_user.role == 'admin' or current_user.phone == '9800000000'%>
-							<p style="width: auto;"><%= link_to "edit", edit_menu_path(menu), :rel => 'facebox' %></div></p>
-							<p style="width: auto;"><%= link_to "delete", menu, method: :delete, data: { confirm: "You sure?" } %></div></p>
+							<p style="width: auto;"><%= link_to "edit", edit_menu_path(menu), :rel => 'facebox' %></p>
+							<p style="width: auto;"><%= link_to "delete", menu, method: :delete, data: { confirm: "You sure?" } %></p>
 						<%end%>
 	  				<%end%>
 	  			</div>
