@@ -1,5 +1,5 @@
 class Slide < ActiveRecord::Base
-   has_attached_file :photo, :styles => {:medium => "490x334>"},
+   has_attached_file :photo, :styles => {:medium => "960x655>"},
                     :url => "/assets/slide/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/assets/slide/:id/:style/:basename.:extension"
   

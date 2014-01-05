@@ -1,6 +1,12 @@
 <% @slide = Slide.find(:all)%>
 <% @slide.each do |slide|%>
-	<%= slide.title %><br />
-	<%= slide.description %><br />
-	<%= image_tag slide.photo.url(:medium) %>
+<div class="slide" data-blurred="/img/transparent.png">
+	<div class="content">
+		<h2><%= slide.title %></h2>
+		<p><%= slide.description %></p>
+	</div>
+	<div class="image">
+		<%= image_tag slide.photo.url(:medium) %>
+	</div>
+</div>
 <%end%>
