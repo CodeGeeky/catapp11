@@ -37,6 +37,11 @@
 
 	<%= stylesheet_link_tag "//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" %>
 
+<%if flash[:error_menu_update]%>
+		<script type="text/javascript">
+			alert("Error updating new menu.");
+		</script>
+<%end%>
 <%= render :partial => 'banner/banner' %>
 <div id="edit-wrapper">
 <%= form_for @menu, url: menu_path(@menu), method: :patch do |f| %>	

@@ -18,7 +18,11 @@
 	}
 </style>
 
-
+<%if flash[:error_slide_update]%>
+	<script type="text/javascript">
+		alert("Error updating slide");
+	</script>
+<%end%>
 <%= render :partial => 'banner/banner' %>
 <div id="edit-wrapper">
 <%= form_for @slide, url: slide_path(@slide), method: :patch do |f| %>	

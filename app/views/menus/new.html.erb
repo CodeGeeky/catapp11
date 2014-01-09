@@ -47,6 +47,11 @@
 			}
 		</style>
 	</head>	
+	<%if flash[:error_menu]%>
+		<script type="text/javascript">
+			alert("Error adding new menu.");
+		</script>
+	<%end%>
 	<body>
 		<%= render :partial => 'banner/banner' %>
 		<div id="new-wrapper">

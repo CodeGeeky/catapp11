@@ -17,11 +17,15 @@
 		font-size: 12px;
 	}
 </style>
-
+<%if flash[:error_hcon_update] %>
+		<script type="text/javascript">
+			alert("Error on update.");
+		</script>
+<%end%>
 
 <%= render :partial => 'banner/banner' %>
 <div id="edit-wrapper">
-<%= form_for @hcon, url: hcon_path(@hcon), method: :patch do |f| %>	
+<%= form_for @hcon, url: hcontent_path(@hcon), method: :patch do |f| %>	
 		<h3 style="color: #FFF; font-size: 20px;">Edit Article</h3><hr />
 		<%= f.label :title %><br />
 		<%= f.text_field :title %><br />

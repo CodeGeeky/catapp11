@@ -7,6 +7,8 @@ class SlidesController < ApplicationController
       if @slide.save
         redirect_to :back
       else
+        flash[:error_slide] = true
+        flash[:notice_slide] = @slide.errors.full_messages
         redirect_to root_url
       end
   end
@@ -19,6 +21,7 @@ class SlidesController < ApplicationController
     if @slide.update_attributes(slide_params)
       redirect_to root_url
     else
+      flash[:error_slide_update] = true
       render "edit"
     end
   end

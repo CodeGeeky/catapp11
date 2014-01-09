@@ -2,7 +2,6 @@ class MenusController < ApplicationController
   require 'date'
 
   before_action :log_in_required, only: [:new, :create, :edit, :update, :destroy]
-  
   def new
     @menu = Menu.new
   end
@@ -12,7 +11,9 @@ class MenusController < ApplicationController
     if @menu.save
       redirect_to :back
     else
-      redirect_to root_url
+      flash[:error_menu] = true
+      flash[:notice_menu] = @menu.errors.full_messages
+      redirect_to :back 
     end
   end
   def show
@@ -33,6 +34,7 @@ class MenusController < ApplicationController
     if @menu.update_attributes(menu_params)
       redirect_to @menu
     else
+      flash[:error_menu_update] = true
       render "edit"
     end
   end

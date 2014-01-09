@@ -8,6 +8,8 @@ class HcontentsController < ApplicationController
     if @hcon.save
       redirect_to :back
     else
+      flash[:error_add] = true
+      flash[:notice_on_add] = @hcon.errors.full_messages 
       redirect_to root_url
     end
   end
@@ -18,8 +20,9 @@ class HcontentsController < ApplicationController
   def update
     @hcon = Hcontent.find(params[:id])
     if @hcon.update_attributes(hcontent_params)
-      redirect_to @hcon
+      redirect_to root_url
     else
+      flash[:error_hcon_update] = true
       render "edit"
     end
   end

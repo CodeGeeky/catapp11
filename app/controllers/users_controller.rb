@@ -37,6 +37,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(user_params)
       redirect_to @user
     else
+      flash[:error_user_update] = true
       render "edit"
     end
   end

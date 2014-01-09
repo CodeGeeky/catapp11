@@ -5,5 +5,10 @@ class Menu < ActiveRecord::Base
                     :default_url => "/images/no-picture.png"
   
   validates_attachment_size :photo, :less_than => 5.megabytes
-  validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']   
+  validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
+  
+  validates :item_name, :presence=>true
+  validates :price, :presence => true, 
+                    numericality: true
+  validates :description, :presence => true
 end
