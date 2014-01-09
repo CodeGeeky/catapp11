@@ -8,6 +8,11 @@ gem 'simple_captcha', :git => 'git://github.com/Azdaroth/simple-captcha.git', :b
 # devise for user authentication
 gem 'devise'
 # Deliver the email
+
+gem 'spud_photos'
+
+gem 'protected_attributes'
+
 gem 'pony'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
