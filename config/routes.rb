@@ -3,7 +3,7 @@ Catreen101::Application.routes.draw do
   get 'pages/login', :as => "login"
   get 'welcome/profile', :as => "profile"
   get "logout" => "pages#destroy", :as => "logout"
-  get 'welcome/index'
+  #get 'welcome/index'
   get 'inquiries/new', :as => 'inquiry'
   root :to => 'welcome#index'
   get 'citems/add', :as=>'addtocart'
@@ -23,7 +23,7 @@ Catreen101::Application.routes.draw do
   resources :users
   resources :pages
   resources :inquiries, :only => [:new, :create]
-  resources :welcome
+  #resources :welcome
   resources :menus
   resources :carts
   resources :citems
