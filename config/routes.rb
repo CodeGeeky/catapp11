@@ -1,18 +1,20 @@
 Catreen101::Application.routes.draw do
-  get "calender/full_calender"
-  get 'pages/login', :as => "login"
-  get 'welcome/profile', :as => "profile"
-  get "logout" => "pages#destroy", :as => "logout"
-  #get 'welcome/index'
-  get 'inquiries/new', :as => 'inquiry'
+  
   root :to => 'welcome#index'
-  get 'citems/add', :as=>'addtocart'
-  get 'citems/remove', :as=>'removefromcart'
-  get 'ibooks/confirm', :as=>'confirm'
-  get 'citems/removeall', :as=>'cancelorder'
-  get 'citems/list', :as=>'listorder'
-  get 'menus/show', :as=>'showmenus'
-  get 'citems/show', :as=>'showitemsincart'
+  get "calender/full_calender"
+  #get 'pages/login', :as => "login"
+  #get 'welcome/profile', :as => "profile"
+  #get "logout" => "pages#destroy", :as => "logout"
+  #get 'welcome/index'
+  #get 'inquiries/new', :as => 'inquiry'
+  
+  #get 'citems/add', :as=>'addtocart'
+  #get 'citems/remove', :as=>'removefromcart'
+  #get 'ibooks/confirm', :as=>'confirm'
+  #get 'citems/removeall', :as=>'cancelorder'
+  #get 'citems/list', :as=>'listorder'
+  #get 'menus/show', :as=>'showmenus'
+  #get 'citems/show', :as=>'showitemsincart'
   get 'calender/calender'
   #get "logout" => "sessions#destroy", :as => "logout"
   #get "login" => "sessions#new", :as => "login"
