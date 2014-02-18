@@ -2,13 +2,7 @@ class ApplicationController < ActionController::Base
   
   include SimpleCaptcha::ControllerHelpers
 
-  include ActionController::MimeResponds
-  include ActionController::Caching
-  include AbstractController::Layouts
-
-  self.page_cache_directory = Rails.public_path
-  self.perform_caching = true
-  self.cache_store = ActionController::Base.cache_store
+  
   
    # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.

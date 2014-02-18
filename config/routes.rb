@@ -6,7 +6,7 @@ Catreen101::Application.routes.draw do
   get 'pages/login', :as => "login"
   get 'welcome/profile', :as => "profile"
   get "logout" => "pages#destroy", :as => "logout"
-  get 'welcome/index'
+  #get 'welcome/index'
   get 'inquiries/new', :as => 'inquiry'
   get 'citems/add', :as=>'addtocart'
   get 'citems/remove', :as=>'removefromcart'

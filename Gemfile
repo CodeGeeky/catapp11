@@ -19,7 +19,7 @@ gem 'sass-rails', '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-gem 'unicorn'
+
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 gem 'simple_form'
@@ -60,6 +60,7 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 group :production do
+	gem 'unicorn'
 	gem 'pg','0.15.1'
 	gem 'rails_12factor', '0.0.2'
 end
