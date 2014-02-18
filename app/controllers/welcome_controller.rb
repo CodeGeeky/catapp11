@@ -1,5 +1,7 @@
 class WelcomeController < ApplicationController
   before_action :log_in_required, only: [:edit, :update]
+  def index 
+  end
   def edit
     @user = current_user
   end
