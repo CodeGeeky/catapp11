@@ -9,7 +9,7 @@ gem 'simple_captcha', :git => 'git://github.com/Azdaroth/simple-captcha.git', :b
 gem 'devise'
 # Deliver the email
 
-gem 'spud_photos'
+#gem 'spud_photos'
 
 gem 'protected_attributes'
 
@@ -19,7 +19,7 @@ gem 'sass-rails', '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-
+gem 'unicorn'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 gem 'simple_form'
