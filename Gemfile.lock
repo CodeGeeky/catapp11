@@ -210,7 +210,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails (~> 2.1)
   paperclip!
-  pg (= 0.15.1)
+  pg
   pony
   protected_attributes
   rails (= 4.0.1.rc4)
