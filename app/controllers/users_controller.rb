@@ -9,19 +9,19 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if simple_captcha_valid?
-      if @user.save
-        flash[:sign_up] = true
-        redirect_to session[:my_previous_url] #, :notice => "Signed up!"
-      else
-        flash[:error_signup] = true
-        flash[:notice] = @user.errors.full_messages
-        redirect_to root_url
-      end
+    # if simple_captcha_valid?
+    if @user.save
+      flash[:sign_up] = true
+      redirect_to session[:my_previous_url] #, :notice => "Signed up!"
     else
-      flash[:error_captcha] = true
+      flash[:error_signup] = true
+      flash[:notice] = @user.errors.full_messages
       redirect_to root_url
     end
+    # else
+    #   flash[:error_captcha] = true
+    #   redirect_to root_url
+    # end
   end
   
   def show

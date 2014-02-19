@@ -25,16 +25,6 @@
 		color: #FFF;
 		font-size: 14px;
 	}
-	.captcha {
-
-	}
-</style>
-<script type="text/javascript">
-  function reload()
-  {
-    $('.captcha').load('.captcha');
-  }
-</script>
 </head>
 
 <%= render :partial => 'banner/banner' %>
@@ -53,8 +43,9 @@
 		<%= f.text_field :phone %><br />
 		<%= f.label :email %><br />
 		<%= f.text_field :email  %><br />
-		<div class="captcha"><%= show_simple_captcha(:label => "", :placeholder => "", :code_type => "numeric") %></div>		
-		<!--<input type="button" value="refresh" onclick="reload()" />-->
+		 <!--/*<div class="captcha"><%= show_simple_captcha(:label => "", :placeholder => "", :code_type => "numeric") %>
+		</div>*/-->
+		
 		<%= f.submit "Sign Up"%>
 <% end %>
 </div>

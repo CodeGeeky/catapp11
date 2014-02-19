@@ -35,5 +35,6 @@ class PagesController < ApplicationController
   def save_my_previous_url
     session[:my_previous_url] = URI(request.referer).path
   end
-  
+  def show
+  end
 end

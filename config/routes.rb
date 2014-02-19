@@ -4,17 +4,17 @@ Catreen101::Application.routes.draw do
   get "calender/full_calender"
   get 'calender/calender'
   get 'pages/login', :as => "login"
-  get 'welcome/profile', :as => "profile"
+  #get 'welcome/profile', :as => "profile"
   get "logout" => "pages#destroy", :as => "logout"
   #get 'welcome/index'
-  get 'inquiries/new', :as => 'inquiry'
-  get 'citems/add', :as=>'addtocart'
-  get 'citems/remove', :as=>'removefromcart'
-  get 'ibooks/confirm', :as=>'confirm'
-  get 'citems/removeall', :as=>'cancelorder'
-  get 'citems/list', :as=>'listorder'
-  get 'menus/show', :as=>'showmenus'
-  get 'citems/show', :as=>'showitemsincart'
+  #get 'inquiries/new', :as => 'inquiry'
+  #get 'citems/add', :as=>'addtocart'
+  #get 'citems/remove', :as=>'removefromcart'
+  #get 'ibooks/confirm', :as=>'confirm'
+  #get 'citems/removeall', :as=>'cancelorder'
+  #get 'citems/list', :as=>'listorder'
+  #get 'menus/show', :as=>'showmenus'
+  #get 'citems/show', :as=>'showitemsincart'
   
   #get "logout" => "sessions#destroy", :as => "logout"
   #get "login" => "sessions#new", :as => "login"
@@ -23,13 +23,13 @@ Catreen101::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
   
   resources :users
-  #resources :pages
-  #resources :inquiries, :only => [:new, :create]
-  #resources :welcome
-  #resources :menus
+  resources :pages
+  resources :inquiries, :only => [:new, :create]
+  resources :welcome
+  resources :menus
   resources :carts
-  #resources :citems
-  #resources :ibooks
+  resources :citems
+  resources :ibooks
   resources :hcontents
   resources :slides
   # You can have the root of your site routed with "root"

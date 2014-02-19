@@ -21,6 +21,7 @@ module Catreen101
     # config.i18n.default_locale = :de
     config.assets.enabled = true
     config.assets.paths << "#{Rails.root}/app/assets/fonts"
+    config.active_record.whitelist_attributes = true
 
   end
 end

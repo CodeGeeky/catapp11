@@ -4,7 +4,7 @@ gem 'ruby'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1.rc4'
 # captcha gem
-gem 'simple_captcha', :git => 'git://github.com/Azdaroth/simple-captcha.git', :branch => 'rails-4'
+gem 'simple_captcha2', require: 'simple_captcha'
 # devise for user authentication
 gem 'devise'
 # Deliver the email
