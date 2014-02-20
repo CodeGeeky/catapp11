@@ -8,13 +8,13 @@ Catreen101::Application.routes.draw do
   get "logout" => "pages#destroy", :as => "logout"
   #get 'welcome/index'
   #get 'inquiries/new', :as => 'inquiry'
-  #get 'citems/add', :as=>'addtocart'
-  #get 'citems/remove', :as=>'removefromcart'
+  get 'citems/add', :as=>'addtocart'
+  get 'citems/remove', :as=>'removefromcart'
   #get 'ibooks/confirm', :as=>'confirm'
-  #get 'citems/removeall', :as=>'cancelorder'
-  #get 'citems/list', :as=>'listorder'
+  get 'citems/removeall', :as=>'cancelorder'
+  get 'citems/list', :as=>'listorder'
   #get 'menus/show', :as=>'showmenus'
-  #get 'citems/show', :as=>'showitemsincart'
+  get 'citems/show', :as=>'showitemsincart'
   
   #get "logout" => "sessions#destroy", :as => "logout"
   #get "login" => "sessions#new", :as => "login"
@@ -28,7 +28,7 @@ Catreen101::Application.routes.draw do
   resources :welcome
   resources :menus
   resources :carts
-  resources :citems
+  #resources :citems
   resources :ibooks
   resources :hcontents
   resources :slides
