@@ -1,4 +1,5 @@
 class Menu < ActiveRecord::Base
+  attr_accessible :item_name, :price, :description, :photo
   has_attached_file :photo, :styles => {:small => "250x150"},
                     :url => "/assets/slide/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/assets/slide/:id/:style/:basename.:extension",
