@@ -10,10 +10,10 @@ Catreen101::Application.routes.draw do
   #get 'inquiries/new', :as => 'inquiry'
   get 'citems/add', :as=>'addtocart'
   get 'citems/remove', :as=>'removefromcart'
-  #get 'ibooks/confirm', :as=>'confirm'
+  get 'ibooks/confirm', :as=>'confirm'
   get 'citems/removeall', :as=>'cancelorder'
   get 'citems/list', :as=>'listorder'
-  #get 'menus/show', :as=>'showmenus'
+  get 'menus/show', :as=>'showmenus'
   get 'citems/show', :as=>'showitemsincart'
   
   #get "logout" => "sessions#destroy", :as => "logout"
