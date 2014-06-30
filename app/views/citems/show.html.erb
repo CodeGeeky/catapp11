@@ -49,10 +49,11 @@
 <div id="citems-wrapper">
 	<h3 style="font-size: 20px;">Order List</h3><hr />
 	<% @list.each do |list| %>
-		<%=link_to "[remove]", :controller => 'citems', :action => 'remove', :list => list%><%= list.menu.item_name %> <br />
+		<%= list.menu.item_name %> <%=link_to "  [remove]", :controller => 'citems', :action => 'remove', :list => list%> <br />
 	<% end %>
+    <hr>
 	<%= link_to "[confirm order] ", :controller => 'ibooks', :action => 'confirm', :for_when => params[:for_when]%>
-	<%= link_to " [cancel order]", :controller => 'citems', :action => 'removeall'%>
+	<%= link_to "[cancel order]", :controller => 'citems', :action => 'removeall'%>
 </div>
 </body>
 </html>
