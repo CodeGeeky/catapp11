@@ -12,28 +12,28 @@
 			color: #FFF;
 		}
 
-		#citems-wrapper label, #citems-wrapper p, #citems-wrapper a {
+		#list-wrapper label, #list-wrapper p, #list-wrapper a {
 			font-family: 'Source Sans Pro', sans-serif;
 			font-weight: 100;
 			text-align: left;
 			color: #FFF;
 			font-size: 14px;
 		}
-		#citems-wrapper a:hover {
+		#list-wrapper a:hover {
 			font-weight: 300;
 		}
-		#citems-wrapper {
+		#list-wrapper {
 			width: 400px;
 			margin-left: auto;
 			margin-right: auto;
 			margin-top: 50px;
 		}
-		#citems-wrapper input[type="text"], #citems-wrapper textarea
+		#list-wrapper input[type="text"], #list-wrapper textarea
 		{
 			width: 200px;
 		}
 
-		#citems-wrapper select {
+		#list-wrapper select {
 			/*background: #551950;
 			color: #FFF;
 			border-style: .5px solid #2a0c28;*/
@@ -44,16 +44,17 @@
 		}
 	</style>
 </head>
-<%= render :partial => 'banner/banner' %>
 <body>
-<div id="citems-wrapper">
-	<h3 style="font-size: 20px;">Order List</h3><hr />
-	<% @list.each do |list| %>
-		<%= list.menu.item_name %> <%=link_to "  [remove]", :controller => 'citems', :action => 'remove', :list => list%> <br />
-	<% end %>
-    <hr>
-	<%= link_to "[confirm order] ", :controller => 'ibooks', :action => 'confirm', for_when: params[:for_when]%>
-	<%= link_to "[cancel order]", :controller => 'citems', :action => 'removeall'%>
-</div>
+<%= render :partial => 'banner/banner' %>
+	<div id="list-wrapper">
+	<h3 style="font-size: 20px;">User Info</h3><hr />
+        name:<span style="margin-left:15px"><%= @user_info.name %> </span><br />
+        phone:<span style="margin-left:10px"><%= @user_info.phone %> </span><br />
+        email:<span style="margin-left:17px"><%= @user_info.email %> </span><br />
+
+	</div>
 </body>
 </html>
+
+
+

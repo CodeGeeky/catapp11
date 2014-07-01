@@ -46,6 +46,10 @@ class UsersController < ApplicationController
    User.find(params[:id]).destroy
    redirect_to root_url     
   end
+
+  def list_users
+    @user_info = User.find(params[:user_id])
+  end
   
   private
   def user_params

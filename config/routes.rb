@@ -3,19 +3,20 @@ Catreen101::Application.routes.draw do
   root :to => 'welcome#index'
   get "calender/full_calender"
   get 'calender/calender'
-  get 'pages/login', :as => "login"
-  #get 'welcome/profile', :as => "profile"
-  get "logout" => "pages#destroy", :as => "logout"
-  #get 'welcome/index'
-  #get 'inquiries/new', :as => 'inquiry'
   get 'citems/add', :as=>'addtocart'
   get 'citems/remove', :as=>'removefromcart'
-  get 'ibooks/confirm', :as=>'confirm'
   get 'citems/removeall', :as=>'cancelorder'
   get 'citems/list', :as=>'listorder'
-  get 'menus/show', :as=>'showmenus'
   get 'citems/show', :as=>'showitemsincart'
-  
+  get 'ibooks/confirm', :as=>'confirm'
+  get 'menus/show', :as=>'showmenus'
+  get 'pages/login', :as => "login"
+  get "logout" => "pages#destroy", :as => "logout"
+  get 'users/list_users', :as => 'listUser'
+
+  #get 'welcome/profile', :as => "profile"
+  #get 'welcome/index'
+  #get 'inquiries/new', :as => 'inquiry'
   #get "logout" => "sessions#destroy", :as => "logout"
   #get "login" => "sessions#new", :as => "login"
   #get "sign_up" => "users#new", :as => "sign_up"
@@ -28,12 +29,12 @@ Catreen101::Application.routes.draw do
   resources :welcome
   resources :menus
   resources :carts
-  #resources :citems
   resources :ibooks
   resources :hcontents
   resources :slides
+  #resources :citems
   # You can have the root of your site routed with "root"
- 
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

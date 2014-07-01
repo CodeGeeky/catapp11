@@ -62,7 +62,7 @@
 		<% @ibook.each do |ibook| %>
 		<tr>
 			<td><%= ibook.id %></td>
-			<td><%= ibook.user.name %></td>
+            <td><%= link_to ibook.user.name, :controller => 'users', :action => 'list_users', :user_id => ibook.user_id %></td>
 			<td><%= link_to ibook.cart_id, :controller => 'citems', :action => 'list', :ibook => ibook.cart_id %></td>
 			<td><%= ibook.created_at.strftime("%d %b. %Y") %></td>
 			<td><%= ibook.for_when%></td>			
