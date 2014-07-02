@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_one :cart
   attr_accessor :password
-  attr_accessible :name, :email, :phone, :password
+  attr_accessible :name, :email, :phone, :password, :photo
   before_save :encrypt_password
   has_attached_file :photo, :styles => {:small => "150x150>"},
                     :url => "/assets/users/:id/:style/:basename.:extension",

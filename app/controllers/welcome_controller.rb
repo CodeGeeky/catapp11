@@ -1,5 +1,8 @@
 class WelcomeController < ApplicationController
   before_action :log_in_required, only: [:edit, :update]
+  def show
+
+  end
   def index 
   end
   def edit
@@ -7,7 +10,7 @@ class WelcomeController < ApplicationController
   end
 
   def update
-    @user = current_user
+     @user = current_user
      respond_to do |format|
       if @user.update(user_params)
        format.html { redirect_to @user, notice: 'User was successfully updated.' }
