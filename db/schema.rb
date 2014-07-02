@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140701112643) do
+ActiveRecord::Schema.define(version: 20140702060647) do
 
   create_table "bookings", force: true do |t|
     t.date     "book_date"
@@ -54,13 +54,13 @@ ActiveRecord::Schema.define(version: 20140701112643) do
     t.string   "item_name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "quantity"
     t.float    "price"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.text     "description"
+    t.string   "category"
   end
 
   create_table "simple_captcha_data", force: true do |t|

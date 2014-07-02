@@ -19,7 +19,12 @@ class MenusController < ApplicationController
   def show
     # @ibook = Ibook.new(:for_when => params[:mdate])
     # @ibook.save
-    @menu = Menu.find(:all)
+    print params[:category]
+    if params[:category] and params[:category] != 'all'
+      @menu = Menu.where('category = :category', {category: params[:category]})
+    else
+      @menu = Menu.find(:all)
+    end
     @for_when = params[:mdate]
     if @for_when
       @dateT = Date.parse(@for_when)
@@ -45,7 +50,7 @@ class MenusController < ApplicationController
   
   private
   def menu_params
-    params.require(:menu).permit(:id, :item_name, :price, :description, :photo)
+    params.require(:menu).permit(:id, :item_name, :category, :price, :description, :photo)
   end 
   
   def log_in_required

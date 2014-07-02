@@ -72,21 +72,16 @@
 						<td><%= f.label :price %></td>
 						<td><%= f.text_field :price%></td>
 					</tr>
-					<!--<tr>-->
-						<!--<td><p>Category</p></td>-->
+					<tr>
+						<td><%= f.label :category %></td>
+                        <td><%= f.select :category, [['Breakfast', 'breakfast'], ['Lunch','lunch']] %></td>
 						<!--<td>-->
 							<!--<select>-->
-								<!--<option value="appetizer">Appetizer</option>-->
 					  			<!--<option value="breakfast">Breakfast</option>-->
-					  			<!--<option value="salad">Salad</option>-->
-					  			<!--<option value="Dessert">Dessert</option>-->
 					  			<!--<option value="lunch">Lunch</option>-->
-					  			<!--<option value="tandoori">Tandoori</option>-->
-					  			<!--<option value="dine">Dine</option>-->
 							<!--</select>-->
 						<!--</td>-->
-						<!--<td><a class="custom_button_small" href="#">Add New Catagories</a></td>-->
-					<!--</tr>-->
+					</tr>
 					<tr>
 						<td><%= f.label :description %></td>
 						<td><%= f.text_area :description, :size => "30x10" %></td>

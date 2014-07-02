@@ -195,6 +195,13 @@
   		<% end %>
   	<%end%>
   	</h3><hr />
+    <div class="category">
+      <%= link_to 'all', :controller => 'menus', :action => 'show', category: 'all' %>
+      <span style="margin-left: 1em"/>
+      <%= link_to 'breakfast', :controller => 'menus', :action => 'show', category: 'breakfast' %>
+      <span style="margin-left: 1em"/>
+      <%= link_to 'lunch', :controller => 'menus', :action => 'show', category: 'lunch' %>
+    </div>
   		<% @counter = 1 %>
   		<% @menu.each do |menu|%>
   		<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
