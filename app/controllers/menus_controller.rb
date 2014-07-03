@@ -19,7 +19,6 @@ class MenusController < ApplicationController
   def show
     # @ibook = Ibook.new(:for_when => params[:mdate])
     # @ibook.save
-    print params[:category]
     if params[:category] and params[:category] != 'all'
       @menu = Menu.where('category = :category', {category: params[:category]})
     else
