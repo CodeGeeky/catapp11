@@ -1,62 +1,64 @@
 <style type="text/css">
-	#edit-wrapper {
-		width: 400px;
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: 50px;
-	}
-	body, h3 {
-		font-family: 'Source Sans Pro', sans-serif;
-		font-weight: 100;
-	}
-	#edit-wrapper label, #edit-wrapper p {
-		font-family: 'Source Sans Pro', sans-serif;
-		font-weight: 100;
-		text-align: left;
-		color: #FFF;
-		font-size: 14px;
-	}
+    #edit-wrapper {
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+    }
+    body, h3 {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 100;
+    }
+    #edit-wrapper label, #edit-wrapper p {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 100;
+        text-align: left;
+        color: #FFF;
+        font-size: 14px;
+    }
 </style>
-	<%= javascript_include_tag "application.js" %>
-	<%= javascript_include_tag "jquery_ujs.js" %>
-	<%= javascript_include_tag "facebox.js" %>
-	<%= stylesheet_link_tag "facebox.css" %>
-	<%= javascript_include_tag :defaults %>
-	<%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" %>
-	<%= stylesheet_link_tag "default.css" %>
-	<%= stylesheet_link_tag "fonts.css"%>
-	<%= csrf_meta_tags %>
-	<%= javascript_include_tag "jquery-1.10.2.js" %>
-	<%= javascript_include_tag "jquery-1.7.1.min.js" %>
-	<%= javascript_include_tag "jquery.min.js" %>
-	<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" %>
-	<%= javascript_include_tag "respond.min.js" %>
-	<%= javascript_include_tag "//html5shiv.googlecode.com/svn/trunk/html5.js" %>
+<%= javascript_include_tag "application.js" %>
+<%= javascript_include_tag "jquery_ujs.js" %>
+<%= javascript_include_tag "facebox.js" %>
+<%= stylesheet_link_tag "facebox.css" %>
+<%= javascript_include_tag :defaults %>
+<%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" %>
+<%= stylesheet_link_tag "default.css" %>
+<%= stylesheet_link_tag "fonts.css"%>
+<%= csrf_meta_tags %>
+<%= javascript_include_tag "jquery-1.10.2.js" %>
+<%= javascript_include_tag "jquery-1.7.1.min.js" %>
+<%= javascript_include_tag "jquery.min.js" %>
+<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" %>
+<%= javascript_include_tag "respond.min.js" %>
+<%= javascript_include_tag "//html5shiv.googlecode.com/svn/trunk/html5.js" %>
 
-	<%= javascript_include_tag "//code.jquery.com/ui/1.10.3/jquery-ui.js" %>
+<%= javascript_include_tag "//code.jquery.com/ui/1.10.3/jquery-ui.js" %>
 
-	<%= stylesheet_link_tag "//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" %>
+<%= stylesheet_link_tag "//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" %>
 
 <%if flash[:error_menu_update]%>
-		<script type="text/javascript">
-			alert("Error updating new menu.");
-		</script>
+    <script type="text/javascript">
+        alert("Error updating new menu.");
+    </script>
 <%end%>
 <%= render :partial => 'banner/banner' %>
 <div id="edit-wrapper">
-<%= form_for @menu, url: menu_path(@menu), method: :patch do |f| %>	
-		<h3 style="color: #FFF; font-size: 20px;">Menu Settings</h3><hr />		
-		<%= f.label :item_name %><br />
-		<%= f.text_field :item_name %><br />
-		<%= f.label :image %><br />
-		<%= f.file_field :photo%><br />
-		<%= f.label :price %><br />
-		<%= f.text_field :price %><br />
-		<%= f.label :description %><br />
-		<%= f.text_area :description, :size => '30x10'%><br />
-		
-		<div style="width: 50px; margin-left: auto; margin-right:auto;">
-			<%= f.submit "Update"%>
-		</div>
-<% end %>
+  <%= form_for @menu, url: menu_path(@menu), method: :patch do |f| %>
+      <h3 style="color: #FFF; font-size: 20px;">Menu Settings</h3><hr />
+      <%= f.label :item_name %><br />
+      <%= f.text_field :item_name %><br />
+      <%= f.label :image %><br />
+      <%= f.file_field :photo%><br />
+      <%= f.label :price %><br />
+      <%= f.text_field :price %><br />
+      <%= f.label :category %><br />
+      <%= f.select :category, [['Breakfast', 'breakfast'], ['Lunch','lunch']] %><br />
+      <%= f.label :description %><br />
+      <%= f.text_area :description, :size => '30x10'%><br />
+
+      <div style="width: 50px; margin-left: auto; margin-right:auto;">
+        <%= f.submit "Update"%>
+      </div>
+  <% end %>
 </div>
