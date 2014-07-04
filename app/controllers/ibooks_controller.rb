@@ -14,6 +14,7 @@ class IbooksController < ApplicationController
   end
   
   def show
+    Ibook.where('for_when < ?', Date.today).destroy_all
     @ibook = Ibook.find(:all, :include=>:user)
     
   end

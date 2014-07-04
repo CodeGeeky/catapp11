@@ -1,344 +1,356 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-   "http://www.w3.org/TR/html4/strict.dtd">
+        "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
-  <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title></title>
-	<%= javascript_include_tag "application.js" %>
-	<%= javascript_include_tag "jquery_ujs.js" %>
-	<%= javascript_include_tag "facebox.js" %>
-	<%= stylesheet_link_tag "facebox.css" %>
-	<%= javascript_include_tag :defaults %>
-	<%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" %>
-	<%= stylesheet_link_tag "default.css" %>
-	<%= stylesheet_link_tag "fonts.css"%>
-	<%= csrf_meta_tags %>
-	<%= javascript_include_tag "jquery-1.10.2.js" %>
-	<%= javascript_include_tag "jquery-1.7.1.min.js" %>
-	<%= javascript_include_tag "jquery.min.js" %>
-	<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" %>
-	<%= javascript_include_tag "respond.min.js" %>
-	<%= javascript_include_tag "//html5shiv.googlecode.com/svn/trunk/html5.js" %>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title></title>
+  <%= javascript_include_tag "application.js" %>
+  <%= javascript_include_tag "jquery_ujs.js" %>
+  <%= javascript_include_tag "facebox.js" %>
+  <%= stylesheet_link_tag "facebox.css" %>
+  <%= javascript_include_tag :defaults %>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" %>
+  <%= stylesheet_link_tag "default.css" %>
+  <%= stylesheet_link_tag "fonts.css"%>
+  <%= csrf_meta_tags %>
+  <%= javascript_include_tag "jquery-1.10.2.js" %>
+  <%= javascript_include_tag "jquery-1.7.1.min.js" %>
+  <%= javascript_include_tag "jquery.min.js" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" %>
+  <%= javascript_include_tag "respond.min.js" %>
+  <%= javascript_include_tag "//html5shiv.googlecode.com/svn/trunk/html5.js" %>
 
-	<%= javascript_include_tag "//code.jquery.com/ui/1.10.3/jquery-ui.js" %>
+  <%= javascript_include_tag "//code.jquery.com/ui/1.10.3/jquery-ui.js" %>
 
-	<%= stylesheet_link_tag "//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" %>
+  <%= stylesheet_link_tag "//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" %>
 
-	<%= yield :head %>
+  <%= yield :head %>
 
-		<style>
-		  .ui-effects-transfer {
-		    border: 1px dotted black;
-		  }
-		  #addCart {
+  <style>
+      .ui-effects-transfer {
+          border: 1px dotted black;
+      }
+      #addCart {
 
-		  }
-		</style>
-		<script type="text/javascript">
-		  $(".custom_button_small").click(function() {
-		    //var i = 1 - $( "#addCart" ).index( this );
-		    $("#addCart").effect( "transfer", { to: $( "#right" ), className: 'ui-effects-transfer' }, 1000 );
-		  });
-		</script>
-	  <style type="text/css">
-	  	body, h3 {
-			font-family: 'Source Sans Pro', sans-serif;
-			font-weight: 100;
-			color: #FFF;
-		}
-	
-		#show-wrapper label, #show-wrapper p, #show-wrapper a {
-			font-family: 'Source Sans Pro', sans-serif;
-			font-weight: 100;
-			color: #FFFFFF;
-			font-size: 14px;
-		}
-		#show-wrapper a:hover {
-			font-weight: 300;
-		}
-		#show-wrapper {
-			width: 786px;
-			margin-left: auto;
-			margin-right: auto;
-			padding-top: 50px;
-			margin-top: 50px;
-		}
-		#show-wrapper input[type="textbox"] {
-			width: 50px;
-			padding: 2px 0;
-		}
-
-		#show-wrapper input[type="button"] {
-			padding: 2px 2px;
-			cursor: pointer;
-			cursor: hand;
-		}
-		#show-wrapper table {
-			width: 100%;
-		}
-
-		#menu-page-header {
-			width: 900px;
-			margin-left: auto;
-			margin-right: auto;
-			height: auto;
-			margin-bottom: 10px;
-			padding-top: 10px;
-		}
-
-		#menu-page-header a {
-			font-family: 'Source Sans Pro', sans-serif;
-			font-weight: 100;
-			text-align: left;
-			color: #FFFFFF;
-			font-size: 14px;
-			text-decoration: none;
-		}
-
-		#menu-page-header a:hover {
-			font-weight: 300;
-		}
-
-		#menu-page-header .left {
-			width: 450px;
-			margin-left: 0;
-			margin-top: 0;
-			float: left;
-			text-align: left;
-			height: 100%;
-		}
-
-		#menu-page-header .right {
-			width: 450px;
-			margin-top: 0;
-			margin-right: 0;
-			float: right;
-			text-align: right;
-			height: 100%;
-		}
-
-		#menu-page-header select {
-			/*background: #551950;
-			color: #FFF;
-			border-style: .5px solid #2a0c28;*/
-			font-family: 'Source Sans Pro', sans-serif;
-			font-weight: 300;
-			font-size: 13px;
-			width: 200px;
-
-		}
-	  </style>
-	  <script type="text/javascript">
-	  $document.ready(function(){
-	  	$('#qty').keyup(function(){
-        	$('#subamount').html($(this).val());
-    	});
-	  });
-	  </script>
-  </head>
-  <body>
-  <%= render :partial => 'banner/banner' %>
-  <div id="menu-page-header">
-	<div class="left">
-		<% if !current_user %>
-			<p>Hello! Guest, Check out our food items.</p>
-		<% end %>
-		<% if current_user %>
-			<% if current_user.role != 'admin' and current_user.phone != '9800000000' %>
-				<p>Hello! <%= current_user.name %>, Check out our food items.</p>
-			<% end %>
-			<% if current_user.role == 'admin' or current_user.phone == '9800000000' %>
-				<p>Hello! <%= current_user.name %>
-			<% end %>
-		<% end %>
-		<!--<p>View the food Categories : -->
-		<!--<select>-->
-			<!--<option value="appetizer">Appetizer</option>-->
-			<!--<option value="breakfast">Breakfast</option>-->
-			<!--<option value="salad">Salad</option>-->
-			<!--<option value="Dessert">Dessert</option>-->
-			<!--<option value="lunch">Lunch</option>-->
-			<!--<option value="tandoori">Tandoori</option>-->
-			<!--<option value="dine">Dine</option>-->
-		<!--</select>-->
-		<!--</p>-->
-	</div>
-	<div class="right">
-	<p style="text-align: right;">
-	<% if current_user %>
-		<% if current_user.role != 'admin' and current_user.phone != '9800000000' %>
-			You have [<%= link_to count, :controller=>'citems', :action=>'show', :for_when => @for_when %>] items on your order list. <br />
-			<% if @for_when %>
-				<p>Your order is for <%= link_to @dateT, "#" %>.<br /><%= link_to "[change date]", "/calender/calender" %></p>
-
-			<% else %>
-				<p style="text-align: right;">You didn't tell us for when this order is.<br />Choose <%= link_to "order date", "/calender/calender" %>.</p>
-			<% end %>
-		<%else%>
-			You have [<%= link_to order, '/ibooks/show' %>] order. <br />
-		<% end %>
-	<% end %>
-	<%if !current_user %>
-		Please <%= link_to "Sign in!", '/pages/login', :rel => 'facebox' %> to order.<br />
-		Not registered? <%= link_to "Sign Up!", '/users/new', :rel => 'facebox' %> <br />
-		Contact Us: beetle@beetle-developers.com
-	<% end %>
-	</p>
-	</div>
-  </div>
-
-  <div id="show-wrapper">
-  <h3 style="color: #FFF; font-size: 20px;">Food Menu
-  	<%if current_user%>
-		<%if current_user.role == 'admin' or current_user.phone == '9800000000'%>
-  		<%= link_to ' [Add Food Item]',new_menu_path %>
-  		<% end %>
-  	<%end%>
-  	</h3><hr />
-    <div class="category">
-      <%= link_to 'all', :controller => 'menus', :action => 'show', category: 'all' %>
-      <span style="margin-left: 1em"/>
-      <%= link_to 'breakfast', :controller => 'menus', :action => 'show', category: 'breakfast' %>
-      <span style="margin-left: 1em"/>
-      <%= link_to 'lunch', :controller => 'menus', :action => 'show', category: 'lunch' %>
-    </div>
-  		<% @counter = 1 %>
-  		<% @menu.each do |menu|%>
-  		<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-			<div class="flipper">
-				<div class="front">
-					<div class="img-cls">
-						<%= image_tag menu.photo.url(:small) %> 																	
-					</div>
-					<div class="caption-cls">
-	  					<%= menu.item_name %><br />
-  					</div>
-  				</div>
-				<div class="back">		
-  					Rs. <input type="textbox" name="rate" class="rate<%= @counter %>" value=" <%= menu.price %>" disabled style="background: none;"><br />
-  					<% if current_user %>
-  						<%if current_user.role != 'admin' and current_user.phone != '9800000000'%>
-							<p id="addCart"><a class="custom_button_small" href="#"><span class="icon icon-plus-sign-alt"><%= link_to 'Add To Cart', :controller => 'citems', :action => 'add', :menu => menu, :for_when => @for_when %></span></a></p>
-			  			<%end%>
-						<%if current_user.role == 'admin' or current_user.phone == '9800000000'%>
-							<p style="width: auto;"><%= link_to "edit", edit_menu_path(menu), :rel => 'facebox' %></p>
-							<p style="width: auto;"><%= link_to "delete", menu, method: :delete, data: { confirm: "You sure?" } %></p>
-						<%end%>
-	  				<%end%>
-	  				<br /><%= menu.description %>
-	  			</div>
-			</div>
-  		</div>
-  		<% @counter = @counter + 1 %>
-  		<%end%>
-  		<%if flash[:exist]%>
-			<script>
-				alert("Item already exist.\nPlease select other menus\nThank You");
-			</script>		  					
-		<%end%>		
-  </div>
-  <script>
-  	$(document).ready(function()
-	{
-    /*
-    * binding onChange event here
-    * you can replace .change with .blur
-    */
-	var number = "<%= @counter %>";
-	for (i=1; i<number;i++)
-		var qtyidtemp = '.qty'+i;
-		$('qtyid').change(UpdateInfo(i));
-	}
-	});
-   function UpdateInfo()
-   {
-   	var qtyid = '.qty'+i;
-   	var rateid = '.rate'+i;
-   	var subtotalid = '.subtotal'+i;
-     var qty = $(qtyid).val();
-     var rate = $(rateid).val();
-     var subtotal = qty * rate;
-     $(subtotalid).val(subtotal);
-   }
-  </script>
-   <style type="text/css">
-  /* entire container, keeps perspective */
-	.flip-container {
-		display: inline-block;
-		margin: 5px;
-		border-style: solid 5px #2A0C28;
-		-webkit-perspective: 1000;
-     	   -moz-perspective: 1000;
-      		-ms-perspective: 1000;
-          		perspective: 1000;
-	}
-	/* flip the pane when hovered */
-	.flip-container:hover .flipper, .flip-container.hover .flipper {
-		-webkit-transform: rotateY(180deg);
-     	   -moz-transform: rotateY(180deg);
-      	    -ms-transform: rotateY(180deg);
-       	     -o-transform: rotateY(180deg);
-       	     	transform: rotateY(180deg);
-	}
-
-	.flip-container a, .front a, .back a,
-	.flip-container p, .front p, .back p {
-		text-align: center;
-	}
-	.flip-container, .front, .back {
-		width: 250px;
-		height: 200px;
-		background: #2A0C28;
-		border-radius: 10px;
-		text-align: center;
-
-	}
-
-	.img-cls {
-		height: 150px;
-		width: auto;
-	}
-
-	.caption-cls {
-		height: 50px;
-		width: auto;
-	}
-	/* flip speed goes here */
-	.flipper {
-		-webkit-transition: 0.6s;
-     	   -moz-transition: 0.6s;
-       		 -o-transition: 0.6s;
-          		transition: 0.6s;
-		-webkit-transform-style: preserve-3d;
-				transform-style: preserve-3d;
-
-		position: relative;
-	}
-
-	/* hide back of pane during swap */
-	.front, .back {
-		-webkit-backface-visibility: hidden; /* Chrome and Safari */
-		   -moz-backface-visibility: hidden; /* Firefox */
-			-ms-backface-visibility: hidden;
-				backface-visibility: hidden;
-		position: absolute;
-		top: 0;
-		left: 0;
-	}
-
-	/* front pane, placed above back */
-	.front {
-		z-index: 2;
-	}
-
-	/* back, initially hidden pane */
-	.back {
-		-webkit-transform: rotateY(180deg);
-     	   -moz-transform: rotateY(180deg);
-      	    -ms-transform: rotateY(180deg);
-       	     -o-transform: rotateY(180deg);
-       	     	transform: rotateY(180deg);
-	}
+      }
   </style>
-  </body>
+  <script type="text/javascript">
+      $(".custom_button_small").click(function() {
+          //var i = 1 - $( "#addCart" ).index( this );
+          $("#addCart").effect( "transfer", { to: $( "#right" ), className: 'ui-effects-transfer' }, 1000 );
+      });
+  </script>
+  <style type="text/css">
+      body, h3 {
+          font-family: 'Source Sans Pro', sans-serif;
+          font-weight: 100;
+          color: #FFF;
+      }
+
+      #show-wrapper label, #show-wrapper p, #show-wrapper a {
+          font-family: 'Source Sans Pro', sans-serif;
+          font-weight: 100;
+          color: #FFFFFF;
+          font-size: 14px;
+      }
+      #show-wrapper a:hover {
+          font-weight: 300;
+      }
+      #show-wrapper {
+          width: 786px;
+          margin-left: auto;
+          margin-right: auto;
+          padding-top: 50px;
+          margin-top: 50px;
+      }
+      #show-wrapper input[type="textbox"] {
+          width: 50px;
+          padding: 2px 0;
+      }
+
+      #show-wrapper input[type="button"] {
+          padding: 2px 2px;
+          cursor: pointer;
+          cursor: hand;
+      }
+      #show-wrapper table {
+          width: 100%;
+      }
+
+      #menu-page-header {
+          width: 900px;
+          margin-left: auto;
+          margin-right: auto;
+          height: auto;
+          margin-bottom: 10px;
+          padding-top: 10px;
+      }
+
+      #menu-page-header a {
+          font-family: 'Source Sans Pro', sans-serif;
+          font-weight: 100;
+          text-align: left;
+          color: #FFFFFF;
+          font-size: 14px;
+          text-decoration: none;
+      }
+
+      #menu-page-header a:hover {
+          font-weight: 300;
+      }
+
+      #menu-page-header .left {
+          width: 450px;
+          margin-left: 0;
+          margin-top: 0;
+          float: left;
+          text-align: left;
+          height: 100%;
+      }
+
+      #menu-page-header .right {
+          width: 450px;
+          margin-top: 0;
+          margin-right: 0;
+          float: right;
+          text-align: right;
+          height: 100%;
+      }
+
+      #menu-page-header select {
+          /*background: #551950;
+          color: #FFF;
+          border-style: .5px solid #2a0c28;*/
+          font-family: 'Source Sans Pro', sans-serif;
+          font-weight: 300;
+          font-size: 13px;
+          width: 200px;
+
+      }
+  </style>
+  <script type="text/javascript">
+      $document.ready(function(){
+          $('#qty').keyup(function(){
+              $('#subamount').html($(this).val());
+          });
+      });
+  </script>
+</head>
+<body>
+<%= render :partial => 'banner/banner' %>
+<div id="menu-page-header">
+  <div class="left">
+    <% if !current_user %>
+        <p>Hello! Guest, Check out our food items.</p>
+    <% end %>
+    <% if current_user %>
+        <% if current_user.role != 'admin' and current_user.phone != '9800000000' %>
+            <p>Hello! <%= current_user.name %>, Check out our food items.</p>
+        <% end %>
+        <% if current_user.role == 'admin' or current_user.phone == '9800000000' %>
+            <p>Hello! <%= current_user.name %>
+        <% end %>
+    <% end %>
+    <!--<p>View the food Categories : -->
+    <!--<select>-->
+    <!--<option value="appetizer">Appetizer</option>-->
+    <!--<option value="breakfast">Breakfast</option>-->
+    <!--<option value="salad">Salad</option>-->
+    <!--<option value="Dessert">Dessert</option>-->
+    <!--<option value="lunch">Lunch</option>-->
+    <!--<option value="tandoori">Tandoori</option>-->
+    <!--<option value="dine">Dine</option>-->
+    <!--</select>-->
+    <!--</p>-->
+  </div>
+  <div class="right">
+    <p style="text-align: right;">
+      <% if current_user %>
+          <% if current_user.role != 'admin' and current_user.phone != '9800000000' %>
+              You have [<%= link_to count, :controller=>'citems', :action=>'show', :for_when => @for_when %>] items on your order list. <br />
+              <% if @for_when %>
+                  <p>Your order is for <%= link_to @dateT, "#" %>.<br /><%= link_to "[change date]", "/calender/calender" %></p>
+
+              <% else %>
+                  <p style="text-align: right;">You didn't tell us for when this order is.<br />Choose <%= link_to "order date", "/calender/calender" %>.</p>
+              <% end %>
+          <%else%>
+              You have [<%= link_to order, '/ibooks/show' %>] order. <br />
+          <% end %>
+      <% end %>
+      <%if !current_user %>
+          Please <%= link_to "Sign in!", '/pages/login', :rel => 'facebox' %> to order.<br />
+          Not registered? <%= link_to "Sign Up!", '/users/new', :rel => 'facebox' %> <br />
+          Contact Us: beetle@beetle-developers.com
+      <% end %>
+      </p>
+      </div>
+</div>
+
+<div id="show-wrapper">
+  <h3 style="color: #FFF; font-size: 20px;">Food Menu
+    <%if current_user%>
+        <%if current_user.role == 'admin' or current_user.phone == '9800000000'%>
+            <%= link_to ' [Add Food Item]',new_menu_path %>
+        <% end %>
+    <%end%>
+  </h3><hr />
+  <div class="category">
+    <%= link_to 'all', :controller => 'menus', :action => 'show', category: 'all' %>
+    <span style="margin-left: 1em"/>
+    <%= link_to 'breakfast', :controller => 'menus', :action => 'show', category: 'breakfast' %>
+    <span style="margin-left: 1em"/>
+    <%= link_to 'lunch', :controller => 'menus', :action => 'show', category: 'lunch' %>
+  </div>
+  <% @counter = 1 %>
+  <% @menu.each do |menu|%>
+      <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+          <div class="front">
+            <div class="img-cls">
+              <%= image_tag menu.photo.url(:small) %>
+            </div>
+            <div class="caption-cls">
+              <%= menu.item_name %><br />
+            </div>
+          </div>
+          <div class="back">
+            Rs. <input type="textbox" name="rate" class="rate<%= @counter %>" value=" <%= menu.price %>" disabled style="background: none;"><br />
+            <% if current_user %>
+                <%if current_user.role != 'admin' and current_user.phone != '9800000000'%>
+                    <%= form_tag({:controller => 'citems', :action => 'add'}) do%>
+                        Qty: <input type="textbox" name="quantity" value="1" style="border: 1px solid #2779aa"/>
+                        <p id="addCart">
+                          <input type="hidden" name="menu" value="<%=menu.id%>">
+                          <input type="hidden" name="for_when" value="<%=@for_when%>">
+                          <a class="custom_button_small" href="#">
+                          <span class="icon icon-plus-sign-alt">
+                            <%= submit_tag 'Add To Cart' %>
+                                </span>
+                          </a>
+                        </p>
+                    <%end%>
+                <%end%>
+
+                <%if current_user.role == 'admin' or current_user.phone == '9800000000'%>
+                    <p style="width: auto;"><%= link_to "edit", edit_menu_path(menu), :rel => 'facebox' %></p>
+                    <p style="width: auto;"><%= link_to "delete", menu, method: :delete, data: { confirm: "You sure?" } %></p>
+                <%end%>
+            <%end%>
+            <br /><%= menu.description %>
+          </div>
+        </div>
+      </div>
+      <% @counter = @counter + 1 %>
+  <%end%>
+  <%if flash[:exist]%>
+      <script>
+          alert("Item already exist.\nPlease select other menus\nThank You");
+      </script>
+  <%end%>
+</div>
+<script>
+    $(document).ready(function()
+    {
+        /*
+         * binding onChange event here
+         * you can replace .change with .blur
+         */
+        var number = "<%= @counter %>";
+        for (i=1; i<number;i++)
+             var qtyidtemp = '.qty'+i;
+        $('qtyid').change(UpdateInfo(i));
+    }
+    });
+    function UpdateInfo()
+    {
+        var qtyid = '.qty'+i;
+        var rateid = '.rate'+i;
+        var subtotalid = '.subtotal'+i;
+        var qty = $(qtyid).val();
+        var rate = $(rateid).val();
+        var subtotal = qty * rate;
+        $(subtotalid).val(subtotal);
+    }
+</script>
+<style type="text/css">
+    /* entire container, keeps perspective */
+    .flip-container {
+        display: inline-block;
+        margin: 5px;
+        border-style: solid 5px #2A0C28;
+        -webkit-perspective: 1000;
+        -moz-perspective: 1000;
+        -ms-perspective: 1000;
+        perspective: 1000;
+    }
+    /* flip the pane when hovered */
+    .flip-container:hover .flipper, .flip-container.hover .flipper {
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+
+    .flip-container a, .front a, .back a,
+    .flip-container p, .front p, .back p {
+        text-align: center;
+    }
+    .flip-container, .front, .back {
+        width: 250px;
+        height: 200px;
+        background: #2A0C28;
+        border-radius: 10px;
+        text-align: center;
+
+    }
+
+    .img-cls {
+        height: 150px;
+        width: auto;
+    }
+
+    .caption-cls {
+        height: 50px;
+        width: auto;
+    }
+    /* flip speed goes here */
+    .flipper {
+        -webkit-transition: 0.6s;
+        -moz-transition: 0.6s;
+        -o-transition: 0.6s;
+        transition: 0.6s;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+
+        position: relative;
+    }
+
+    /* hide back of pane during swap */
+    .front, .back {
+        -webkit-backface-visibility: hidden; /* Chrome and Safari */
+        -moz-backface-visibility: hidden; /* Firefox */
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    /* front pane, placed above back */
+    .front {
+        z-index: 2;
+    }
+
+    /* back, initially hidden pane */
+    .back {
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+</style>
+</body>
 </html>

@@ -1,59 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" %>
-	<%= stylesheet_link_tag "default.css" %>
-	<%= stylesheet_link_tag "fonts.css"%>
-	<style type="text/css">
-		body, h3 {
-			font-family: 'Source Sans Pro', sans-serif;
-			font-weight: 100;
-			color: #FFF;
-		}
+  <title></title>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" %>
+  <%= stylesheet_link_tag "default.css" %>
+  <%= stylesheet_link_tag "fonts.css"%>
+  <style type="text/css">
+      body, h3 {
+          font-family: 'Source Sans Pro', sans-serif;
+          font-weight: 100;
+          color: #FFF;
+      }
 
-		#citems-wrapper label, #citems-wrapper p, #citems-wrapper a {
-			font-family: 'Source Sans Pro', sans-serif;
-			font-weight: 100;
-			text-align: left;
-			color: #FFF;
-			font-size: 14px;
-		}
-		#citems-wrapper a:hover {
-			font-weight: 300;
-		}
-		#citems-wrapper {
-			width: 400px;
-			margin-left: auto;
-			margin-right: auto;
-			margin-top: 50px;
-		}
-		#citems-wrapper input[type="text"], #citems-wrapper textarea
-		{
-			width: 200px;
-		}
+      #citems-wrapper label, #citems-wrapper p, #citems-wrapper a {
+          font-family: 'Source Sans Pro', sans-serif;
+          font-weight: 100;
+          text-align: left;
+          color: #FFF;
+          font-size: 14px;
+      }
+      #citems-wrapper a:hover {
+          font-weight: 300;
+      }
+      #citems-wrapper {
+          width: 400px;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 50px;
+      }
+      #citems-wrapper input[type="text"], #citems-wrapper textarea
+      {
+          width: 200px;
+      }
 
-		#citems-wrapper select {
-			/*background: #551950;
-			color: #FFF;
-			border-style: .5px solid #2a0c28;*/
-			font-family: 'Source Sans Pro', sans-serif;
-			font-weight: 300;
-			font-size: 14px;
-			width: 200px;
-		}
-	</style>
+      #citems-wrapper select {
+          /*background: #551950;
+          color: #FFF;
+          border-style: .5px solid #2a0c28;*/
+          font-family: 'Source Sans Pro', sans-serif;
+          font-weight: 300;
+          font-size: 14px;
+          width: 200px;
+      }
+
+      #citems-wrapper table {
+          width: 100%;
+      }
+  </style>
 </head>
 <%= render :partial => 'banner/banner' %>
 <body>
 <div id="citems-wrapper">
-	<h3 style="font-size: 20px;">Order List</h3><hr />
-	<% @list.each do |list| %>
-		<%= list.menu.item_name %> <%=link_to "  [remove]", :controller => 'citems', :action => 'remove', :list => list%> <br />
-	<% end %>
-    <hr>
-	<%= link_to "[confirm order] ", :controller => 'ibooks', :action => 'confirm', for_when: params[:for_when]%>
-	<%= link_to "[cancel order]", :controller => 'citems', :action => 'removeall'%>
+  <h3 style="font-size: 20px;">Order List</h3><hr />
+  <table>
+    <tr>
+      <td>Item Name</td>
+      <td>Quantity</td>
+      <td>Action</td>
+    </tr>
+    <% @list.each do |list| %>
+        <tr>
+          <td><%= list.menu.item_name %></td>
+          <td><%= list.quantity%></td>
+          <td><%=link_to "[remove]", :controller => 'citems', :action => 'remove', :list => list%></td>
+        </tr>
+    <% end %>
+  </table>
+  <hr>
+  <%= link_to "[confirm order] ", :controller => 'ibooks', :action => 'confirm', for_when: params[:for_when]%>
+  <%= link_to "[cancel order]", :controller => 'citems', :action => 'removeall'%>
 </div>
 </body>
 </html>

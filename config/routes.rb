@@ -3,7 +3,7 @@ Catreen101::Application.routes.draw do
   root :to => 'welcome#index'
   get "calender/full_calender"
   get 'calender/calender'
-  get 'citems/add', :as=>'addtocart'
+  post 'citems/add' => 'citems#add'
   get 'citems/remove', :as=>'removefromcart'
   get 'citems/removeall', :as=>'cancelorder'
   get 'citems/list', :as=>'listorder'
