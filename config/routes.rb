@@ -13,7 +13,7 @@ Catreen101::Application.routes.draw do
   get 'pages/login', :as => "login"
   get "logout" => "pages#destroy", :as => "logout"
   get 'users/list_users', :as => 'listUser'
-
+  get 'galleries/gallery'
   #get 'welcome/profile', :as => "profile"
   #get 'welcome/index'
   #get 'inquiries/new', :as => 'inquiry'
