@@ -6,12 +6,13 @@
   z-index: 100;
   text-align: left;
   color: #FFF;
+    background: #333333;
 }
 
 #facebox input, #facebox textarea {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
-  background: #2a0c28;
+  background: #222;
   color: #FFF;
   border-radius: 5px;
   border-style: none;
@@ -23,8 +24,8 @@
 }
 
 #facebox hr {
-  background: #2a0c28;
-  border-color: #2A0C28;
+  background: #222;
+  border-color: #222;
   opacity: 0.2;
 }
 
@@ -52,7 +53,7 @@
 }
 #facebox .popup{
   position:relative;
-  border:3px solid #2a0c28;
+  border:3px solid #222;
   -webkit-border-radius:5px;
   -moz-border-radius:5px;
   border-radius:5px;
@@ -65,7 +66,7 @@
   display:table;
   width: 370px;
   padding: 20px 40px;
-  background: #551950;
+  background: #333;
   -webkit-border-radius:4px;
   -moz-border-radius:4px;
   border-radius:4px;

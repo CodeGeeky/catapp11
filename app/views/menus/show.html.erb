@@ -44,13 +44,14 @@
       body, h3 {
           font-family: 'Source Sans Pro', sans-serif;
           font-weight: 100;
-          color: #FFF;
+          color: #fff;
+          background: #333333;
       }
 
       #show-wrapper label, #show-wrapper p, #show-wrapper a {
           font-family: 'Source Sans Pro', sans-serif;
           font-weight: 100;
-          color: #FFFFFF;
+          color: #fff;
           font-size: 14px;
       }
       #show-wrapper a:hover {
@@ -58,6 +59,7 @@
       }
       #show-wrapper {
           width: 786px;
+          min-height: 500px;
           margin-left: auto;
           margin-right: auto;
           padding-top: 50px;
@@ -90,7 +92,7 @@
           font-family: 'Source Sans Pro', sans-serif;
           font-weight: 100;
           text-align: left;
-          color: #FFFFFF;
+          color: #fff;
           font-size: 14px;
           text-decoration: none;
       }
@@ -188,7 +190,7 @@
 </div>
 
 <div id="show-wrapper">
-  <h3 style="color: #FFF; font-size: 20px;">Food Menu
+  <h3 style="color: #fff; font-size: 20px;">Food Menu
     <%if current_user%>
         <%if current_user.role == 'admin' or current_user.phone == '9800000000'%>
             <%= link_to ' [Add Food Item]',new_menu_path %>
@@ -352,5 +354,4 @@
         transform: rotateY(180deg);
     }
 </style>
-</body>
-</html>
+<%= render :partial => 'footer/footer' %>

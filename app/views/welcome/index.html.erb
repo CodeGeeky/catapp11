@@ -8,13 +8,46 @@
 		box-shadow: 0px -25px 18px rgba(0,0,0,.2);
 		*/
 	}
+
+    #sticky
+    {
+        background: transparent;
+        color: #000000;
+    }
+    #sticky li
+    {
+        background: transparent;
+        color: #000000;
+    }
 	#book {
 		background: none;
 		cursor: pointer;
 		cursor: hand;
 	}
 
-
+    #sticky a{
+        font-weight: 500;
+        color: #aaa;
+        text-shadow:1px 1px 2px #555;
+    }
+    #sticky p{
+        color: #aaa;
+        font-weight: 500;
+    }
+    #sticky p:hover{
+        color: #aaa;
+        font-weight: 500;
+    }
+    #sticky a:hover
+    {
+        color: #fff;
+        font-weight: 500;
+    }
+    #scroll-up
+    {
+        background: none repeat scroll 0 0 #333333;
+        border: 2px solid #AAAAAA;
+    }
 
 </style>
 <script type="text/javascript">
@@ -37,152 +70,152 @@
 		alert("Your order has been booked!\nWe will call you as soon as possible.\nThankyou")
 	</script>
 <%end%>
-<div id="header-wrapper">
-	<div id="sticky-wrapper" style="width:100%">
-		<div id="sticky" style="margin-top: -41px;">
-			<ul>
-			
-			<li>
-				<h4>
-					<div id="book" onclick="scrollToElement('#menu-area', 1300)">
-						<span class="icon icon-shopping-cart"><a> Book Now!</a></span>
-					</div>
+<div id="background-dark-grey">
+    <div id="header-wrapper">
+        <div id="sticky-wrapper" style="width:100%">
+            <div id="sticky" style="margin-top: -41px;">
+                <ul>
 
-				</h4>
-			</li>
-			<li>
-				<h4>
-					<a href="menu/menu" target="_blank"><span class="icon icon-pencil"></span></a>
-					<%= link_to "View Menu!", 'menus/show', :target => '_blank', :title => "View what kind of food we serve and order." %>
-				</h4>
-			</li>
-			<li><h4><span class="icon icon-skype"><a href="#" title="Feel free to call us!"> Call Us: +977-00-0000000</a></span></h4></li>
-			<li>
-				<p style="padding-top: 50px;">Socials : 
-				<a href="#" accesskey="1"> <span class="icon icon-facebook"> </span></a>  
-				<a href="#" accesskey="2"> <span class="icon icon-twitter"> </span></a>  
-				<a href="#" accesskey="3"> <span class="icon icon-youtube"> </span></a>  
-				<a href="#" accesskey="4"> <span class="icon icon-flickr"> </span></a>
-				</p>
-			</li>
-			<li>
-				<h4>
-					<% if flash[:sign_up]%>
-						<script type="text/javascript">
-							alert("Thank You For Signup")
-						</script>
-					<%end%>
-					
-					<% if flash[:error_feedback]%>
-					<script type="text/javascript">
-						alert("<%= flash[:notice_feedback]%>")
-					</script>
-					<a href="inquiries/new" rel="facebox"><span class="icon icon-comment"></span></a>
-					<%= link_to "Feedback!", 'inquiries/new', :title => flash[:notice_feedback], :rel => :tooltip, :rel => 'facebox', :style => 'color:red' %>
-					<% else %>
-						<% if flash[:notice_feedback]%>
-							<script type="text/javascript">
-								alert("Thanks for your feedback!")
-							</script>
-						<%end%>
-					<a href="inquiries/new" rel="facebox"><span class="icon icon-comment"></span></a>
-					<%= link_to "Feedback!", 'inquiries/new', :rel => 'facebox' %>
-					<% end %>
-				</h4>
-			</li>
-			<li style="line-height: .1em; padding-top: 20px; padding-bottom: 20px;">
-				
-				<% if current_user %>
-					<% if current_user.phone == '9800000000'%>
-						<div style = "margin-top:80px"><h4><%= link_to "users", 'users/show', :rel => 'facebox' %></h4></div>
-					<%else%>
-						<div style = "margin-top:80px"><h4><span class="icon icon-user"> </span><%= link_to current_user.name, 'welcome/profile', :rel => 'facebox' %></div>						
-					<%end%>
+                <li>
+                    <h4>
+                        <div id="book" onclick="scrollToElement('#menu-area', 1300)">
+                            <span class="icon icon-shopping-cart"><a> Book Now!</a></span>
+                        </div>
 
-			    	<p style="font-size: 12px; color: #FFF; font-weight: 100; line-height: 20%;"><span class="icon icon-signout"></span><%= link_to "Log out", logout_path %></p>					
-			    	
-			    	
-				<% else %>			
-					<h4 style="margin-top: 80px;">
-						<% if flash[:error]  %>					
-					   		<script language="javascript">
-					     		alert("Invalid username or password.\n    Hit <enter> to continue ");
-					   		</script>
-							<%= # link_to image_tag("lock-fatde.png", alt: "lock-black"), 'pages/login', :rel=>'facebox'			 	
-								link_to "Sign in!", 'pages/login', :title => 'Invalid username or password', :rel => 'tooltip', :rel => 'facebox', :style => 'color:red'%>
-						<% else %>
-							<%= link_to "Sign in!", 'pages/login', :rel => 'facebox' %>
-						<% end %>		
-					
-						<a href="pages/login" rel='facebox'><span class="icon icon-signin"></span></a>
-					</h4>
+                    </h4>
+                </li>
+                <li>
+                    <h4>
+                        <a href="menu/menu" target="_blank"><span class="icon icon-pencil"></span></a>
+                        <%= link_to "View Menu!", 'menus/show', :target => '_blank', :title => "View what kind of food we serve and order." %>
+                    </h4>
+                </li>
+                <li><h4><span class="icon icon-skype"><a href="#" title="Feel free to call us!"> Call Us: +977-00-0000000</a></span></h4></li>
+                <li>
+                    <p style="padding-top: 50px;">Socials :
+                    <a href="#" accesskey="1"> <span class="icon icon-facebook"> </span></a>
+                    <a href="#" accesskey="2"> <span class="icon icon-twitter"> </span></a>
+                    <a href="#" accesskey="3"> <span class="icon icon-youtube"> </span></a>
+                    <a href="#" accesskey="4"> <span class="icon icon-flickr"> </span></a>
+                    </p>
+                </li>
+                <li>
+                    <h4>
+                        <% if flash[:sign_up]%>
+                            <script type="text/javascript">
+                                alert("Thank You For Signup")
+                            </script>
+                        <%end%>
 
-					<p style="font-size: 12px; color: #FFF; font-weright: normal; line-height: 20%;">Not Registered?
-						<% if flash[:error_captcha] %>
-							<script type="text/javascript">
-								alert("Captcha Verification Failed!")
-							</script>
-							<%= link_to "Sign Up!", 'users/new', :title => "captcha verification failed", :rel=>'tooltip', :rel => 'facebox', :style => 'color:red'%>
-						
-						<% elsif flash[:error_signup] %>			
-							<script type="text/javascript">						  							  
-						  			alert("<%= flash[:notice] %>")						  					
-							</script>
-					
-							<%= link_to "Sign Up!", 'users/new', :title => flash[:notice], :rel=>'tooltip', :rel => 'facebox', :style => 'color:red'%>
-						<% else %>
-							<%= link_to "Sign Up!", 'users/new', :rel => 'facebox' %>
-						<%end%>
-					</p>
-				<% end %>
-			</li>
-			</ul>
-		</div>		
-	</div>
-</div>
+                        <% if flash[:error_feedback]%>
+                        <script type="text/javascript">
+                            alert("<%= flash[:notice_feedback]%>")
+                        </script>
+                        <a href="inquiries/new" rel="facebox"><span class="icon icon-comment"></span></a>
+                        <%= link_to "Feedback!", 'inquiries/new', :title => flash[:notice_feedback], :rel => :tooltip, :rel => 'facebox', :style => 'color:red' %>
+                        <% else %>
+                            <% if flash[:notice_feedback]%>
+                                <script type="text/javascript">
+                                    alert("Thanks for your feedback!")
+                                </script>
+                            <%end%>
+                        <a href="inquiries/new" rel="facebox"><span class="icon icon-comment"></span></a>
+                        <%= link_to "Feedback!", 'inquiries/new', :rel => 'facebox' %>
+                        <% end %>
+                    </h4>
+                </li>
+                <li style="line-height: .1em; padding-top: 20px; padding-bottom: 20px;">
 
-<div id="header" class="container">
-		<!--<div id="logo">
-			
-			<span class="icon icon-group"><img src="/images/box1_img4.png" />  
-			<h1><a href="#">CaMS</a></h1></span>
-			<span>Designed & Developed by <a href="#" rel="nofollow">BEETLE<img src="/images/beetle/beetle-18x16.png" /></a></span>
-			
-		</div>-->
+                    <% if current_user %>
+                        <% if current_user.phone == '9800000000'%>
+                            <div style = "margin-top:80px"><h4><%= link_to "users", 'users/show', :rel => 'facebox' %></h4></div>
+                        <%else%>
+                            <div style = "margin-top:80px"><h4><span class="icon icon-user"> </span><%= link_to current_user.name, 'welcome/profile', :rel => 'facebox' %></div>
+                        <%end%>
 
-		
-		<!-- 	SLIDER START	-->
-		
-		<div class="immersive_slider" onmouseover="setVisibility('panelButtons_Holder', 'inline');" onmouseout="setVisibility('panelButtons_Holder', 'none');">
-			<% if current_user and (current_user.phone == '9800000000' or current_user.role == "admin") %>					
-			<div id="panelButtons_Holder" style="display: none;">
-				<span style="color: #FFF; text-decoration: blink;"><img src="/images/settings.png" /> 
-				<%if flash[:error_slide]%>
-					<%= link_to 'Add Slide', 'slides/new',:title => flash[:notice_slide], :rel=>'tooltip', :style => 'color:red'%></span>
-				<%else%>
-					<%= link_to 'Add Slide', 'slides/new', :style => 'color:#fff'%></span>
-				<%end%>
-			</div>	
-			<%end%>
-			
-		
-		<% if current_user and (current_user.phone == '9800000000' or current_user.role == 'admin')%>
-			<%= render :partial => 'slides/show'%>
-		<%else%>
-			<%= render :partial => 'slides/showforall'%>
-		<%end%>	
-          <a href="#" class="is-prev">&laquo;</a>
-          <a href="#" class="is-next">&raquo;</a>
+                        <p style="font-size: 12px; color: #FFF; font-weight: 100; line-height: 20%;"><span class="icon icon-signout"></span><%= link_to "Log out", logout_path %></p>
+
+
+                    <% else %>
+                        <h4 style="margin-top: 80px;">
+                            <% if flash[:error]  %>
+                                <script language="javascript">
+                                    alert("Invalid username or password.\n    Hit <enter> to continue ");
+                                </script>
+                                <%= # link_to image_tag("lock-fatde.png", alt: "lock-black"), 'pages/login', :rel=>'facebox'
+                                    link_to "Sign in!", 'pages/login', :title => 'Invalid username or password', :rel => 'tooltip', :rel => 'facebox', :style => 'color:red'%>
+                            <% else %>
+                                <%= link_to "Sign in!", 'pages/login', :rel => 'facebox' %>
+                            <% end %>
+
+                            <a href="pages/login" rel='facebox'><span class="icon icon-signin"></span></a>
+                        </h4>
+
+                        <p style="font-size: 12px; color: #FFF; font-weright: normal; line-height: 20%;">Not Registered?
+                            <% if flash[:error_captcha] %>
+                                <script type="text/javascript">
+                                    alert("Captcha Verification Failed!")
+                                </script>
+                                <%= link_to "Sign Up!", 'users/new', :title => "captcha verification failed", :rel=>'tooltip', :rel => 'facebox', :style => 'color:red'%>
+
+                            <% elsif flash[:error_signup] %>
+                                <script type="text/javascript">
+                                        alert("<%= flash[:notice] %>")
+                                </script>
+
+                                <%= link_to "Sign Up!", 'users/new', :title => flash[:notice], :rel=>'tooltip', :rel => 'facebox', :style => 'color:red'%>
+                            <% else %>
+                                <%= link_to "Sign Up!", 'users/new', :rel => 'facebox' %>
+                            <%end%>
+                        </p>
+                    <% end %>
+                </li>
+                </ul>
+            </div>
         </div>
-      </div>
-  	</div>
+    </div>
+
+    <div id="header" class="container">
+            <!--<div id="logo">
+
+                <span class="icon icon-group"><img src="/images/box1_img4.png" />
+                <h1><a href="#">CaMS</a></h1></span>
+                <span>Designed & Developed by <a href="#" rel="nofollow">BEETLE<img src="/images/beetle/beetle-18x16.png" /></a></span>
+
+            </div>-->
+
+
+            <!-- 	SLIDER START	-->
+
+            <div class="immersive_slider" onmouseover="setVisibility('panelButtons_Holder', 'inline');" onmouseout="setVisibility('panelButtons_Holder', 'none');">
+                <% if current_user and (current_user.phone == '9800000000' or current_user.role == "admin") %>
+                <div id="panelButtons_Holder" style="display: none;">
+                    <span style="color: #FFF; text-decoration: blink;"><img src="/images/settings.png" />
+                    <%if flash[:error_slide]%>
+                        <%= link_to 'Add Slide', 'slides/new',:title => flash[:notice_slide], :rel=>'tooltip', :style => 'color:red'%></span>
+                    <%else%>
+                        <%= link_to 'Add Slide', 'slides/new', :style => 'color:#fff'%></span>
+                    <%end%>
+                </div>
+                <%end%>
+
+
+            <% if current_user and (current_user.phone == '9800000000' or current_user.role == 'admin')%>
+                <%= render :partial => 'slides/show'%>
+            <%else%>
+                <%= render :partial => 'slides/showforall'%>
+            <%end%>
+              <a href="#" class="is-prev">&laquo;</a>
+              <a href="#" class="is-next">&raquo;</a>
+            </div>
+    </div>
+</div>
   	<div class="benefits">
       <div class="page_container">
   	  </div>
   	</div>
 
 		<!-- 	SLDIER END 		-->
-</div>
 
 <style type="text/css">
 	#calender-wrapper
