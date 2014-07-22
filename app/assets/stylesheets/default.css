@@ -12,7 +12,7 @@ body
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 11pt;
 	font-weight: 100;
-	color: #6c6c6c
+	color: #6c6c6c;
 
     background: #ededed; /* Old browsers */
     background: -moz-linear-gradient(top,  #ededed 0%, #ffffff 50%, #ffffff 100%, #ededed 100%); /* FF3.6+ */
